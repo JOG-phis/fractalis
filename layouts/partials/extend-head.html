@@ -1,0 +1,31 @@
+<style>
+  .course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .course-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border: 1px solid currentColor;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .course-grid a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 640px) {
+    .course-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
