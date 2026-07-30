@@ -1,0 +1,20 @@
+disabled = false
+locale = "en-US"
+label = "English"
+weight = 2
+title = "Fractalis"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  logo = "img/logo.png"
+  dateFormat = "January 2, 2006"
+  description = "Physics and Chemistry at every scale"
+  copyright = "© { year } Fractalis"
+
+  [params.author]
+    name = "Fractalis"
+    email = "jogprofciencias@gmail.com"
+    headline = "Physics and Chemistry at every scale"
+    bio = "**Fractal:** a geometric shape in which the same structure, fragmented or seemingly irregular, repeats at different scales and sizes."
