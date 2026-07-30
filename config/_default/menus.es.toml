@@ -1,17 +1,8 @@
 # -- Main Menu --
-# Estructura Macro / Meso / Micro
+# Navegación por curso. Se añaden más entradas a medida que se creen
+# las carpetas de contenido de cada curso (3 ESO, 4 ESO, 1 BACH, 2 BACH).
 
 [[main]]
-  name = "Macro"
-  pageRef = "/macro"
+  name = "2 ESO"
+  pageRef = "/2eso"
   weight = 10
-
-[[main]]
-  name = "Meso"
-  pageRef = "/meso"
-  weight = 20
-
-[[main]]
-  name = "Micro"
-  pageRef = "/micro"
-  weight = 30
