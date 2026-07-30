@@ -1,0 +1,20 @@
+disabled = false
+languageCode = "es-es"
+locale = "es"
+label = "Español"
+weight = 1
+title = "Fractalis"
+
+[params]
+  displayName = "ES"
+  isoCode = "es"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Física y Química en cada escala"
+  copyright = "© { year } Fractalis"
+
+  [params.author]
+    name = "Nombre del profesor"
+    email = "jogprofciencias@gmail.com"
+    headline = "Física y Química en cada escala"
+    bio = "Profesor de física y química. Aquí comparto apuntes, ejercicios y divulgación científica."

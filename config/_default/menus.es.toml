@@ -1,0 +1,17 @@
+# -- Main Menu --
+# Estructura Macro / Meso / Micro
+
+[[main]]
+  name = "Macro"
+  pageRef = "/macro"
+  weight = 10
+
+[[main]]
+  name = "Meso"
+  pageRef = "/meso"
+  weight = 20
+
+[[main]]
+  name = "Micro"
+  pageRef = "/micro"
+  weight = 30
