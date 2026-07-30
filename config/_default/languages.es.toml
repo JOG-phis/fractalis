@@ -1,6 +1,5 @@
 disabled = false
-languageCode = "es-es"
-locale = "es"
+locale = "es-ES"
 label = "Español"
 weight = 1
 title = "Fractalis"
