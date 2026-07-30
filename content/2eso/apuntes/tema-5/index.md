@@ -1,9 +1,9 @@
 ---
-title: "Tema 4"
+title: "Tema 5"
 description: "Placeholder, contenido pendiente."
 summary: "Placeholder, contenido pendiente."
 date: 2026-07-30
-weight: 40
+weight: 50
 tipo: ["apuntes"]
 tags: ["placeholder"]
 draft: false

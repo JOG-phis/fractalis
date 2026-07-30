@@ -9,4 +9,7 @@ tags: ["placeholder"]
 draft: false
 ---
 
-Contenido pendiente.
+{{< alert >}}
+🚧 **En construcción** 🚧  
+Este artículo es un borrador. Estoy terminando de escribir y pulir el contenido. ✏️
+{{< /alert >}}

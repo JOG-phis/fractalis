@@ -9,4 +9,7 @@ tags: ["placeholder"]
 draft: false
 ---
 
-Content pending.
+{{< alert >}}
+🚧 **Work in progress** 🚧  
+This article is a draft. I'm still writing and polishing the content. ✏️
+{{< /alert >}}
