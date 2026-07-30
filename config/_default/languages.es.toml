@@ -8,6 +8,7 @@ title = "Fractalis"
   displayName = "ES"
   isoCode = "es"
   rtl = false
+  logo = "img/logo.png"
   dateFormat = "2 January 2006"
   description = "Física y Química en cada escala"
   copyright = "© { year } Fractalis"
