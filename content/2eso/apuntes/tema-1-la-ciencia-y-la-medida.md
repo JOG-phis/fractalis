@@ -2,6 +2,7 @@
 title: "Tema 1: La ciencia y la medida"
 description: "El método científico, la medida (el sistema internacional), múltiplos y submúltiplos, material y seguridad en el laboratorio, factores de conversión."
 summary: "El método científico, la medida, el sistema internacional, factores de conversión y seguridad en el laboratorio."
+date: 2026-07-30
 weight: 10
 tipo: ["apuntes"]
 tags: ["materia", "densidad", "física", "química", "método científico"]

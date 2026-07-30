@@ -2,6 +2,7 @@
 title: "Topic 1: Science and Measurement"
 description: "The scientific method, measurement (the International System), multiples and submultiples, lab equipment and safety, conversion factors."
 summary: "The scientific method, measurement, the International System, conversion factors, and lab safety."
+date: 2026-07-30
 weight: 10
 tipo: ["notes"]
 tags: ["matter", "density", "physics", "chemistry", "scientific method"]
