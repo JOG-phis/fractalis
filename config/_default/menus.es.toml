@@ -6,3 +6,8 @@
   name = "2 ESO"
   pageRef = "/2eso"
   weight = 10
+
+[[main]]
+  name = "Sobre mí"
+  pageRef = "/sobre-mi"
+  weight = 90
