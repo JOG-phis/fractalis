@@ -18,9 +18,14 @@
   weight = 30
 
 [[main]]
+  name = "1 BACH"
+  pageRef = "/1bach"
+  weight = 40
+
+[[main]]
   name = "2 BACH"
   pageRef = "/2bach"
-  weight = 40
+  weight = 50
 
 [[main]]
   name = "Physics"
