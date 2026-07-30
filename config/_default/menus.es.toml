@@ -18,20 +18,20 @@
   weight = 30
 
 [[main]]
-  name = "1 BACH"
-  pageRef = "/1bach"
+  name = "2 BACH"
+  pageRef = "/2bach"
   weight = 40
 
 [[main]]
   name = "Física"
-  parent = "1 BACH"
-  pageRef = "/1bach/fisica"
+  parent = "2 BACH"
+  pageRef = "/2bach/fisica"
   weight = 10
 
 [[main]]
   name = "Química"
-  parent = "1 BACH"
-  pageRef = "/1bach/quimica"
+  parent = "2 BACH"
+  pageRef = "/2bach/quimica"
   weight = 20
 
 [[main]]
