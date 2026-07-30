@@ -1,11 +1,38 @@
 # -- Main Menu --
 # Navigation by course. More entries will be added as content folders
-# for each course are created (3 ESO, 4 ESO, 1 BACH, 2 BACH).
+# for each course are created.
 
 [[main]]
   name = "2 ESO"
   pageRef = "/2eso"
   weight = 10
+
+[[main]]
+  name = "3 ESO"
+  pageRef = "/3eso"
+  weight = 20
+
+[[main]]
+  name = "4 ESO"
+  pageRef = "/4eso"
+  weight = 30
+
+[[main]]
+  name = "1 BACH"
+  pageRef = "/1bach"
+  weight = 40
+
+[[main]]
+  name = "Physics"
+  parent = "1 BACH"
+  pageRef = "/1bach/fisica"
+  weight = 10
+
+[[main]]
+  name = "Chemistry"
+  parent = "1 BACH"
+  pageRef = "/1bach/quimica"
+  weight = 20
 
 [[main]]
   name = "About me"
