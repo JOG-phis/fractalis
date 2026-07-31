@@ -5,7 +5,7 @@ summary: "The scientific method, measurement, the International System, conversi
 date: 2026-07-30
 weight: 10
 showHero: true
-heroStyle: "big"
+heroStyle: "background"
 tipo: ["notes"]
 tags: ["matter", "density", "physics", "chemistry", "scientific method"]
 draft: false

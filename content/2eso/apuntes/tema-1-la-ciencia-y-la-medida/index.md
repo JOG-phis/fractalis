@@ -5,7 +5,7 @@ summary: "El método científico, la medida, el sistema internacional, factores 
 date: 2026-07-30
 weight: 10
 showHero: true
-heroStyle: "big"
+heroStyle: "background"
 tipo: ["apuntes"]
 tags: ["materia", "densidad", "física", "química", "método científico"]
 draft: false
