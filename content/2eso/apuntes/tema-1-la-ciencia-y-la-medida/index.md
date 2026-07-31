@@ -14,7 +14,9 @@ draft: false
 
 ## 1. El Método Científico
 
+{{< lead >}}
 La ciencia no es solo un conjunto de conocimientos, es una forma de **interrogar a la naturaleza**. Para ello, utilizamos un proceso riguroso llamado **método científico**.
+{{< /lead >}}
 
 > **Definición:** El método científico es el procedimiento sistemático que permite a los científicos resolver problemas, responder preguntas y crear nuevo conocimiento.
 
@@ -82,8 +84,8 @@ Para hablar el mismo idioma en todo el mundo, usamos el **Sistema Internacional 
 
 A veces medimos cosas gigantescas (distancia a una estrella) o minúsculas (tamaño de un átomo). Para no escribir tantos ceros, usamos la **notación científica** y los prefijos.
 
-### Prefijos más comunes
-
+{{< accordion >}}
+  {{< accordionItem title="Ver tabla completa de prefijos" icon="list-ol" >}}
 | Prefijo | Símbolo | Factor | Ejemplo |
 | :--- | :---: | :--- | :--- |
 | **Giga** | \(G\) | $$10^9$$ | Gigabyte |
@@ -94,6 +96,8 @@ A veces medimos cosas gigantescas (distancia a una estrella) o minúsculas (tama
 | **Mili** | \(m\) | \(10^{-3}\) | Miligramo |
 | **Micro** | \(\mu\) | \(10^{-6}\) | Micrómetro |
 | **Nano** | \(n\) | \(10^{-9}\) | Nanotecnología |
+  {{< /accordionItem >}}
+{{< /accordion >}}
 
 ### Notación Científica
 Consiste en escribir cualquier número como un producto de un número decimal (entre 1 y 10) y una potencia de 10.
@@ -132,8 +136,8 @@ Debes saber identificar las etiquetas de los reactivos:
 * 🧪 **Corrosivo:** Destruye tejidos vivos (piel) y materiales.
 * 💥 **Explosivo:** Puede explotar por choque o calor.
 
-### Material básico
-
+{{< accordion >}}
+  {{< accordionItem title="Ver material básico de laboratorio" >}}
 Podemos clasificar el material de vidrio en dos grandes grupos según su precisión:
 
 1.  **Material volumétrico (Preciso):** Sirve para medir volúmenes exactos.
@@ -144,3 +148,5 @@ Podemos clasificar el material de vidrio en dos grandes grupos según su precisi
 2.  **Material no volumétrico (Aproximado):** Sirve para contener, calentar o mezclar, pero sus marcas de volumen no son fiables.
     * *Vaso de precipitados.*
     * *Matraz Erlenmeyer.*
+  {{< /accordionItem >}}
+{{< /accordion >}}

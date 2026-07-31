@@ -14,7 +14,9 @@ draft: false
 
 ## 1. The Scientific Method
 
+{{< lead >}}
 Science is not just a collection of knowledge; it's a way of **questioning nature**. To do this, we use a rigorous process called the **scientific method**.
+{{< /lead >}}
 
 > **Definition:** The scientific method is the systematic procedure that allows scientists to solve problems, answer questions, and create new knowledge.
 
@@ -82,8 +84,8 @@ To speak the same language all over the world, we use the **International System
 
 Sometimes we measure gigantic things (the distance to a star) or tiny things (the size of an atom). To avoid writing so many zeros, we use **scientific notation** and prefixes.
 
-### Most common prefixes
-
+{{< accordion >}}
+  {{< accordionItem title="View full prefix table" icon="list-ol" >}}
 | Prefix | Symbol | Factor | Example |
 | :--- | :---: | :--- | :--- |
 | **Giga** | \(G\) | $$10^9$$ | Gigabyte |
@@ -94,6 +96,8 @@ Sometimes we measure gigantic things (the distance to a star) or tiny things (th
 | **Milli** | \(m\) | \(10^{-3}\) | Milligram |
 | **Micro** | \(\mu\) | \(10^{-6}\) | Micrometre |
 | **Nano** | \(n\) | \(10^{-9}\) | Nanotechnology |
+  {{< /accordionItem >}}
+{{< /accordion >}}
 
 ### Scientific Notation
 It consists of writing any number as a product of a decimal number (between 1 and 10) and a power of 10.
@@ -132,8 +136,8 @@ You should be able to identify the labels on reagents:
 * 🧪 **Corrosive:** Destroys living tissue (skin) and materials.
 * 💥 **Explosive:** Can explode from shock or heat.
 
-### Basic equipment
-
+{{< accordion >}}
+  {{< accordionItem title="View basic lab equipment" >}}
 Glassware can be classified into two broad groups according to their precision:
 
 1.  **Volumetric equipment (precise):** Used to measure exact volumes.
@@ -144,3 +148,5 @@ Glassware can be classified into two broad groups according to their precision:
 2.  **Non-volumetric equipment (approximate):** Used to hold, heat, or mix, but its volume markings aren't reliable.
     * *Beaker.*
     * *Erlenmeyer flask.*
+  {{< /accordionItem >}}
+{{< /accordion >}}
