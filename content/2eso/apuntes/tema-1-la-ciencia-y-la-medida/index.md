@@ -4,6 +4,8 @@ description: "El método científico, la medida (el sistema internacional), múl
 summary: "El método científico, la medida, el sistema internacional, factores de conversión y seguridad en el laboratorio."
 date: 2026-07-30
 weight: 10
+showHero: true
+heroStyle: "big"
 tipo: ["apuntes"]
 tags: ["materia", "densidad", "física", "química", "método científico"]
 draft: false

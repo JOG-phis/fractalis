@@ -4,6 +4,8 @@ description: "The scientific method, measurement (the International System), mul
 summary: "The scientific method, measurement, the International System, conversion factors, and lab safety."
 date: 2026-07-30
 weight: 10
+showHero: true
+heroStyle: "big"
 tipo: ["notes"]
 tags: ["matter", "density", "physics", "chemistry", "scientific method"]
 draft: false
