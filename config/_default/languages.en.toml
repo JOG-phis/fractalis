@@ -16,4 +16,5 @@ title = "Fractalis"
   [params.author]
     name = "Fractalis."
     email = "jogprofciencias@gmail.com"
-    bio = "**Education:** a chaotic object in which the same structure, fragmented or seemingly irregular, repeats identically at different scales."
+    headline = "Education"
+    bio = "A chaotic object in which the same structure, fragmented or seemingly irregular, repeats identically at different scales."
