@@ -14,7 +14,6 @@ title = "Fractalis"
   copyright = "© { year } Fractalis"
 
   [params.author]
-    name = "Fractalis"
+    name = "Fractalis."
     email = "jogprofciencias@gmail.com"
-    headline = "Física y Química en cada escala"
-    bio = "**Fractal:** objeto geométrico en el que una misma estructura, fragmentada o aparentemente irregular, se repite a diferentes escalas y tamaños."
+    bio = "**Educación:** objeto caótico en el que una misma estructura, fragmentada o aparentemente irregular, se repite de forma idéntica a diferentes escalas."

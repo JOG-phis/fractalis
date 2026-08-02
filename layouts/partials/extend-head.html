@@ -1,4 +1,42 @@
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .scroll-cue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 1.5rem auto 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    animation: scroll-cue-bounce 2s ease-in-out infinite;
+    transition: transform 0.2s ease;
+  }
+  .scroll-cue:hover {
+    transform: scale(1.35);
+    animation-play-state: paused;
+  }
+  @keyframes scroll-cue-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  #cursos {
+    scroll-margin-top: 2rem;
+  }
+  .course-section-title,
+  #cursos h2 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    margin-bottom: 1.5rem;
+  }
+
   .course-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -30,16 +68,21 @@
   }
   .course-grid a figure {
     margin: 0;
+    overflow: hidden;
   }
   .course-grid a img {
     width: 96px;
     height: 96px;
     object-fit: contain;
     pointer-events: none;
+    transition: transform 0.25s ease;
   }
   .course-grid a:hover {
     transform: translateY(-3px);
     background: rgba(15, 23, 42, 0.8);
+  }
+  .course-grid a:hover img {
+    transform: scale(1.15);
   }
   @media (max-width: 640px) {
     .course-grid {
