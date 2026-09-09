@@ -40,6 +40,11 @@
   weight = 20
 
 [[main]]
+  name = "Friendly sites"
+  pageRef = "/paginas-amigas"
+  weight = 80
+
+[[main]]
   name = "About me"
   pageRef = "/sobre-mi"
   weight = 90
