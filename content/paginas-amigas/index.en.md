@@ -11,38 +11,38 @@ When I started teaching I often felt lost and on my own. I don't know what would
 <div class="friend-links-grid">
 
 <a href="https://fisiquimicamente.com/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>FisiQuímicamente <span class="friend-link-lang">ES</span></h3>
     <span class="friend-link-author">Rodrigo Alcaraz de la Osa et al.</span>
+    <p>Physics and chemistry resources, tutorials, and current science news.</p>
   </div>
-  <p>Physics and chemistry resources, tutorials, and current science news.</p>
   {{< figure src="icon-fisiquimicamente.png" alt="FisiQuímicamente" nozoom=true class="friend-link-icon" >}}
 </a>
 
 <a href="https://fqsaja.com/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>Física y Química — IES Valle del Saja <span class="friend-link-lang">ES</span></h3>
     <span class="friend-link-author">FyQ Department</span>
+    <p>Videos, lab practicals, and materials from the department, meant to help students understand physical and chemical principles.</p>
   </div>
-  <p>Videos, lab practicals, and materials from the department, meant to help students understand physical and chemical principles.</p>
   {{< figure src="icon-fqsaja.png" alt="IES Valle del Saja" nozoom=true class="friend-link-icon" >}}
 </a>
 
 <a href="https://miguelquiroga.es/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>Miguel Quiroga <span class="friend-link-lang">ES</span></h3>
     <span class="friend-link-author">Miguel Quiroga</span>
+    <p>Teaching materials, lab practicals, astronomy, 3D printing, and generators for the physics and chemistry classroom.</p>
   </div>
-  <p>Teaching materials, lab practicals, astronomy, 3D printing, and generators for the physics and chemistry classroom.</p>
   {{< figure src="icon-miguelquiroga.png" alt="Miguel Quiroga" nozoom=true class="friend-link-icon" >}}
 </a>
 
 <a href="https://www.passionatelycurious.info/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>Passionately Curious</h3>
     <span class="friend-link-author">Joe Cossette</span>
+    <p>Interactive and engaging resources for teaching high school science, physics, and chemistry.</p>
   </div>
-  <p>Interactive and engaging resources for teaching high school science, physics, and chemistry.</p>
   {{< figure src="icon-passionatelycurious.png" alt="Passionately Curious" nozoom=true class="friend-link-icon" >}}
 </a>
 

@@ -11,38 +11,38 @@ Cuando empecé a dar clases me sentí bastante perdido. No sé qué habría sido
 <div class="friend-links-grid">
 
 <a href="https://fisiquimicamente.com/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>FisiQuímicamente</h3>
     <span class="friend-link-author">Rodrigo Alcaraz de la Osa et al.</span>
+    <p>Recursos de Física y Química, tutoriales y ciencia de actualidad.</p>
   </div>
-  <p>Recursos de Física y Química, tutoriales y ciencia de actualidad.</p>
   {{< figure src="icon-fisiquimicamente.png" alt="FisiQuímicamente" nozoom=true class="friend-link-icon" >}}
 </a>
 
 <a href="https://fqsaja.com/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>Física y Química — IES Valle del Saja</h3>
     <span class="friend-link-author">Departamento de FyQ</span>
+    <p>Vídeos, prácticas y materiales de departamento, pensados para ayudar al alumnado a comprender los principios físico-químicos.</p>
   </div>
-  <p>Vídeos, prácticas y materiales de departamento, pensados para ayudar al alumnado a comprender los principios físico-químicos.</p>
   {{< figure src="icon-fqsaja.png" alt="IES Valle del Saja" nozoom=true class="friend-link-icon" >}}
 </a>
 
 <a href="https://miguelquiroga.es/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>Miguel Quiroga</h3>
     <span class="friend-link-author">Miguel Quiroga</span>
+    <p>Materiales didácticos, prácticas de laboratorio, astronomía, impresión 3D y generadores para el aula.</p>
   </div>
-  <p>Materiales didácticos, prácticas de laboratorio, astronomía, impresión 3D y generadores para el aula.</p>
   {{< figure src="icon-miguelquiroga.png" alt="Miguel Quiroga" nozoom=true class="friend-link-icon" >}}
 </a>
 
 <a href="https://www.passionatelycurious.info/" target="_blank" rel="noopener noreferrer" class="friend-link-card">
-  <div class="friend-link-heading">
+  <div class="friend-link-text">
     <h3>Passionately Curious <span class="friend-link-lang">EN</span></h3>
     <span class="friend-link-author">Joe Cossette</span>
+    <p>Interactive and engaging resources for teaching high school science, physics, and chemistry.</p>
   </div>
-  <p>Interactive and engaging resources for teaching high school science, physics, and chemistry.</p>
   {{< figure src="icon-passionatelycurious.png" alt="Passionately Curious" nozoom=true class="friend-link-icon" >}}
 </a>
 
