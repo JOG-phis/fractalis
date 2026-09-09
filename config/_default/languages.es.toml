@@ -14,7 +14,6 @@ title = "Fractalis"
   copyright = "© { year } Fractalis"
 
   [params.author]
-    name = "Fractalis."
+    name = "Fractalis"
     email = "jogprofciencias@gmail.com"
-    headline = "Educación"
     bio = "Objeto caótico en el que una misma estructura, fragmentada o aparentemente irregular, se repite de forma idéntica a diferentes escalas."

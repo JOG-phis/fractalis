@@ -1,14 +1,19 @@
-{{ if .IsHome }}
-<style>
-  h1 {
-    font-size: clamp(3rem, 8vw, 6.5rem) !important;
-    line-height: 1.05 !important;
-  }
-</style>
-{{ end }}
 <style>
   html {
     scroll-behavior: smooth;
+  }
+
+  .dict-def {
+    max-width: 42rem;
+    margin: 0.25rem auto 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--tw-prose-body, #d4d4d4);
+    opacity: 0.85;
+  }
+  .dict-def strong {
+    font-style: normal;
   }
 
   .scroll-cue {
