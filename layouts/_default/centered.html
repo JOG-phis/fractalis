@@ -1,0 +1,28 @@
+{{ define "main" }}
+  <article>
+    {{/* Hero (only if explicitly enabled on the page) */}}
+    {{ if .Params.showHero | default false }}
+      {{ $heroStyle := .Params.heroStyle | default "basic" }}
+      {{ $heroStyle := print "hero/" $heroStyle ".html" }}
+      {{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
+        {{ partial $heroStyle . }}
+      {{ else }}
+        {{ partial "hero/basic.html" . }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Header: just the title, centered, no date/meta/breadcrumbs */}}
+    <header id="single_header" class="mt-5 max-w-4xl mx-auto text-center">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+      </h1>
+    </header>
+
+    {{/* Body: centered, wider than the usual prose column, no sidebar/TOC */}}
+    <section class="mt-6 prose dark:prose-invert max-w-4xl mx-auto">
+      <div class="article-content mb-20">
+        {{ .Content }}
+      </div>
+    </section>
+  </article>
+{{ end }}
