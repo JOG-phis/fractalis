@@ -1,0 +1,100 @@
+{{- /*
+  Tablas cruzadas del currículo oficial (competencias específicas · criterios · saberes).
+  Datos en data/curriculo/<curso>.yaml (extraídos del BOJA).
+  Uso:  {{< curriculo >}}                      -> todos los cursos con datos
+        {{< curriculo cursos="2eso,4eso" >}}   -> solo los indicados
+  El orden y el color de cada curso salen de data/cursos.json.
+*/ -}}
+{{- $datos := hugo.Data.curriculo -}}
+{{- $cursos := slice -}}
+{{- with .Get "cursos" -}}
+  {{- range split . "," }}{{ $cursos = $cursos | append (trim . " ") }}{{ end -}}
+{{- else -}}
+  {{- range sort hugo.Data.cursos "orden" }}{{ if index $datos .id }}{{ $cursos = $cursos | append .id }}{{ end }}{{ end -}}
+{{- end -}}
+
+<nav class="curriculo-nav not-prose" aria-label="Cursos">
+{{- range $cursos }}
+  {{- $c := index $datos . }}{{ $info := index hugo.Data.cursos . }}
+  <a href="#cur-{{ . }}" style="--c: {{ $info.color | default "#38bdf8" }}">{{ $c.materia }} · {{ $c.curso }}</a>
+{{- end }}
+</nav>
+
+{{- range $cursos }}
+{{- $id := . -}}
+{{- $c := index $datos $id -}}
+{{- $info := index hugo.Data.cursos $id -}}
+{{- /* Texto de cada saber y criterios que lo usan (cruce inverso) */ -}}
+{{- $texto := dict -}}
+{{- range $c.bloques }}{{ range .saberes }}{{ $texto = merge $texto (dict (lower .codigo) .texto) }}{{ end }}{{ end -}}
+{{- $usos := dict -}}
+{{- range $c.competencias }}{{ range .criterios }}{{ $n := .n }}{{ range .saberes }}
+  {{- $usos = merge $usos (dict (lower .) ((index $usos (lower .) | default slice) | append $n)) -}}
+{{- end }}{{ end }}{{ end }}
+
+<section id="cur-{{ $id }}" class="curriculo-curso" style="--c: {{ $info.color | default "#38bdf8" }}">
+  <h2>{{ $c.materia }} · {{ $c.curso }}</h2>
+  <p class="curriculo-norma">{{ $c.norma.nombre }}. <a href="{{ $c.norma.url }}" target="_blank" rel="noopener noreferrer">{{ $c.norma.boja }}</a>.</p>
+
+  <div class="curriculo-scroll not-prose">
+  <table class="curriculo-tabla">
+    <thead>
+      <tr><th>Competencia específica</th><th>Criterio de evaluación</th><th>Saberes básicos</th></tr>
+    </thead>
+    <tbody>
+    {{- range $ce := $c.competencias }}
+      {{- range $i, $cr := $ce.criterios }}
+      <tr id="crit-{{ $id }}-{{ replace $cr.n "." "-" }}"{{ if eq $i 0 }} class="ce-inicio"{{ end }}>
+        {{- if eq $i 0 }}
+        <td rowspan="{{ len $ce.criterios }}" class="ce">
+          <span class="ce-num">{{ $ce.n }}.</span> {{ $ce.texto }}
+          {{- with $ce.descriptores }}
+          <span class="ce-desc">{{ range . }}<span>{{ . }}</span>{{ end }}</span>
+          {{- end }}
+        </td>
+        {{- end }}
+        <td class="crit"><span class="crit-num">{{ $cr.n }}</span> {{ $cr.texto }}</td>
+        <td class="sab">
+          {{- range $cr.saberes }}
+          <a href="#sab-{{ $id }}-{{ replace . "." "-" }}" title="{{ index $texto (lower .) }}">{{ . }}</a>
+          {{- end }}
+        </td>
+      </tr>
+      {{- end }}
+    {{- end }}
+    </tbody>
+  </table>
+  </div>
+
+  <details class="curriculo-saberes">
+    <summary>Saberes básicos de {{ $c.materia }} · {{ $c.curso }}</summary>
+    {{- range $c.bloques }}
+    <h3>{{ .id }}. {{ .titulo }}</h3>
+    <dl>
+      {{- range .saberes }}
+      <dt id="sab-{{ $id }}-{{ replace .codigo "." "-" }}">{{ .codigo }}</dt>
+      <dd>{{ .texto }}
+        {{- with index $usos (lower .codigo) }}
+        <span class="sab-usos">Criterios: {{ range $j, $n := . }}{{ if $j }}, {{ end }}<a href="#crit-{{ $id }}-{{ replace $n "." "-" }}">{{ $n }}</a>{{ end }}</span>
+        {{- end }}
+      </dd>
+      {{- end }}
+    </dl>
+    {{- end }}
+  </details>
+</section>
+{{- end }}
+
+<script>
+  /* Al seguir un enlace a un saber, abre su desplegable antes de saltar */
+  (function () {
+    function abrir() {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var el = id && document.getElementById(id);
+      var det = el && el.closest('details');
+      if (det && !det.open) { det.open = true; el.scrollIntoView(); }
+    }
+    window.addEventListener('hashchange', abrir);
+    document.addEventListener('DOMContentLoaded', abrir);
+  })();
+</script>

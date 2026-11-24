@@ -1,0 +1,17 @@
+{{- /*
+  Ejercicio de muestra con pista y solución plegadas (para intentarlo antes de mirar).
+  Uso:  {{< ejercicio n="3" pista="..." solucion="..." >}} enunciado en Markdown {{< /ejercicio >}}
+  pista y solucion admiten Markdown y fórmulas \( \).
+*/ -}}
+<div class="ejercicio">
+  <div class="ejercicio-num">{{ .Get "n" }}</div>
+  <div class="ejercicio-cuerpo">
+    {{ trim .Inner "\n\r " | .Page.RenderString }}
+    {{- with .Get "pista" }}
+    <details class="ejercicio-pista"><summary>{{ i18n "fractalis.ejercicio_pista" }}</summary><div>{{ . | $.Page.RenderString }}</div></details>
+    {{- end }}
+    {{- with .Get "solucion" }}
+    <details class="ejercicio-solucion"><summary>{{ i18n "fractalis.ejercicio_solucion" }}</summary><div>{{ . | $.Page.RenderString }}</div></details>
+    {{- end }}
+  </div>
+</div>

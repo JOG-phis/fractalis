@@ -1,0 +1,20 @@
+{{- /*
+  Rejilla de cursos de la portada, a partir de data/cursos.json (id, orden, nombre / nombre_en, ruta).
+  El icono de cada curso es content/course-<id>.svg (se genera con tools/iconos_portada.py).
+  Los cursos sin ninguna página publicada salen atenuados y con la etiqueta «Próximamente».
+  Uso, en content/_index.md y _index.en.md:  {{< cursos-portada >}}
+*/ -}}
+{{- $p := .Page -}}
+<div class="course-grid">
+{{- range sort hugo.Data.cursos "orden" }}
+  {{- $nombre := cond (eq $p.Language.Lang "es") .nombre (.nombre_en | default .nombre) -}}
+  {{- $destino := site.GetPage .ruta -}}
+  {{- if not $destino }}{{ warnf "[Fractalis] cursos-portada: no existe la página %s" .ruta }}{{ end -}}
+  {{- $icono := $p.Resources.Get (printf "course-%s.svg" .id) }}
+  {{- $vacio := not (and $destino $destino.RegularPagesRecursive) }}
+  <a href="{{ with $destino }}{{ .RelPermalink }}{{ end }}"{{ if $vacio }} class="proximamente"{{ end }}>
+<figure>
+        <img class="my-0 rounded-md nozoom" src="{{ with $icono }}{{ .RelPermalink }}{{ end }}" alt="{{ $nombre }}" />
+  </figure>{{ $nombre }}{{ if $vacio }}<span class="proximamente-etiqueta">{{ i18n "fractalis.proximamente" }}</span>{{ end }}</a>
+{{- end }}
+</div>

@@ -1,0 +1,3 @@
+{{- /* Botón de descarga. Recibe dict: pagina, src (fichero del bundle), texto, estilo (opcional: "secundario"). */ -}}
+{{- $url := .src }}{{ with .pagina.Resources.Get .src }}{{ $url = .RelPermalink }}{{ else }}{{ warnf "[Fractalis] %s: no encuentro %s en el bundle" .pagina.File.Path .src }}{{ end -}}
+<p class="descarga"><a class="descarga-boton{{ with .estilo }} {{ . }}{{ end }}" href="{{ $url }}" target="_blank" download>{{ partial "icon.html" "file-lines" }} {{ .texto }}</a></p>

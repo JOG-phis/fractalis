@@ -1,0 +1,27 @@
+{{- /*
+  Figura procedente de TikZ (SVG) sobre fondo claro, para que se lea igual en modo claro y oscuro.
+  Uso:  {{< figura src="cambios-estado.svg" alt="..." pie="Diagrama de los cambios de estado." ancho="560" >}}
+  Varias imágenes en fila (como \filaley): separa src, alt, ancho y rotulos con "|".
+  rotulos: texto corto debajo de cada imagen (por ejemplo, el nombre de cada material).
+*/ -}}
+{{- $srcs := split (.Get "src") "|" -}}
+{{- $alts := split (.Get "alt" | default "") "|" -}}
+{{- $anchos := split (.Get "ancho" | default "") "|" -}}
+{{- $rotulos := split (.Get "rotulos" | default "") "|" -}}
+{{- $conRotulos := ne (.Get "rotulos" | default "") "" -}}
+<figure class="fig-tikz{{ if $conRotulos }} fig-tikz-rotulada{{ end }}">
+  <div class="fig-tikz-fila">
+  {{- range $i, $s := $srcs }}
+    {{- $s = trim $s " " }}
+    {{- $url := $s }}{{ with $.Page.Resources.Get $s }}{{ $url = .RelPermalink }}{{ end }}
+    {{- $ancho := trim (index $anchos $i | default "") " " }}
+    {{- $img := printf "<img src=\"%s\" alt=\"%s\"%s loading=\"lazy\">" $url (trim (index $alts $i | default "") " " | htmlEscape) (cond (ne $ancho "") (printf " width=\"%s\"" $ancho) "") }}
+    {{- if $conRotulos }}
+    <div class="fig-tikz-item">{{ $img | safeHTML }}<span class="fig-tikz-rotulo">{{ trim (index $rotulos $i | default "") " " | $.Page.RenderString (dict "display" "inline") }}</span></div>
+    {{- else }}
+    {{ $img | safeHTML }}
+    {{- end }}
+  {{- end }}
+  </div>
+  {{- with .Get "pie" }}<figcaption>{{ . | $.Page.RenderString (dict "display" "inline") }}</figcaption>{{ end }}
+</figure>

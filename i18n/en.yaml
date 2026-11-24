@@ -1,0 +1,51 @@
+# Own strings that override the Blowfish theme ones (only the keys listed here).
+footer:
+  # Footer: Hugo and Blowfish credit + attribution required by the Icons8 free license.
+  powered_by: 'Powered by {{ .Hugo }} &amp; {{ .Theme }} · Icons by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://icons8.com/" target="_blank" rel="noopener noreferrer">Icons8</a>'
+
+# Strings for Fractalis' own shortcodes (layouts/shortcodes)
+fractalis:
+  caja_idea: "Key idea"
+  caja_nota: "Remember"
+  caja_cuidado: "Careful!"
+  caja_tcm: "Why? The kinetic-molecular theory explains it:"
+  caja_ejemplo: "Worked example"
+  simulacion_abrir: "Open the simulation"
+  ejercicio_pista: "Hint"
+  ejercicio_solucion: "Solution"
+  act_titulo: "Activities for this topic"
+  act_ver: "See all the topic {{ .Tema }} activities in the list →"
+  act_en_espanol: "The activities are in Spanish."
+  clase_ejercicios: "Exercises"
+  clase_breakouts: "Breakout"
+  clase_lecturas: "Reading"
+  clase_practicas: "Lab practical"
+  clase_simulaciones: "Simulation"
+  clase_tareas: "Task"
+  clase_proyectos: "Project"
+  filtro_ejercicios: "Exercises"
+  filtro_breakouts: "Breakouts"
+  filtro_lecturas: "Readings"
+  filtro_practicas: "Lab practicals"
+  filtro_simulaciones: "Simulations"
+  filtro_tareas: "Tasks"
+  filtro_proyectos: "Projects"
+  filtro_aria: "Filter activities"
+  filtro_todas: "All"
+  filtro_tema: "Topic"
+  filtro_todos_temas: "All topics"
+  filtro_vacio: "There are no activities of that type in that topic yet."
+  filtro_una: "activity"
+  filtro_varias: "activities"
+  tema_entradilla: "Here you have the essentials of the unit for revision. The full notes, with all the explanations and worked examples, are in the PDF (in Spanish)."
+  tema_descarga: "Download the full unit here (PDF, in Spanish)"
+  licencia_apuntes: 'Notes licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>.'
+  licencia_material: 'Material licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>.'
+  imagen_credito: 'Header image: {{ .Autor }} on {{ .Fuente }}.'
+  act_descarga: "Download the activity (PDF, in Spanish)"
+  act_soluciones: "Download the solutions (PDF, in Spanish)"
+  act_repasa: 'Revise the theory in the <a href="{{ .Url }}">topic {{ .Tema }} notes</a>.'
+  ficha_paginas:
+    one: "{{ .Count }} page · PDF in Spanish"
+    other: "{{ .Count }} pages · PDF in Spanish"
+  proximamente: "Coming soon"

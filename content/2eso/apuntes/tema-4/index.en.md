@@ -1,11 +1,15 @@
 ---
-title: "Topic 4: Chemical Changes"
-description: "Chemical reactions, conservation laws and reaction rate."
-summary: "Chemical reactions, conservation laws and reaction rate."
-date: 2026-07-31
+title: "Topic 4: Chemical changes"
+description: "Unit summary: physical and chemical changes, chemical reactions and their signs, conservation of mass, reaction rate and reactions in everyday life."
+summary: "Physical and chemical changes, chemical reactions, Lavoisier's law, reaction rate and everyday reactions."
+date: 2026-11-22
 weight: 40
-tipo: ["notes"]
-tags: ["chemical reactions", "conservation laws", "reaction rate", "chemistry"]
+showHero: true
+heroStyle: "background"
+tema: 4
+materia: ["quimica"]
+tags: ["chemical reactions", "chemical changes", "conservation of mass", "reaction rate"]
+pdf: "apuntes-cambios-quimicos.pdf"
 draft: false
 showTableOfContents: true
 showTaxonomies: true
@@ -13,110 +17,69 @@ showTaxonomies: true
 
 {{< katex >}}
 
-## 1. Changes in Matter
+## 1. Physical changes and chemical changes
 
-Matter can undergo two types of change. It's essential to tell them apart:
+{{< columnas >}}
+{{< caja idea "Physical change:" >}}
+the substances **stay the same**: changes of state, dissolving, breaking…
+{{< /caja >}}
+{{< caja idea "Chemical change or chemical reaction:" >}}
+**new substances** form, with different properties.
+{{< /caja >}}
+{{< /columnas >}}
 
-{{< alert icon="wand-magic-sparkles" >}}
-**Physical changes:** The substance does **NOT** change. It's still the same substance, only its shape or state changes.
-*   *Example:* Melting ice (it's still water, \(\text{H}_2\text{O}\)), cutting paper.
+{{< figura src="fisico-quimico-en.svg" alt="Physical change: ice melts and the water molecules stay the same. Chemical change: hydrogen and oxygen form water molecules" pie="In a physical change the particles do not change; in a chemical change new particles form." ancho="600" >}}
 
-**Chemical changes:** The substance **transforms** into a completely new one with different properties.
-*   *Example:* Burning wood (combustion), a rusted nail, digestion.
-{{< /alert >}}
+## 2. The chemical reaction
 
----
+In a chemical reaction, the **reactants** turn into **products**:
 
-## 2. How do we know a reaction has happened?
+{{< formula >}}\text{reactants} \longrightarrow \text{products}{{< /formula >}}
 
-We can't always see the atoms, but there are **clues** (evidence) that give away a chemical change:
+**How do we know a chemical reaction has taken place?** By its signs:
 
-1.  **Gas released:** We see bubbles without boiling.
-2.  **Colour change:** A different colour appears from the starting ingredients.
-3.  **Temperature change:** It heats up or cools down "on its own" (releases or absorbs heat).
-4.  **Light emission:** As in fireworks or fireflies.
+{{< figura src="senal-color.svg|senal-gas.svg|senal-precipitado.svg|senal-temperatura.svg|senal-luz.svg|senal-olor.svg" alt="A liquid changes colour|Gas bubbles are given off|A solid forms at the bottom|The thermometer rises or falls|A flame appears|A smell is given off" ancho="120|80|80|75|110|80" rotulos="Colour change|A gas is given off|A precipitate forms|The temperature changes|Light is produced|A smell appears" >}}
 
----
+## 3. Inside a chemical reaction
 
-## 3. The Chemical Reaction
+{{< figura src="reorganizacion-en.svg" alt="Two hydrogen molecules and one oxygen molecule split into atoms that join in a new way to give two water molecules" pie="The atoms of the reactants separate and join together in a different way." ancho="620" >}}
 
-This is the process where **Reactants** (starting ingredients) turn into **Products** (final substances).
+{{< caja nota "Remember:" >}}
+in a chemical reaction the bonds between atoms break and new ones form, but atoms are **neither created nor destroyed**: there are the same atoms before and after.
+{{< /caja >}}
 
-### The Chemical Equation
-This is the mathematical way of writing the recipe.
+## 4. Conservation of mass
 
-$$
-\text{Reactants} \longrightarrow \text{Products}
-$$
+{{< caja idea "Lavoisier's law:" >}}
+in a chemical reaction, the **mass of the reactants** is equal to the **mass of the products**.
+{{< /caja >}}
 
-States are written in brackets: **(s)** solid, **(l)** liquid, **(g)** gas, **(aq)** dissolved in water.
+{{< figura src="lavoisier-en.svg" alt="A closed flask on a balance reads 150.0 g before and after the reaction" ancho="380" >}}
 
-**Example:** Iron reacts with sulphur and heat.
-$$ \text{Fe}(s) + \text{S}(s) \longrightarrow \text{FeS}(s) $$
+{{< caja cuidado >}}
+to check Lavoisier's law, the reaction has to take place in a **closed container**, because gases have mass too.
+{{< /caja >}}
 
----
+## 5. The rate of reactions
 
-## 4. Collision Theory (How does it happen?)
+{{< caja idea "Collision theory:" >}}
+there is only a reaction if the particles **collide** with enough energy and the right orientation (**effective collisions**). The more effective collisions, the faster the reaction.
+{{< /caja >}}
 
-Think of atoms as billiard balls. For them to react, they must collide. According to this theory, 3 steps are needed:
+{{< figura src="choques-en.svg" alt="Effective collision: the particles collide with energy and form new molecules. Ineffective collision: they bounce off unchanged" ancho="600" >}}
 
-1.  **Breaking:** The bonds of the reactants break.
-2.  **Rearranging:** The atoms rearrange themselves.
-3.  **Forming:** New bonds are created (products).
+| Factor | The reaction is faster if… | Example |
+| :--- | :--- | :--- |
+| **Temperature** | the temperature rises | the fridge keeps food fresh |
+| **Concentration** | there are more reactant particles | concentrated vinegar and limestone |
+| **Surface area** | the solid is in small pieces or powdered | a powdered effervescent tablet |
+| **Catalyst** | a catalyst is added | a car's catalytic converter, enzymes |
 
-{{< figure src="teoriacolision.png" alt="Collision theory" caption="Collision theory: reactants collide, break their bonds, and form new products." nozoom=true >}}
+## 6. Chemical reactions in everyday life
 
-{{< alert icon="triangle-exclamation" cardColor="#dc2626" iconColor="#ffffff" textColor="#fef2f2" >}}
-**Important!** Not every collision counts. Only **Effective Collisions** (with enough force and the right orientation) produce a reaction.
-{{< /alert >}}
-
----
-
-## 5. Law of Conservation of Mass
-
-This is chemistry's golden rule, discovered by **Lavoisier**.
-
-{{< alert icon="scale-balanced" cardColor="#1d4ed8" iconColor="#ffffff" textColor="#eff6ff" >}}
-**Lavoisier's Law: "Matter is neither created nor destroyed, only transformed."**
-
-The sum of the mass of the reactants is **EQUAL** to the sum of the mass of the products.
-$$
-\sum m_{\text{reactants}} = \sum m_{\text{products}}
-$$
-{{< /alert >}}
-
-### Worked Example
-If \(12\text{ g}\) of Carbon react with \(32\text{ g}\) of Oxygen, how much \(\text{CO}_2\) do we get?
-
-$$
-\text{C} + \text{O}_2 \longrightarrow \text{CO}_2
-$$
-
-$$
-12\text{ g} + 32\text{ g} = \text{Total Mass}
-$$
-
-$$
-\text{Mass of CO}_2 = 44\text{ g}
-$$
-
----
-
-## 6. Balancing Equations
-
-Since atoms can't disappear (by Lavoisier's law), we have to balance the equation by placing numbers in front of formulas (**coefficients**).
-
-**Example: Formation of water**
-*   *Wrong:* \(\text{H}_2 + \text{O}_2 \longrightarrow \text{H}_2\text{O}\) (2 "O" go in but only 1 comes out. Impossible!)
-*   *Right:* \(2\text{H}_2 + \text{O}_2 \longrightarrow 2\text{H}_2\text{O}\) (Now there are 4 hydrogens and 2 oxygens on both sides).
-
----
-
-## 7. Reaction Rate
-
-We can speed up or slow down a reaction by changing these factors:
-
-*   **Temperature:** More heat means molecules move faster \(\rightarrow\) more collisions \(\rightarrow\) **higher rate**.
-*   **Concentration:** More reactant packed together means more collisions.
-*   **Degree of division:** Crushing a solid into powder makes it react much faster than in a block (more surface area to collide).
-*   **Catalysts:** Special substances that speed up the reaction without being used up (e.g. the enzymes in your body).
+{{< figtexto lado="derecha" src="triangulo-fuego-en.svg" alt="The fire triangle: fuel, oxidiser (oxygen) and heat (spark, flame)" ancho="230" >}}
+- **Combustion:** fuel + oxygen → carbon dioxide + water + energy. For a fire to burn, all three sides of the **fire triangle** are needed.
+- **Oxidation:** iron + oxygen → iron oxide.
+- **Fermentation:** yeasts and bacteria transform sugars (bread, yoghurt).
+- **Photosynthesis** and **respiration:** the products of one are the reactants of the other.
+{{< /figtexto >}}

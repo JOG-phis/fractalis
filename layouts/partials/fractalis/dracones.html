@@ -1,0 +1,20 @@
+{{- /*
+  Aviso «Hic sunt dracones» para lo que aún no tiene contenido. Recibe la página (para el idioma).
+  Icono: dragón de Icons8 (estilo emoji), con atribución en el pie de la web.
+  Si se guarda una copia en assets/img/iconos/dragon.png, se usa esa; si no, se carga desde Icons8.
+*/ -}}
+{{- $p := . -}}
+{{- $icono := "https://img.icons8.com/emoji/128/dragon-emoji.png" -}}
+{{- with resources.Get "img/iconos/dragon.png" }}{{ $icono = .RelPermalink }}{{ end -}}
+{{- $en := eq $p.Language.Lang "en" -}}
+<div class="dracones not-prose">
+  <img class="dracones-icono" src="{{ $icono }}" alt="{{ cond $en "Dragon" "Dragón" }}" width="96" height="96" loading="lazy">
+  <p class="dracones-lema"><em>Hic sunt dracones</em></p>
+  {{- if $en }}
+  <p class="dracones-texto">When Renaissance cartographers marked unexplored, distant or dangerous lands, they wrote <em>Hic sunt dracones</em> (“here be dragons”).</p>
+  <p class="dracones-nota">This corner of the map is still unexplored. Content coming soon.</p>
+  {{- else }}
+  <p class="dracones-texto">Cuando los cartógrafos del Renacimiento señalaban territorios inexplorados, lejanos o peligrosos, escribían <em>Hic sunt dracones</em> («aquí hay dragones»).</p>
+  <p class="dracones-nota">Este rincón del mapa todavía está por explorar. Pronto habrá contenido aquí.</p>
+  {{- end }}
+</div>

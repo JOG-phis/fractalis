@@ -1,0 +1,12 @@
+{{- /*
+  Figura a la izquierda y texto a la derecha (como \estado o las cajas de evaporación/ebullición).
+  Uso:  {{< figtexto src="estado-solido.svg" alt="..." ancho="150" >}} texto en Markdown {{< /figtexto >}}
+  Con lado="derecha" la figura va a la derecha del texto.
+  En el móvil la figura pasa arriba.
+*/ -}}
+{{- $s := .Get "src" -}}
+{{- $url := $s }}{{ with .Page.Resources.Get $s }}{{ $url = .RelPermalink }}{{ end -}}
+<div class="figtexto{{ if eq (.Get "lado") "derecha" }} figtexto-derecha{{ end }}">
+  <div class="figtexto-fig fig-tikz"><img src="{{ $url }}" alt="{{ .Get "alt" }}"{{ with .Get "ancho" }} width="{{ . }}"{{ end }} loading="lazy"></div>
+  <div class="figtexto-texto">{{ trim .Inner "\n\r " | .Page.RenderString }}</div>
+</div>

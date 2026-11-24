@@ -1,0 +1,49 @@
+# Vocabulario cerrado de las taxonomías de Fractalis.
+# Solo se usan estos términos en el front matter. Para añadir uno nuevo:
+#   1. añádelo aquí (término, título en español y en inglés, y descripción si quieres);
+#   2. ejecuta  python tools/revisar_front_matter.py --paginas  (crea sus páginas _index.md e _index.en.md);
+#   3. actualiza el documento «05-taxonomias-y-ficha-recurso» del proyecto.
+# Los términos (slugs) son los mismos en los dos idiomas; solo se traduce el título.
+
+materia:
+  titulo: {es: "Materias", en: "Subjects"}
+  descripcion: {es: "Recursos de todos los cursos agrupados por materia.", en: "Resources from every year, grouped by subject."}
+  terminos:
+    fisica: {es: "Física", en: "Physics"}
+    quimica: {es: "Química", en: "Chemistry"}
+    computacion-robotica: {es: "Computación y Robótica", en: "Computing and Robotics"}
+    docencia: {es: "Docencia", en: "Teaching", desc_es: "Evaluación, metodologías e IA para docentes.", desc_en: "Assessment, teaching methods and AI for teachers."}
+
+herramienta:
+  titulo: {es: "Herramientas", en: "Tools"}
+  descripcion: {es: "Recursos que usan una herramienta concreta.", en: "Resources that use a particular tool."}
+  terminos:
+    phet: {es: "PhET", en: "PhET"}
+    geogebra: {es: "GeoGebra", en: "GeoGebra"}
+    app-fractalis: {es: "App de Fractalis", en: "Fractalis app"}
+    ia-generativa: {es: "IA generativa", en: "Generative AI"}
+    arduino: {es: "Arduino", en: "Arduino"}
+    microbit: {es: "micro:bit", en: "micro:bit"}
+    scratch: {es: "Scratch", en: "Scratch"}
+    impresion-3d: {es: "Impresión 3D", en: "3D printing"}
+    hoja-de-calculo: {es: "Hoja de cálculo", en: "Spreadsheet"}
+    laboratorio: {es: "Material de laboratorio", en: "Lab equipment"}
+    moodle: {es: "Moodle", en: "Moodle"}
+
+metodologia:
+  titulo: {es: "Metodologías", en: "Teaching methods"}
+  descripcion: {es: "Recursos agrupados por metodología.", en: "Resources grouped by teaching method."}
+  terminos:
+    gamificacion: {es: "Gamificación", en: "Gamification"}
+    aprendizaje-cooperativo: {es: "Aprendizaje cooperativo", en: "Cooperative learning"}
+    indagacion: {es: "Indagación", en: "Inquiry-based learning"}
+    abp: {es: "Aprendizaje basado en proyectos", en: "Project-based learning"}
+    clase-invertida: {es: "Clase invertida", en: "Flipped classroom"}
+
+# Tipos de actividad. Sus páginas (content/clase/<tipo>/) ya existen y sus nombres están en i18n;
+# aquí solo se listan para que la revisión compruebe que no hay tipos inventados.
+clase:
+  terminos: [ejercicios, breakouts, lecturas, practicas, simulaciones, tareas, proyectos]
+
+# Parámetros (no son taxonomías): valores permitidos
+agrupamiento: [individual, parejas, equipos, gran-grupo]

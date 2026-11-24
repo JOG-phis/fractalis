@@ -1,0 +1,40 @@
+
+/* ---------- Currículo: tablas cruzadas (shortcode curriculo) ---------- */
+.curriculo-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0.5rem; }
+.curriculo-nav a {
+  padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.875rem; text-decoration: none;
+  border: 1px solid var(--c); color: inherit;
+}
+.curriculo-nav a:hover { background: color-mix(in srgb, var(--c) 18%, transparent); }
+.curriculo-curso { scroll-margin-top: 5rem; margin-top: 3rem; }
+.curriculo-curso > h2 { border-left: 6px solid var(--c); padding-left: 0.6rem; }
+.curriculo-norma { font-size: 0.85rem; color: var(--fq-gris); margin-top: -0.5rem; }
+.curriculo-scroll { overflow-x: auto; }
+.curriculo-tabla { width: 100%; min-width: 46rem; border-collapse: collapse; font-size: 0.85rem; line-height: 1.4; }
+.curriculo-tabla th {
+  text-align: left; padding: 0.5rem; font-weight: 700;
+  background: color-mix(in srgb, var(--c) 22%, transparent);
+}
+.curriculo-tabla td { vertical-align: top; padding: 0.5rem; border-top: 1px solid var(--fq-borde); }
+.curriculo-tabla tr.ce-inicio td { border-top: 2px solid color-mix(in srgb, var(--c) 70%, transparent); }
+.curriculo-tabla td.ce { width: 32%; background: color-mix(in srgb, var(--c) 7%, transparent); }
+.curriculo-tabla td.crit { width: 50%; }
+.curriculo-tabla td.sab { width: 18%; }
+.curriculo-tabla tr:target td.crit, .curriculo-tabla tr:target td.sab { background: color-mix(in srgb, var(--c) 18%, transparent); }
+.ce-num, .crit-num { font-weight: 700; }
+.ce-desc { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.5rem; }
+.ce-desc span {
+  font-size: 0.7rem; padding: 0.05rem 0.35rem; border-radius: 0.25rem;
+  border: 1px solid var(--fq-borde); color: var(--fq-gris);
+}
+.curriculo-tabla td.sab a {
+  display: block; white-space: nowrap; font-family: ui-monospace, monospace; font-size: 0.78rem;
+  text-decoration: none; color: inherit;
+}
+.curriculo-tabla td.sab a:hover { text-decoration: underline; }
+.curriculo-saberes { margin-top: 1rem; }
+.curriculo-saberes summary { cursor: pointer; font-weight: 600; }
+.curriculo-saberes dt { font-family: ui-monospace, monospace; font-size: 0.85rem; scroll-margin-top: 5rem; }
+.curriculo-saberes dt:target { color: var(--c); }
+.curriculo-saberes dd { margin: 0 0 0.75rem 1rem; font-size: 0.9rem; }
+.sab-usos { display: block; font-size: 0.78rem; color: var(--fq-gris); margin-top: 0.15rem; }

@@ -1,0 +1,10 @@
+{{- /*
+  Postulado numerado con icono (como \postulado de LaTeX).
+  Uso:  {{< postulado n="1" icono="postulado-1.svg" alt="..." >}} texto {{< /postulado >}}
+*/ -}}
+{{- $s := .Get "icono" -}}
+{{- $url := $s }}{{ with .Page.Resources.Get $s }}{{ $url = .RelPermalink }}{{ end -}}
+<div class="caja caja-idea postulado">
+  <div class="postulado-icono fig-tikz"><img src="{{ $url }}" alt="{{ .Get "alt" }}" width="90" loading="lazy"></div>
+  <div class="caja-cuerpo"><span class="postulado-num">{{ .Get "n" }}</span> {{ trim .Inner "\n\r " | .Page.RenderString (dict "display" "inline") }}</div>
+</div>

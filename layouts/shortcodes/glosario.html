@@ -1,0 +1,6 @@
+{{- /*
+  Glosario bilingüe a dos columnas. Dentro, una lista de definiciones de Markdown:
+    **Término** *(term)*
+    : Definición.
+*/ -}}
+<div class="glosario">{{ trim .Inner "\n\r " | .Page.RenderString }}</div>

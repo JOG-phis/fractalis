@@ -2,3 +2,7 @@ public/
 resources/
 .hugo_build.lock
 _vendor/
+
+# Herramientas (tools/)
+__pycache__/
+_build/

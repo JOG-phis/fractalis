@@ -1,0 +1,37 @@
+{{- /*
+  «Actividades de este tema»: lista de las actividades del mismo curso con el mismo  tema:.
+  Recibe la página del tema. La usan el pie automático de los temas y el shortcode {{< actividades-tema >}}.
+  El número de tema sale de  tema:  en el front matter o, si no está, del título «Tema N: …».
+  Si en este idioma no hay actividades, se muestran las de la versión en español. Si no hay ninguna, no muestra nada.
+*/ -}}
+{{- $p := . -}}
+{{- $n := $p.Params.tema -}}
+{{- if not $n }}{{ with findRESubmatch `^Tema (\d+)` $p.Title 1 }}{{ $n = index (index . 0) 1 }}{{ end }}{{ end -}}
+{{- with $n }}{{ $n = int . }}{{ end -}}
+{{- $curso := $p.CurrentSection.Parent -}}
+{{- $seccion := "" -}}
+{{- $acts := slice -}}
+{{- $otroIdioma := false -}}
+{{- with $curso }}{{ with .GetPage "actividades" }}{{ $seccion = . }}{{ $acts = where .Pages.ByWeight "Params.tema" $n }}{{ end }}{{ end -}}
+{{- if and $n (not $acts) $curso }}
+  {{- range $curso.Translations }}{{ if and (eq .Language.Lang "es") (not $acts) }}
+    {{- with .GetPage "actividades" }}{{ $seccion = . }}{{ $acts = where .Pages.ByWeight "Params.tema" $n }}{{ $otroIdioma = true }}{{ end }}
+  {{- end }}{{ end }}
+{{- end -}}
+{{- if and $n $acts }}
+<section class="actividades-tema not-prose">
+  <h2 id="actividades-de-este-tema">{{ i18n "fractalis.act_titulo" }}</h2>
+  {{- if $otroIdioma }}<p class="actividades-tema-nota">{{ i18n "fractalis.act_en_espanol" }}</p>{{ end }}
+  <div class="actividades-tema-lista">
+  {{- range $acts }}
+    <a class="actividad-mini" href="{{ .RelPermalink }}"{{ if $otroIdioma }} hreflang="es" lang="es"{{ end }}>
+      <span class="chip-clase chip-{{ .Params.clase }}">{{ i18n (printf "fractalis.clase_%s" .Params.clase) | default .Params.clase }}</span>
+      <span class="actividad-mini-titulo">{{ .Title }}</span>
+    </a>
+  {{- end }}
+  </div>
+  {{- with $seccion }}
+  <p class="actividades-tema-todas"><a href="{{ .RelPermalink }}?tema={{ $n }}">{{ i18n "fractalis.act_ver" (dict "Tema" $n) }}</a></p>
+  {{- end }}
+</section>
+{{- end }}

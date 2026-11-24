@@ -1,0 +1,5 @@
+{{- /*
+  En la página de un curso: muestra el aviso «Hic sunt dracones» solo mientras el curso no tenga ninguna página publicada.
+  Cuando se publique el primer tema o actividad, desaparece solo. Uso: {{< curso-vacio >}} en el _index.md del curso.
+*/ -}}
+{{- if not .Page.RegularPagesRecursive }}{{ partial "fractalis/dracones.html" .Page }}{{ end -}}

@@ -16,6 +16,9 @@ buildFuture = false
 
 enableEmoji = true
 
+# Los títulos automáticos de etiquetas y listados se dejan como se escriben (en español no se pone Mayúscula En Cada Palabra)
+capitalizeListTitles = false
+
 # googleAnalytics = "G-XXXXXXXXX"
 
 [pagination]
@@ -29,7 +32,10 @@ enableEmoji = true
   category = "categories"
   author = "authors"
   series = "series"
-  tipo = "tipos"
+  clase = "clase"     # tipo de actividad (ejercicios, breakouts...): páginas /clase/<tipo>/ con todas las de ese tipo, de todos los cursos
+  materia = "materia"           # física, química, computación y robótica, docencia (vocabulario: data/vocabulario.yaml)
+  herramienta = "herramienta"   # PhET, Arduino, impresión 3D... (solo si la actividad usa alguna)
+  metodologia = "metodologia"   # gamificación, ABP... (solo si es parte esencial de la actividad)
 
 [sitemap]
   changefreq = 'daily'
@@ -50,6 +56,10 @@ enableEmoji = true
     [[related.indices]]
         name = "categories"
         weight = 100
+
+    [[related.indices]]
+        name = "materia"
+        weight = 60
 
     [[related.indices]]
         name = "series"

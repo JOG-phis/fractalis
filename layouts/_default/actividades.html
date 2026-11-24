@@ -1,0 +1,112 @@
+{{- /*
+  Listado de la sección «Actividades» con filtros por tipo y por tema.
+  Se activa con  layout: "actividades"  en el _index.md de la sección.
+  Cada actividad declara en su front matter:  clase: "ejercicios" | "breakouts" | "lecturas" | "practicas" | "simulaciones" | "tareas" | "proyectos"
+  y  tema: <número>. Los filtros funcionan en el navegador y se pueden enlazar: ?tipo=breakouts&tema=3
+*/ -}}
+{{ define "main" }}
+{{- /* Los nombres de cada tipo salen de i18n (fractalis.filtro_<clase>), en es.yaml y en.yaml */ -}}
+{{- $clases := slice
+    (dict "id" "ejercicios"   "nombre" (i18n "fractalis.filtro_ejercicios"))
+    (dict "id" "breakouts"    "nombre" (i18n "fractalis.filtro_breakouts"))
+    (dict "id" "lecturas"     "nombre" (i18n "fractalis.filtro_lecturas"))
+    (dict "id" "practicas"    "nombre" (i18n "fractalis.filtro_practicas"))
+    (dict "id" "simulaciones" "nombre" (i18n "fractalis.filtro_simulaciones"))
+    (dict "id" "tareas"       "nombre" (i18n "fractalis.filtro_tareas"))
+    (dict "id" "proyectos"    "nombre" (i18n "fractalis.filtro_proyectos")) -}}
+{{- $nombreClase := dict -}}
+{{- range $clases }}{{ $nombreClase = merge $nombreClase (dict .id .nombre) }}{{ end -}}
+{{- $paginas := .Pages.ByWeight -}}
+{{- $temas := slice -}}
+{{- range $paginas }}{{ with .Params.tema }}{{ $temas = $temas | append . }}{{ end }}{{ end -}}
+{{- $temas = $temas | uniq | sort -}}
+{{- /* Nombre de cada tema, tomado del título de sus apuntes («Tema N: Título» o «Topic N: Title») */ -}}
+{{- $nombreTema := dict -}}
+{{- with .Parent }}{{ with .GetPage "apuntes" }}{{ range .Pages }}
+  {{- with findRESubmatch `^(?:Tema|Topic) (\d+): (.+)$` .Title 1 }}{{ $nombreTema = merge $nombreTema (dict (index (index . 0) 1) (index (index . 0) 2)) }}{{ end }}
+{{- end }}{{ end }}{{ end -}}
+
+<header>
+  {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+    {{ partial "breadcrumbs.html" . }}
+  {{ end }}
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+</header>
+<section class="prose dark:prose-invert max-w-prose mt-2">{{ with .Params.description }}<p>{{ . }}</p>{{ end }}{{ .Content }}</section>
+
+<div class="filtros-actividades" role="group" aria-label="{{ i18n "fractalis.filtro_aria" }}">
+  <div class="filtros-tipo">
+    <button type="button" class="filtro-chip" data-tipo="" aria-pressed="true">{{ i18n "fractalis.filtro_todas" }}</button>
+    {{- range $clases }}
+    {{- $id := .id }}{{ $n := len (where $paginas "Params.clase" $id) }}
+    {{- if $n }}
+    <button type="button" class="filtro-chip" data-tipo="{{ .id }}" aria-pressed="false">{{ .nombre }} <span class="filtro-num">{{ $n }}</span></button>
+    {{- end }}
+    {{- end }}
+  </div>
+  <label class="filtro-tema">{{ i18n "fractalis.filtro_tema" }}
+    <select id="filtro-tema">
+      <option value="">{{ i18n "fractalis.filtro_todos_temas" }}</option>
+      {{- range $temas }}
+      <option value="{{ . }}">{{ . }}. {{ index $nombreTema (string .) | default "" }}</option>
+      {{- end }}
+    </select>
+  </label>
+  <p class="filtro-resumen" aria-live="polite"></p>
+</div>
+
+<section class="rejilla-actividades">
+  {{- range $paginas }}
+  {{- $img := "" }}
+  {{- with .Resources.GetMatch "feature*" }}{{ $img = (.Fill "600x380 Top").RelPermalink }}{{ end }}
+  <a class="tarjeta-actividad" href="{{ .RelPermalink }}" data-tipo="{{ .Params.clase }}" data-tema="{{ .Params.tema }}">
+    {{- with $img }}<div class="tarjeta-img"><img src="{{ . }}" alt="" loading="lazy"></div>{{ end }}
+    <div class="tarjeta-texto">
+      <div class="tarjeta-chips">
+        <span class="chip-clase chip-{{ .Params.clase }}">{{ index $nombreClase .Params.clase | default .Params.clase }}</span>
+        {{- with .Params.tema }}<span class="chip-tema">{{ i18n "fractalis.filtro_tema" }} {{ . }}</span>{{ end }}
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p>{{ .Summary | plainify | truncate 160 }}</p>
+    </div>
+  </a>
+  {{- end }}
+</section>
+<p class="filtro-vacio" hidden>{{ i18n "fractalis.filtro_vacio" }}</p>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll('.filtro-chip');
+  var sel = document.getElementById('filtro-tema');
+  var cards = document.querySelectorAll('.tarjeta-actividad');
+  var resumen = document.querySelector('.filtro-resumen');
+  var vacio = document.querySelector('.filtro-vacio');
+  var tipo = '', tema = '';
+  try {
+    var q = new URLSearchParams(location.search);
+    tipo = q.get('tipo') || ''; tema = q.get('tema') || '';
+  } catch (e) {}
+  function aplicar(guardar) {
+    var n = 0;
+    cards.forEach(function (c) {
+      var ok = (!tipo || c.dataset.tipo === tipo) && (!tema || c.dataset.tema === tema);
+      c.hidden = !ok; if (ok) n++;
+    });
+    chips.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.tipo === tipo ? 'true' : 'false'); });
+    sel.value = tema;
+    resumen.textContent = n + ' ' + (n === 1 ? {{ i18n "fractalis.filtro_una" }} : {{ i18n "fractalis.filtro_varias" }});
+    vacio.hidden = n > 0;
+    if (guardar) {
+      try {
+        var q = new URLSearchParams();
+        if (tipo) q.set('tipo', tipo); if (tema) q.set('tema', tema);
+        history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q : ''));
+      } catch (e) {}
+    }
+  }
+  chips.forEach(function (b) { b.addEventListener('click', function () { tipo = b.dataset.tipo; aplicar(true); }); });
+  sel.addEventListener('change', function () { tema = sel.value; aplicar(true); });
+  aplicar(false);
+})();
+</script>
+{{ end }}

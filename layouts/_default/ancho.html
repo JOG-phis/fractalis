@@ -1,0 +1,15 @@
+{{- /* Como "centered", pero con una columna mucho más ancha: para tablas grandes (currículo). */ -}}
+{{ define "main" }}
+  <article>
+    <header id="single_header" class="mt-5 mx-auto text-center" style="max-width: 72rem">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+      </h1>
+    </header>
+    <section class="mt-6 prose dark:prose-invert mx-auto" style="max-width: 72rem">
+      <div class="article-content mb-20">
+        {{ .Content }}
+      </div>
+    </section>
+  </article>
+{{ end }}

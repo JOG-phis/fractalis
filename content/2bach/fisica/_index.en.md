@@ -1,3 +1,5 @@
 ---
 title: "Physics"
 ---
+
+{{< curso-vacio >}}

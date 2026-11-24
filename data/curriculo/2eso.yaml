@@ -1,0 +1,276 @@
+# Currículo oficial de Física y Química (2º ESO) en Andalucía.
+# Fuente: Orden de 30 de mayo de 2023 (ESO, Andalucía), Anexo II. BOJA nº 104, de 2 de junio de 2023.
+# Texto extraído del BOJA; no editar salvo para corregir erratas de la extracción.
+materia: Física y Química
+curso: "2º ESO"
+norma:
+  nombre: Orden de 30 de mayo de 2023 (ESO, Andalucía), Anexo II
+  boja: BOJA nº 104, de 2 de junio de 2023
+  url: "https://www.juntadeandalucia.es/eboja/2023/104/BOJA23-104-00289-9727-01_00284752.pdf"
+competencias:
+- n: 1
+  texto: Comprender y relacionar los motivos por los que ocurren los principales fenómenos fisicoquímicos del entorno, explicándolos en términos de las leyes y teorías científicas adecuadas, para resolver problemas con el fin de aplicarlas para mejorar la realidad cercana y la calidad de vida humana.
+  descriptores:
+  - CCL1
+  - STEM1
+  - STEM2
+  - STEM4
+  - CPSAA4
+  criterios:
+  - n: "1.1"
+    texto: Identificar, comprender y explicar, siguiendo las orientaciones del profesorado, en su entorno próximo, los fenómenos fisicoquímicos cotidianos más relevantes, explicarlos en términos básicos de los principios, teorías y leyes científicas estudiadas y expresarlos con coherencia y corrección, utilizando al menos dos soportes y dos medios de comunicación.
+    saberes:
+    - FYQ.2.A.5
+    - FYQ.2.B.1
+    - FYQ.2.C.1
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+  - n: "1.2"
+    texto: Resolver los problemas fisicoquímicos que se le proponen, en situaciones habituales de escasa complejidad, aplicando los aspectos básicos de las leyes y teorías científicas estudiadas, razonando los procedimientos utilizados para encontrar y comprobar la(s) solución(es) obtenidas y expresando adecuadamente los resultados.
+    saberes:
+    - FYQ.2.A.2
+    - FYQ.2.A.4
+    - FYQ.2.B.1
+    - FYQ.2.C.4
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+  - n: "1.3"
+    texto: Reconocer y describir en el entorno inmediato, siguiendo las orientaciones del profesorado, situaciones problemáticas reales de índole científica y emprender, de forma guiada, iniciativas en las que la ciencia, y en particular la física y la química, pueden contribuir a su solución, reflexionando de forma motivada acerca de su impacto en la sociedad.
+    saberes:
+    - FYQ.2.A.1
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.C.4
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.1
+    - FYQ.2.E.2
+- n: 2
+  texto: Expresar las observaciones realizadas por el alumnado en forma de preguntas, formulando hipótesis, para explicarlas y demostrando dichas hipótesis a través de la experimentación científica, la indagación y la búsqueda de evidencias, para desarrollar los razonamientos propios del pensamiento científico y mejorar las destrezas en el uso de las metodologías científicas.
+  descriptores:
+  - CCL1
+  - CCL3
+  - STEM1
+  - STEM2
+  - CD1
+  - CPSAA4
+  - CE1
+  - CCEC3
+  criterios:
+  - n: "2.1"
+    texto: Aplicar, de forma guiada, las metodologías propias de la ciencia para identificar y describir fenómenos que suceden en el entorno inmediato a partir de cuestiones a las que se pueda dar respuesta a través de la indagación, la deducción, el trabajo experimental y el razonamiento lógicomatemático, reflexionando de forma argumentada acerca de aquellas pseudocientíficas que no admiten comprobación experimental.
+    saberes:
+    - FYQ.2.B.2
+    - FYQ.2.C.1
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.1
+  - n: "2.2"
+    texto: Seleccionar, de forma guiada, de acuerdo con la naturaleza de las cuestiones que se traten, una manera adecuada de comprobar o refutar las hipótesis formuladas, para diseñar estrategias sencillas de indagación y búsqueda de evidencias que permitan obtener conclusiones y respuestas ajustadas a la naturaleza de la pregunta formulada.
+    saberes:
+    - FYQ.2.A.2
+    - FYQ.2.B.2
+    - FYQ.2.C.1
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+  - n: "2.3"
+    texto: Aplicar, siguiendo las orientaciones del profesorado, las leyes y teorías científicas estudiadas para formular cuestiones e hipótesis, en situaciones habituales de la realidad, de manera razonada y coherente con el conocimiento científico existente y diseñar, de forma guiada, los procedimientos experimentales o deductivos necesarios para resolverlas.
+    saberes:
+    - FYQ.2.A.1
+    - FYQ.2.A.5
+    - FYQ.2.B.1
+    - FYQ.2.B.2
+    - FYQ.2.C.1
+    - FYQ.2.C.2
+    - FYQ.2.C.4
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+- n: 3
+  texto: Manejar con soltura las reglas y normas básicas de la física y la química en lo referente al lenguaje de la IUPAC, al lenguaje matemático, al empleo de unidades de medida correctas, al uso seguro del laboratorio y a la interpretación y producción de datos e información en diferentes formatos y fuentes (textos, enunciados, tablas, gráficas, informes, manuales, diagramas, fórmulas, esquemas, modelos, símbolos, etc.), para reconocer el carácter universal y transversal del lenguaje científico y la necesidad de una comunicación fiable en investigación y ciencia entre diferentes países y culturas.
+  descriptores:
+  - STEM4
+  - STEM5
+  - CD3
+  - CPSAA2
+  - CC1
+  - CCEC2
+  - CCEC4
+  criterios:
+  - n: "3.1"
+    texto: Emplear datos a un nivel básico y en los formatos que se indiquen para interpretar y transmitir información relativa a un proceso fisicoquímico concreto, relacionando entre sí lo que cada uno de ellos contiene, y extrayendo en cada caso, siguiendo las orientaciones del profesorado, lo más relevante para la resolución de un problema.
+    saberes:
+    - FYQ.2.A.4
+    - FYQ.2.B.1
+    - FYQ.2.C.1
+    - FYQ.2.C.4
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+  - n: "3.2"
+    texto: Aplicar adecuadamente las reglas básicas de la física y la química, incluyendo el uso de unidades de medida, las herramientas básicas matemáticas y unas mínimas reglas de nomenclatura, para facilitar una comunicación efectiva con toda la comunidad científica.
+    saberes:
+    - FYQ.2.A.4
+    - FYQ.2.B.1
+    - FYQ.2.C.1
+    - FYQ.2.C.4
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+  - n: "3.3"
+    texto: Poner en práctica, de forma responsable y siguiendo las indicaciones del profesorado, las normas de uso de los espacios específicos de la ciencia, como el laboratorio de física y química, como forma de conocer y prevenir los riesgos y de asegurar la salud propia y colectiva, la conservación sostenible del medioambiente y el respeto por las instalaciones.
+    saberes:
+    - FYQ.2.A.2
+    - FYQ.2.A.3
+    - FYQ.2.B.2
+    - FYQ.2.C.2
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+- n: 4
+  texto: Utilizar de forma crítica, eficiente y segura plataformas digitales y recursos variados, tanto para el trabajo individual como en equipo, para fomentar la creatividad, el desarrollo personal y el aprendizaje individual y social, mediante la consulta de información, la creación de materiales y la comunicación efectiva en los diferentes entornos de aprendizaje.
+  descriptores:
+  - CCL2
+  - CCL3
+  - STEM4
+  - CD1
+  - CD2
+  - CPSAA3
+  - CE3
+  - CCEC4
+  criterios:
+  - n: "4.1"
+    texto: Utilizar al menos dos recursos tradicionales y dos digitales, para el aprendizaje y para participar y colaborar con otros miembros de la comunidad educativa, con respeto hacia docentes y estudiantes y reflexionando de forma argumentada acerca de las aportaciones de cada participante.
+    saberes:
+    - FYQ.2.A.3
+    - FYQ.2.B.1
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+  - n: "4.2"
+    texto: Trabajar de forma adecuada y versátil con al menos dos medios tradicionales y dos digitales, en la consulta de información y la elaboración de contenidos, seleccionando, siguiendo las orientaciones del profesorado y de forma argumentada, las fuentes más fiables y desechando las menos adecuadas para la mejora del aprendizaje propio y colectivo.
+    saberes:
+    - FYQ.2.A.3
+    - FYQ.2.A.5
+    - FYQ.2.B.2
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.1
+- n: 5
+  texto: Utilizar las estrategias propias del trabajo colaborativo, potenciando el crecimiento entre iguales como base emprendedora de una comunidad científica crítica, ética y eficiente, para comprender la importancia de la ciencia en la mejora de la sociedad andaluza y global, las aplicaciones y repercusiones de los avances científicos, la preservación de la salud y la conservación sostenible del medioambiente.
+  descriptores:
+  - CCL5
+  - CP3
+  - STEM3
+  - STEM5
+  - CD3
+  - CPSAA3
+  - CC3
+  - CE2
+  criterios:
+  - n: "5.1"
+    texto: Participar en interacciones constructivas y coeducativas, a través de actividades previamente planificadas de cooperación y del uso de las estrategias propias del trabajo colaborativo, como forma de establecer un medio de trabajo eficiente en la ciencia.
+    saberes:
+    - FYQ.2.A.2
+    - FYQ.2.A.3
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+  - n: "5.2"
+    texto: Emprender, de forma guiada y de acuerdo a la metodología adecuada, proyectos científicos que involucren al alumnado en la mejora de la sociedad andaluza y global y que creen valor para el individuo y para la comunidad.
+    saberes:
+    - FYQ.2.A.1
+    - FYQ.2.A.5
+    - FYQ.2.C.2
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+- n: 6
+  texto: Comprender y valorar la ciencia como una construcción colectiva en continuo cambio y evolución, en la que no solo participan las personas dedicadas a la ciencia, sino que también requiere de una interacción con el resto de la sociedad, para obtener resultados que repercutan en el avance tecnológico, económico, ambiental y social.
+  descriptores:
+  - STEM2
+  - STEM5
+  - CD4
+  - CPSAA1
+  - CPSAA4
+  - CC4
+  - CCEC1
+  criterios:
+  - n: "6.1"
+    texto: Conocer y apreciar a través del análisis histórico de los hombres y mujeres de ciencia y los avances científicos, que la ciencia es un proceso en permanente construcción y, reconocer las repercusiones mutuas de la ciencia actual con la tecnología, la sociedad y el medioambiente.
+    saberes:
+    - FYQ.2.A.6
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.2
+  - n: "6.2"
+    texto: Identificar, de forma guiada, en el entorno próximo y en situaciones de actualidad las necesidades tecnológicas, ambientales, económicas y sociales más importantes que demanda la sociedad para reconocer la capacidad de la ciencia para darles solución sostenible a través de la implicación de todos los ciudadanos.
+    saberes:
+    - FYQ.2.A.5
+    - FYQ.2.A.6
+    - FYQ.2.C.2
+    - FYQ.2.C.3
+    - FYQ.2.D.1
+    - FYQ.2.D.2
+    - FYQ.2.E.1
+    - FYQ.2.E.2
+bloques:
+- id: A
+  titulo: Las destrezas científicas básicas
+  saberes:
+  - codigo: FYQ.2.A.1
+    texto: "Metodologías de la investigación científica: identificación y formulación de cuestiones, elaboración de hipótesis y comprobación experimental de las mismas."
+  - codigo: FYQ.2.A.2
+    texto: "Trabajo experimental y proyectos de investigación: estrategias en la resolución de problemas y en el desarrollo de las investigaciones mediante la indagación, la deducción, la búsqueda de evidencias y el razonamiento lógico-matemático, haciendo inferencias válidas de las observaciones y obteniendo conclusiones."
+  - codigo: FYQ.2.A.3
+    texto: "Diversos entornos y recursos de aprendizaje científico, como el laboratorio o los entornos virtuales: materiales, sustancias y herramientas tecnológicas, atendiendo a las normas de uso de cada espacio para asegurar la conservación de la salud propia y comunitaria, la seguridad en redes y el respeto hacia el medioambiente."
+  - codigo: FYQ.2.A.4
+    texto: Uso del lenguaje científico, incluyendo el manejo adecuado de sistemas de unidades, utilizando preferentemente el Sistema Internacional de Unidades y la notación científica para expresar los resultados, y herramientas matemáticas, para conseguir una comunicación argumentada con diferentes entornos científicos y de aprendizaje.
+  - codigo: FYQ.2.A.5
+    texto: Interpretación y producción de información científica en diferentes formatos y a partir de diferentes medios para desarrollar un criterio propio basado en lo que el pensamiento científico aporta a la mejora de la sociedad para hacerla más justa, equitativa e igualitaria.
+  - codigo: FYQ.2.A.6
+    texto: Valoración de la cultura científica y del papel de científicos y científicas en los principales hitos históricos y actuales de la física y la química para el avance y la mejora de la sociedad. La Ciencia en Andalucía.
+- id: B
+  titulo: La materia
+  saberes:
+  - codigo: FYQ.2.B.1
+    texto: "Teoría cinético-molecular: aplicación a observaciones sobre la materia para explicar sus propiedades, los estados de agregación y los cambios de estado, y la formación de mezclas y disoluciones, así como la concentración de las mismas y las leyes de los gases ideales."
+  - codigo: FYQ.2.B.2
+    texto: Realización de experimentos relacionados con los sistemas materiales para conocer y describir sus propiedades; densidad, composición y clasificación, así como los métodos de separación de una mezcla.
+- id: C
+  titulo: La energía
+  saberes:
+  - codigo: FYQ.2.C.1
+    texto: Formulación de cuestiones e hipótesis sobre la energía, el calor y el equilibrio térmico, sus manifestaciones y sus propiedades, y explicación del concepto de temperatura en términos del modelo cinético-molecular, para describirla como la causa de todos los procesos de cambio.
+  - codigo: FYQ.2.C.2
+    texto: Diseño y comprobación experimental de hipótesis, relacionadas con el uso doméstico e industrial de la energía en sus distintas formas y las transformaciones entre ellas.
+  - codigo: FYQ.2.C.3
+    texto: Elaboración fundamentada de hipótesis sobre el medioambiente y la sostenibilidad a partir de las diferencias entre fuentes de energía renovables y no renovables. Energías renovables en Andalucía.
+  - codigo: FYQ.2.C.4
+    texto: Análisis y aplicación de los efectos del calor sobre la materia para aplicarlos en situaciones cotidianas.
+- id: D
+  titulo: La interacción
+  saberes:
+  - codigo: FYQ.2.D.1
+    texto: "Identificación de magnitudes que caracterizan un movimiento: posición, trayectoria, desplazamiento y distancia recorrida. Valoración de la importancia de la identificación de un sistema de referencia. Predicción de movimientos sencillos a partir de los conceptos de la cinemática posición, velocidad y aceleración, para formular hipótesis comprobables sobre valores futuros de estas magnitudes, y validación de dichas hipótesis a través del cálculo numérico, la interpretación de gráficas o el trabajo experimental."
+  - codigo: FYQ.2.D.2
+    texto: "Aproximación al concepto de fuerza. Las fuerzas como agentes de cambio: relación de los efectos de las fuerzas, tanto en el estado de movimiento o de reposo de un cuerpo como produciendo deformaciones en los sistemas sobre los que actúan. Máquinas simples."
+- id: E
+  titulo: El cambio
+  saberes:
+  - codigo: FYQ.2.E.1
+    texto: Análisis de los diferentes tipos de cambios que experimentan los sistemas materiales para relacionarlos con las causas que los producen y con las consecuencias que tienen.
+  - codigo: FYQ.2.E.2
+    texto: Interpretación de las reacciones químicas a nivel macroscópico y microscópico, en términos del modelo atómicomolecular de la materia y de la teoría de colisiones, para explicar las relaciones de la química con el medioambiente, la tecnología y la sociedad.

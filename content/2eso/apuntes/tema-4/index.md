@@ -1,11 +1,15 @@
 ---
-title: "Tema 4: Los Cambios Químicos"
-description: "Reacciones químicas, leyes ponderales y velocidad de reacción."
-summary: "Reacciones químicas, leyes ponderales y velocidad de reacción."
-date: 2026-07-31
+title: "Tema 4: Los cambios químicos"
+description: "Resumen del tema: cambios físicos y químicos, la reacción química y sus señales, la conservación de la masa, la velocidad de reacción y las reacciones de la vida cotidiana."
+summary: "Cambios físicos y químicos, reacciones químicas, ley de Lavoisier, velocidad de reacción y reacciones cotidianas."
+date: 2026-11-22
 weight: 40
-tipo: ["apuntes"]
-tags: ["reacciones químicas", "leyes ponderales", "velocidad de reacción", "química"]
+showHero: true
+heroStyle: "background"
+tags: ["reacciones químicas", "cambios químicos", "conservación de la masa", "velocidad de reacción"]
+tema: 4
+materia: ["quimica"]
+pdf: "apuntes-cambios-quimicos.pdf"
 draft: false
 showTableOfContents: true
 showTaxonomies: true
@@ -13,110 +17,69 @@ showTaxonomies: true
 
 {{< katex >}}
 
-## 1. Los Cambios de la Materia
+## 1. Cambios físicos y cambios químicos
 
-La materia puede sufrir dos tipos de cambios. Es fundamental distinguirlos:
+{{< columnas >}}
+{{< caja idea "Cambio físico:" >}}
+las sustancias **siguen siendo las mismas**: cambios de estado, disolver, romper…
+{{< /caja >}}
+{{< caja idea "Cambio químico o reacción química:" >}}
+se forman **sustancias nuevas**, con propiedades diferentes.
+{{< /caja >}}
+{{< /columnas >}}
 
-{{< alert icon="wand-magic-sparkles" >}}
-**Cambios Físicos:** La sustancia **NO** cambia. Sigue siendo la misma, solo cambia su forma o estado.
-*   *Ejemplo:* Hielo derritiéndose (sigue siendo agua, \(\text{H}_2\text{O}\)), cortar papel.
+{{< figura src="fisico-quimico.svg" alt="Cambio físico: el hielo se funde y las moléculas de agua siguen siendo las mismas. Cambio químico: hidrógeno y oxígeno forman moléculas de agua" pie="En un cambio físico las partículas no cambian; en un cambio químico se forman partículas nuevas." ancho="600" >}}
 
-**Cambios Químicos:** La sustancia **se transforma** en otra totalmente nueva con propiedades diferentes.
-*   *Ejemplo:* Quemar madera (combustión), un clavo oxidado, la digestión.
-{{< /alert >}}
+## 2. La reacción química
 
----
+En una reacción química, los **reactivos** se transforman en **productos**:
 
-## 2. ¿Cómo sabemos si hay reacción?
+{{< formula >}}\text{reactivos} \longrightarrow \text{productos}{{< /formula >}}
 
-A veces no vemos los átomos, pero hay **pistas** (evidencias) que nos chivan que ha ocurrido un cambio químico:
+**¿Cómo sabemos que ha ocurrido una reacción química?** Por sus señales *(signs)*:
 
-1.  **Desprendimiento de gas:** Vemos burbujas sin que hierva.
-2.  **Cambio de color:** Aparece un color distinto al de los ingredientes.
-3.  **Cambio de temperatura:** Se calienta o enfría "solo" (desprende o absorbe calor).
-4.  **Emisión de luz:** Como en los fuegos artificiales o luciérnagas.
+{{< figura src="senal-color.svg|senal-gas.svg|senal-precipitado.svg|senal-temperatura.svg|senal-luz.svg|senal-olor.svg" alt="Un líquido cambia de color|Se desprenden burbujas de gas|Se forma un sólido en el fondo|El termómetro sube o baja|Se produce una llama|Se desprende olor" ancho="120|80|80|75|110|80" rotulos="Cambio de color<br>*(colour change)*|Se desprende un gas<br>*(gas)*|Se forma un precipitado<br>*(precipitate)*|Cambia la temperatura<br>*(temperature change)*|Se produce luz<br>*(light)*|Aparece un olor<br>*(smell)*" >}}
 
----
+## 3. Las reacciones químicas por dentro
 
-## 3. La Reacción Química
+{{< figura src="reorganizacion.svg" alt="Dos moléculas de hidrógeno y una de oxígeno se separan en átomos que se unen de otra forma para dar dos moléculas de agua" pie="Los átomos de los reactivos se separan y se unen de otra forma." ancho="620" >}}
 
-Es el proceso donde los **Reactivos** (ingredientes iniciales) se transforman en **Productos** (sustancias finales).
+{{< caja nota "Recuerda:" >}}
+en una reacción química las uniones entre los átomos se rompen y se forman otras nuevas, pero los átomos **no se crean ni se destruyen**: hay los mismos antes y después.
+{{< /caja >}}
 
-### La Ecuación Química
-Es la forma matemática de escribir la receta.
+## 4. La conservación de la masa
 
-$$
-\text{Reactivos} \longrightarrow \text{Productos}
-$$
+{{< caja idea "Ley de Lavoisier:" >}}
+en una reacción química, la **masa de los reactivos** es igual a la **masa de los productos**.
+{{< /caja >}}
 
-Los estados se ponen entre paréntesis: **(s)** sólido, **(l)** líquido, **(g)** gas, **(aq)** disuelto en agua.
+{{< figura src="lavoisier.svg" alt="Un matraz cerrado sobre una balanza marca 150,0 g antes y después de la reacción" ancho="380" >}}
 
-**Ejemplo:** El hierro reacciona con azufre y calor.
-$$ \text{Fe}(s) + \text{S}(s) \longrightarrow \text{FeS}(s) $$
+{{< caja cuidado >}}
+para comprobar la ley de Lavoisier, la reacción tiene que ocurrir en un **recipiente cerrado**, porque los gases también tienen masa.
+{{< /caja >}}
 
----
+## 5. La velocidad de las reacciones
 
-## 4. Teoría de Colisiones (¿Cómo ocurre?)
+{{< caja idea "Teoría de colisiones:" >}}
+solo hay reacción si las partículas **chocan** con suficiente energía y bien orientadas (**choques eficaces**). Cuantos más choques eficaces, más rápida es la reacción.
+{{< /caja >}}
 
-Imagina los átomos como bolas de billar. Para que reaccionen, deben chocar. Según esta teoría, se necesitan 3 pasos:
+{{< figura src="choques.svg" alt="Choque eficaz: las partículas chocan con energía y forman moléculas nuevas. Choque no eficaz: rebotan y siguen igual" ancho="600" >}}
 
-1.  **Ruptura:** Los enlaces de los reactivos se rompen.
-2.  **Reordenación:** Los átomos se reorganizan.
-3.  **Formación:** Se crean nuevos enlaces (productos).
+| Factor | La reacción es más rápida si… | Ejemplo |
+| :--- | :--- | :--- |
+| **Temperatura** | aumenta la temperatura | la nevera conserva los alimentos |
+| **Concentración** | hay más partículas de reactivo | vinagre concentrado y cal |
+| **Superficie de contacto** | el sólido está en trozos pequeños o en polvo | pastilla efervescente en polvo |
+| **Catalizador** | se añade un catalizador | catalizador del coche, enzimas |
 
-{{< figure src="teoriacolision.png" alt="Teoría de colisiones" caption="Teoría de colisiones: los reactivos chocan, rompen sus enlaces y forman nuevos productos." nozoom=true >}}
+## 6. Las reacciones químicas en la vida cotidiana
 
-{{< alert icon="triangle-exclamation" cardColor="#dc2626" iconColor="#ffffff" textColor="#fef2f2" >}}
-**¡Importante!** No todos los choques valen. Solo los **Choques Eficaces** (con fuerza y orientación correcta) producen reacción.
-{{< /alert >}}
-
----
-
-## 5. Ley de Conservación de la Masa
-
-Esta es la regla de oro de la química, descubierta por **Lavoisier**.
-
-{{< alert icon="scale-balanced" cardColor="#1d4ed8" iconColor="#ffffff" textColor="#eff6ff" >}}
-**Ley de Lavoisier: "La materia ni se crea ni se destruye, solo se transforma".**
-
-La suma de la masa de los reactivos es **IGUAL** a la suma de la masa de los productos.
-$$
-\sum m_{\text{reactivos}} = \sum m_{\text{productos}}
-$$
-{{< /alert >}}
-
-### Ejemplo Resuelto
-Si reaccionan \(12\text{ g}\) de Carbono con \(32\text{ g}\) de Oxígeno, ¿cuánto \(\text{CO}_2\) obtenemos?
-
-$$
-\text{C} + \text{O}_2 \longrightarrow \text{CO}_2
-$$
-
-$$
-12\text{ g} + 32\text{ g} = \text{Masa Total}
-$$
-
-$$
-\text{Masa de CO}_2 = 44\text{ g}
-$$
-
----
-
-## 6. Ajuste de Ecuaciones
-
-Como los átomos no pueden desaparecer (por la ley de Lavoisier), tenemos que equilibrar la ecuación poniendo números delante (**coeficientes**).
-
-**Ejemplo: Formación del agua**
-*   *Mal:* \(\text{H}_2 + \text{O}_2 \longrightarrow \text{H}_2\text{O}\) (Entran 2 "O" y sale 1. ¡Imposible!)
-*   *Bien:* \(2\text{H}_2 + \text{O}_2 \longrightarrow 2\text{H}_2\text{O}\) (Ahora hay 4 hidrógenos y 2 oxígenos en ambos lados).
-
----
-
-## 7. Velocidad de Reacción
-
-Podemos acelerar o frenar una reacción cambiando estos factores:
-
-*   **Temperatura:** A más calor, las moléculas van más rápido \(\rightarrow\) más choques \(\rightarrow\) **más velocidad**.
-*   **Concentración:** Si hay más cantidad de reactivo junto, chocan más.
-*   **Grado de división:** Si trituras un sólido (polvo), reacciona mucho más rápido que en bloque (tienen más superficie para chocar).
-*   **Catalizadores:** Sustancias especiales que aceleran la reacción sin gastarse (ej: las enzimas de tu cuerpo).
+{{< figtexto lado="derecha" src="triangulo-fuego.svg" alt="Triángulo del fuego: combustible, comburente (oxígeno) y energía (chispa, calor)" ancho="230" >}}
+- **Combustión:** combustible + oxígeno → dióxido de carbono + agua + energía. Para que haya fuego hacen falta los tres lados del **triángulo del fuego**.
+- **Oxidación:** hierro + oxígeno → óxido de hierro.
+- **Fermentación:** levaduras y bacterias transforman los azúcares (pan, yogur).
+- **Fotosíntesis** y **respiración:** los productos de una son los reactivos de la otra.
+{{< /figtexto >}}

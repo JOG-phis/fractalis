@@ -1,0 +1,51 @@
+# Textos propios que sustituyen a los del tema Blowfish (solo las claves que aparecen aquí).
+footer:
+  # Pie de página: crédito a Hugo y Blowfish + atribución obligatoria de la licencia gratuita de Icons8.
+  powered_by: 'Desarrollada con {{ .Hugo }} &amp; {{ .Theme }} · Iconos de <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://icons8.com/" target="_blank" rel="noopener noreferrer">Icons8</a>'
+
+# Textos de los shortcodes propios de Fractalis (layouts/shortcodes)
+fractalis:
+  caja_idea: "Idea clave"
+  caja_nota: "Recuerda"
+  caja_cuidado: "¡Cuidado!"
+  caja_tcm: "¿Por qué? Explicación con la TCM:"
+  caja_ejemplo: "Ejemplo resuelto"
+  simulacion_abrir: "Abrir la simulación"
+  ejercicio_pista: "Pista"
+  ejercicio_solucion: "Solución"
+  act_titulo: "Actividades de este tema"
+  act_ver: "Ver las actividades del tema {{ .Tema }} en el listado →"
+  act_en_espanol: ""
+  clase_ejercicios: "Ejercicios"
+  clase_breakouts: "Breakout"
+  clase_lecturas: "Lectura"
+  clase_practicas: "Práctica de laboratorio"
+  clase_simulaciones: "Simulación"
+  clase_tareas: "Tarea"
+  clase_proyectos: "Proyecto"
+  filtro_ejercicios: "Ejercicios"
+  filtro_breakouts: "Breakouts"
+  filtro_lecturas: "Lecturas"
+  filtro_practicas: "Prácticas de laboratorio"
+  filtro_simulaciones: "Simulaciones"
+  filtro_tareas: "Tareas"
+  filtro_proyectos: "Proyectos"
+  filtro_aria: "Filtrar actividades"
+  filtro_todas: "Todas"
+  filtro_tema: "Tema"
+  filtro_todos_temas: "Todos los temas"
+  filtro_vacio: "No hay actividades de ese tipo en ese tema todavía."
+  filtro_una: "actividad"
+  filtro_varias: "actividades"
+  tema_entradilla: "Aquí tienes lo esencial del tema para repasar. Los apuntes completos, con todas las explicaciones y los ejemplos resueltos, están en el PDF."
+  tema_descarga: "Descarga el tema completo aquí (PDF)"
+  licencia_apuntes: 'Apuntes bajo licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">Creative Commons BY-NC-SA 4.0</a>.'
+  licencia_material: 'Material bajo licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">Creative Commons BY-NC-SA 4.0</a>.'
+  imagen_credito: 'Imagen de cabecera: {{ .Autor }} en {{ .Fuente }}.'
+  act_descarga: "Descargar la actividad (PDF)"
+  act_soluciones: "Descargar las soluciones (PDF)"
+  act_repasa: 'Repasa la teoría en los <a href="{{ .Url }}">apuntes del tema {{ .Tema }}</a>.'
+  ficha_paginas:
+    one: "{{ .Count }} página · PDF"
+    other: "{{ .Count }} páginas · PDF"
+  proximamente: "Próximamente"

@@ -1,0 +1,329 @@
+/* =====================================================================
+   Fractalis · estilos para los apuntes convertidos desde LaTeX
+   Colores idénticos a los de la plantilla LaTeX (NebulaBlue, StellarGold...)
+   Blowfish carga este fichero automáticamente (assets/css/custom.css).
+   ===================================================================== */
+
+:root {
+  --fq-azul: #0284c7;      /* NebulaBlue  */
+  --fq-oro: #d97706;       /* StellarGold */
+  --fq-rojo: #b91c1c;      /* AlertRed    */
+  --fq-verde: #15803d;     /* OkGreen     */
+  --fq-gris: #64748b;      /* SoftGray    */
+  --fq-borde: #e2e8f0;     /* BorderGray  */
+  --fq-fondo-fig: #f8fafc; /* BgLight: fondo de las figuras TikZ */
+}
+.dark {
+  /* En modo oscuro los títulos usan tonos más claros para que se lean bien */
+  --fq-azul: #38bdf8;
+  --fq-oro: #fbbf24;
+  --fq-rojo: #f87171;
+  --fq-verde: #4ade80;
+  --fq-borde: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- Cajas (ideabox, notabox, cuidadobox, tcmbox...) ---------- */
+.caja {
+  --c: var(--fq-azul);
+  margin: 1.25rem 0;
+  border-radius: 0.375rem;
+  border-left: 4px solid var(--c);
+  background: color-mix(in srgb, var(--c) 7%, transparent);
+  overflow: hidden;
+}
+.caja-cuerpo { padding: 0.7rem 1rem; }
+.caja-cuerpo > :first-child { margin-top: 0; }
+.caja-cuerpo > :last-child { margin-bottom: 0; }
+.caja-titulo { font-weight: 700; color: var(--c); }
+p.caja-titulo { margin-bottom: 0.35rem; }
+
+.caja-idea    { --c: var(--fq-azul); }
+.caja-nota    { --c: var(--fq-oro); }
+.caja-nota .caja-titulo { color: inherit; }
+.caja-cuidado { --c: var(--fq-rojo); }
+.caja-tcm     { --c: var(--fq-verde); }
+
+/* Cajas con cabecera: ejemplo resuelto y recuadro informativo */
+.caja-ejemplo, .caja-marco {
+  border: 1px solid var(--fq-borde);
+  background: transparent;
+}
+.caja-ejemplo { border-color: color-mix(in srgb, var(--fq-azul) 50%, transparent); }
+.caja-cabecera {
+  padding: 0.45rem 1rem;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--fq-azul) 12%, transparent);
+}
+.caja-marco .caja-cuerpo table { margin: 0.25rem auto; }
+
+/* Enlace a simulación (sustituye al QR del PDF) */
+.caja-simulacion { --c: var(--fq-oro); border: 1px solid var(--fq-borde); border-left-width: 4px; background: transparent; }
+.caja-simulacion .caja-titulo { color: inherit; }
+.simulacion-boton, .descarga-boton {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #fff !important;
+  background: var(--fq-azul);
+}
+.dark .simulacion-boton, .dark .descarga-boton { color: #0f172a !important; }
+.descarga { text-align: center; margin: 1.5rem 0; }
+.descarga-boton .icon { display: inline-block; width: 1em; vertical-align: -0.125em; }
+
+/* ---------- Figuras TikZ ---------- */
+.fig-tikz { margin: 1.5rem 0; text-align: center; }
+.fig-tikz-fila {
+  display: flex; flex-wrap: wrap; gap: 1rem 2rem;
+  justify-content: center; align-items: flex-end;
+}
+.fig-tikz img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 !important;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  background: var(--fq-fondo-fig);
+}
+.fig-tikz figcaption { margin-top: 0.5rem; font-size: 0.875rem; font-style: italic; color: var(--fq-gris); }
+.dark .fig-tikz figcaption { color: #94a3b8; }
+
+/* Figura + texto (estados de la materia, evaporación/ebullición) */
+.figtexto { display: flex; gap: 1.25rem; align-items: center; }
+.figtexto-fig { flex: 0 0 auto; margin: 0; }
+.figtexto-texto { flex: 1 1 auto; min-width: 0; }
+.figtexto-texto > :first-child { margin-top: 0; }
+.figtexto-texto > :last-child { margin-bottom: 0; }
+.figtexto-derecha { flex-direction: row-reverse; }
+/* Dentro de dos columnas no hay sitio: figura arriba, texto debajo */
+.columnas .figtexto { flex-direction: column; align-items: stretch; }
+.columnas .figtexto-fig { align-self: center; }
+@media (max-width: 640px) {
+  .figtexto { flex-direction: column; align-items: stretch; }
+  .figtexto-fig { align-self: center; }
+}
+
+/* Postulados de la TCM */
+.postulado { display: flex; align-items: center; gap: 0.5rem; margin: 0; }
+.postulado .postulado-icono { margin: 0 0 0 0.75rem; flex: 0 0 auto; }
+.postulado .postulado-icono img { padding: 0.3rem; }
+.postulado-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.5rem; height: 1.5rem; margin-right: 0.25rem;
+  border-radius: 9999px; font-size: 0.85rem; font-weight: 700;
+  color: #fff; background: #0284c7;
+}
+
+/* ---------- Dos columnas (tcbraster) ---------- */
+.columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+.columnas > .caja { margin: 0; }
+@media (max-width: 768px) { .columnas { grid-template-columns: 1fr; } }
+
+/* ---------- Cálculos ---------- */
+.formula {
+  width: fit-content; max-width: 100%;
+  margin: 1.25rem auto; padding: 0.2rem 1.5rem;
+  border: 1.5px solid color-mix(in srgb, var(--fq-azul) 60%, transparent);
+  border-radius: 0.5rem;
+  background: color-mix(in srgb, var(--fq-azul) 6%, transparent);
+  overflow-x: auto;
+}
+.resultado {
+  display: inline-block; padding: 0 0.4rem; font-weight: 700;
+  border: 1px solid color-mix(in srgb, var(--fq-azul) 50%, transparent);
+  border-radius: 0.25rem;
+  background: color-mix(in srgb, var(--fq-azul) 8%, transparent);
+}
+.tramo {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.4rem; height: 1.4rem; border-radius: 9999px;
+  font-size: 0.75rem; font-weight: 700; color: #fff; background: #d97706;
+}
+/* Nombres de cambios de estado coloreados en las tablas */
+.progresivo { color: var(--fq-rojo); font-weight: 700; }
+.regresivo { color: var(--fq-azul); font-weight: 700; }
+
+/* ---------- Glosario ---------- */
+.glosario dl { columns: 2 15rem; column-gap: 2.5rem; margin: 0; }
+.glosario dt { margin-top: 0.6rem; break-after: avoid; }
+.glosario dt strong { color: var(--fq-azul); }
+.glosario dt em { color: var(--fq-oro); font-weight: 400; }
+.glosario dd { margin: 0.1rem 0 0 0; padding: 0; font-size: 0.95rem; break-inside: avoid; }
+
+/* ---------- «Hic sunt dracones»: páginas aún sin contenido ---------- */
+.dracones {
+  max-width: 34rem;
+  margin: 2.5rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px dashed color-mix(in srgb, var(--fq-oro) 55%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--fq-oro) 5%, transparent);
+}
+.dracones-icono { display: block; margin: 0 auto 0.75rem; width: 96px; height: 96px; }
+.dracones-lema {
+  margin: 0 0 0.75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem; line-height: 1.2;
+  color: var(--fq-oro);
+}
+.dracones-texto { margin: 0 0 0.75rem; line-height: 1.6; }
+.dracones-nota { margin: 0; font-size: 0.9rem; opacity: 0.75; }
+
+/* ---------- Logo (triángulo de Sierpinski) ----------
+   El PNG es negro sobre transparente: en modo oscuro se invierte para que salga blanco. */
+.dark img.logo { filter: invert(1); }
+
+/* ---------- Figuras con rótulo debajo de cada imagen (material, técnicas...) ---------- */
+.fig-tikz-rotulada .fig-tikz-fila { gap: 1rem 1.25rem; align-items: flex-start; }
+.fig-tikz-item { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; max-width: 100%; }
+.fig-tikz-rotulo { max-width: 13rem; font-size: 0.8rem; font-weight: 600; line-height: 1.25; text-align: center; }
+/* Imágenes pequeñas dentro de tablas */
+img.mini-fig { display: inline-block; margin: 0 !important; padding: 0.2rem; border-radius: 0.25rem; background: var(--fq-fondo-fig); }
+
+/* ---------- Ejercicios de muestra (pista y solución plegadas) ---------- */
+.ejercicio { display: flex; gap: 0.9rem; margin: 1.25rem 0; }
+.ejercicio-num {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem; border-radius: 9999px;
+  font-weight: 700; color: #fff; background: #0284c7;
+}
+.ejercicio-cuerpo { flex: 1 1 auto; min-width: 0; }
+.ejercicio-cuerpo > p:first-child { margin-top: 0.2rem; }
+.ejercicio details { margin: 0.4rem 0; border-radius: 0.375rem; border: 1px solid var(--fq-borde); }
+.ejercicio summary { cursor: pointer; padding: 0.35rem 0.8rem; font-weight: 600; font-size: 0.9rem; }
+.ejercicio details > div { padding: 0 0.9rem 0.6rem; }
+.ejercicio details > div > :first-child { margin-top: 0.2rem; }
+.ejercicio-pista summary { color: var(--fq-oro); }
+.ejercicio-solucion summary { color: var(--fq-verde); }
+
+/* ---------- Ficha de una actividad (tema, tipo, formato) ---------- */
+.ficha-actividad { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1.25rem; }
+.ficha-actividad span {
+  padding: 0.15rem 0.65rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600;
+  border: 1px solid var(--fq-borde); background: color-mix(in srgb, var(--fq-azul) 6%, transparent);
+}
+.descargas { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin: 1.5rem 0; }
+.descargas .descarga { margin: 0; }
+.descarga-boton.secundario { background: transparent !important; color: var(--fq-azul) !important; border: 1.5px solid var(--fq-azul); }
+
+/* ---------- Listado de actividades con filtros ---------- */
+.filtros-actividades { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem; margin: 1.5rem 0 1.25rem; }
+.filtros-tipo { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filtro-chip {
+  padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.9rem; font-weight: 600;
+  border: 1.5px solid var(--fq-borde); background: transparent; color: inherit; cursor: pointer;
+}
+.filtro-chip:hover { border-color: var(--fq-azul); }
+.filtro-chip[aria-pressed="true"] { background: var(--fq-azul); border-color: var(--fq-azul); color: #fff; }
+.dark .filtro-chip[aria-pressed="true"] { color: #0f172a; }
+.filtro-num { opacity: 0.7; font-weight: 400; margin-left: 0.15rem; }
+.filtro-tema { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 600; }
+.filtro-tema select {
+  padding: 0.3rem 0.6rem; border-radius: 0.375rem; font-size: 0.9rem;
+  border: 1.5px solid var(--fq-borde); background: transparent; color: inherit;
+}
+.dark .filtro-tema select option { background: #1e293b; }
+.filtro-resumen { margin: 0; font-size: 0.85rem; opacity: 0.7; }
+
+.rejilla-actividades { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+.tarjeta-actividad {
+  display: flex; flex-direction: column; overflow: hidden; text-decoration: none !important; color: inherit;
+  border: 1px solid var(--fq-borde); border-radius: 0.6rem; transition: transform .15s, box-shadow .15s;
+}
+.tarjeta-actividad[hidden] { display: none; }
+.tarjeta-actividad:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.tarjeta-img { aspect-ratio: 600 / 380; background: #e2e8f0; overflow: hidden; }
+.tarjeta-img img { width: 100%; height: 100%; object-fit: cover; margin: 0; }
+.tarjeta-texto { padding: 0.8rem 0.95rem 1rem; }
+.tarjeta-texto h2 { margin: 0.4rem 0 0.35rem; font-size: 1.05rem; line-height: 1.3; font-weight: 700; }
+.tarjeta-texto p { margin: 0; font-size: 0.85rem; line-height: 1.45; opacity: 0.8; }
+.tarjeta-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.chip-clase, .chip-tema { padding: 0.05rem 0.55rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; }
+.chip-tema { border: 1px solid var(--fq-borde); }
+.chip-clase { color: #fff; background: #64748b; }
+.chip-ejercicios { background: #0284c7; }
+.chip-breakouts { background: #b91c1c; }
+.chip-lecturas { background: #d97706; }
+.chip-practicas { background: #0f766e; }
+.chip-simulaciones { background: #15803d; }
+.chip-tareas { background: #7c3aed; }
+.chip-proyectos { background: #be185d; }
+.filtro-vacio { margin-top: 1rem; opacity: 0.75; }
+
+/* ---------- «Actividades de este tema» al final de los apuntes ---------- */
+.actividades-tema { margin: 2.5rem 0 1rem; }
+.actividades-tema h2 { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem; }
+.actividades-tema-lista { display: grid; gap: 0.6rem; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); }
+.actividad-mini {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem;
+  padding: 0.75rem 0.9rem; border-radius: 0.5rem; border: 1px solid var(--fq-borde);
+  text-decoration: none !important; color: inherit; transition: border-color .15s, transform .15s;
+}
+.actividad-mini:hover { border-color: var(--fq-azul); transform: translateY(-1px); }
+.actividad-mini-titulo { font-weight: 600; line-height: 1.3; }
+.actividades-tema-todas { margin: 0.8rem 0 0; font-size: 0.9rem; }
+.actividades-tema-todas a { color: var(--fq-azul); }
+.actividades-tema-nota { margin: -0.5rem 0 0.9rem; font-size: 0.9rem; opacity: 0.75; }
+
+/* Línea de licencia al pie de temas y actividades (la pone la plantilla) */
+.licencia { font-size: 0.85rem; opacity: 0.7; text-align: center; }
+
+/* Portada: cursos que aún no tienen contenido */
+.course-grid a.proximamente img { opacity: 0.45; filter: saturate(0.6); }
+.course-grid a.proximamente { color: rgba(255, 255, 255, 0.7); }
+.proximamente-etiqueta { display: block; margin-top: 0.35rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
+/* Página de un curso vacío: el aviso del dragón ya lo dice; se oculta el «Aún no hay artículos» de Blowfish */
+section:has(.dracones) + section.mt-10 { display: none; }
+
+/* Formulación: colores de las partes del nombre (como en los apuntes LaTeX) */
+.fp { color: #dc2626; }                 /* prefijo multiplicador y número de carga */
+.fe { color: var(--fq-azul); }          /* elemento (parte electronegativa) */
+.fb { color: var(--fq-oro); }           /* segundo elemento (parte electropositiva) */
+.fs { color: #0d9488; }                 /* sufijo: -uro, -ido, -hídrico */
+.dark .fp { color: #f87171; }
+.dark .fs { color: #2dd4bf; }
+.regla { text-align: center; padding: 0.6rem 1rem; margin: 1rem 0; border: 1px solid var(--fq-borde); border-radius: 0.5rem; background: var(--fq-fondo-fig); font-weight: 600; }
+.dark .regla { background: rgba(255,255,255,0.04); }
+
+/* ---------- Currículo: tablas cruzadas (shortcode curriculo) ---------- */
+.curriculo-nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0.5rem; }
+.curriculo-nav a {
+  padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.875rem; text-decoration: none;
+  border: 1px solid var(--c); color: inherit;
+}
+.curriculo-nav a:hover { background: color-mix(in srgb, var(--c) 18%, transparent); }
+.curriculo-curso { scroll-margin-top: 5rem; margin-top: 3rem; }
+.curriculo-curso > h2 { border-left: 6px solid var(--c); padding-left: 0.6rem; }
+.curriculo-norma { font-size: 0.85rem; color: var(--fq-gris); margin-top: -0.5rem; }
+.curriculo-scroll { overflow-x: auto; }
+.curriculo-tabla { width: 100%; min-width: 46rem; border-collapse: collapse; font-size: 0.85rem; line-height: 1.4; }
+.curriculo-tabla th {
+  text-align: left; padding: 0.5rem; font-weight: 700;
+  background: color-mix(in srgb, var(--c) 22%, transparent);
+}
+.curriculo-tabla td { vertical-align: top; padding: 0.5rem; border-top: 1px solid var(--fq-borde); }
+.curriculo-tabla tr.ce-inicio td { border-top: 2px solid color-mix(in srgb, var(--c) 70%, transparent); }
+.curriculo-tabla td.ce { width: 32%; background: color-mix(in srgb, var(--c) 7%, transparent); }
+.curriculo-tabla td.crit { width: 50%; }
+.curriculo-tabla td.sab { width: 18%; }
+.curriculo-tabla tr:target td.crit, .curriculo-tabla tr:target td.sab { background: color-mix(in srgb, var(--c) 18%, transparent); }
+.ce-num, .crit-num { font-weight: 700; }
+.ce-desc { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.5rem; }
+.ce-desc span {
+  font-size: 0.7rem; padding: 0.05rem 0.35rem; border-radius: 0.25rem;
+  border: 1px solid var(--fq-borde); color: var(--fq-gris);
+}
+.curriculo-tabla td.sab a {
+  display: block; white-space: nowrap; font-family: ui-monospace, monospace; font-size: 0.78rem;
+  text-decoration: none; color: inherit;
+}
+.curriculo-tabla td.sab a:hover { text-decoration: underline; }
+.curriculo-saberes { margin-top: 1rem; }
+.curriculo-saberes summary { cursor: pointer; font-weight: 600; }
+.curriculo-saberes dt { font-family: ui-monospace, monospace; font-size: 0.85rem; scroll-margin-top: 5rem; }
+.curriculo-saberes dt:target { color: var(--c); }
+.curriculo-saberes dd { margin: 0 0 0.75rem 1rem; font-size: 0.9rem; }
+.sab-usos { display: block; font-size: 0.78rem; color: var(--fq-gris); margin-top: 0.15rem; }

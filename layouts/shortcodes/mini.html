@@ -1,0 +1,4 @@
+{{- /* Imagen pequeña dentro de una tabla (p. ej. minigráficas). Uso: {{< mini src="mg-mru-xt.svg" alt="..." ancho="90" >}} */ -}}
+{{- $s := .Get "src" -}}
+{{- $url := $s }}{{ with .Page.Resources.Get $s }}{{ $url = .RelPermalink }}{{ end -}}
+<img class="mini-fig" src="{{ $url }}" alt="{{ .Get "alt" }}" width="{{ .Get "ancho" | default "90" }}" loading="lazy">

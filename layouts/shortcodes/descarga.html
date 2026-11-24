@@ -1,0 +1,8 @@
+{{- /*
+  Botón de descarga de un fichero del propio tema (PDF, .tex...).
+  Uso:  {{< descarga src="apuntes-estados-materia.pdf" >}}Descargar los apuntes en PDF{{< /descarga >}}
+  estilo="secundario": botón con borde (para el segundo botón, p. ej. las soluciones).
+*/ -}}
+{{- $s := .Get "src" -}}
+{{- $url := $s }}{{ with .Page.Resources.Get $s }}{{ $url = .RelPermalink }}{{ end -}}
+<p class="descarga"><a class="descarga-boton{{ with .Get "estilo" }} {{ . }}{{ end }}" href="{{ $url }}" target="_blank" download>{{ partial "icon.html" "file-lines" }} {{ trim .Inner "\n\r " }}</a></p>

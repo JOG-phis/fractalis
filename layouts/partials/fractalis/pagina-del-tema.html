@@ -1,0 +1,6 @@
+{{- /* Devuelve la página de apuntes del mismo curso con el mismo  tema:  que la actividad recibida (o nada). */ -}}
+{{- $res := "" -}}
+{{- with .Params.tema }}{{ $n := int . -}}
+  {{- with $.CurrentSection.Parent }}{{ with .GetPage "apuntes" }}{{ with where .Pages "Params.tema" $n }}{{ $res = index . 0 }}{{ end }}{{ end }}{{ end -}}
+{{- end -}}
+{{- return $res -}}

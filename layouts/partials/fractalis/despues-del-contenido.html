@@ -1,0 +1,31 @@
+{{- /*
+  Pie automático según el front matter (la llama layouts/_default/single.html después del contenido).
+  · Actividad: botones de descarga (pdf y, si hay, soluciones), enlace a los apuntes del tema y licencia.
+  · Tema de apuntes: «Actividades de este tema», botón de descarga repetido y licencia.
+  · Si la página lleva imagen_autor (y opcionalmente imagen_autor_url, imagen_fuente, imagen_url), el crédito de la foto de cabecera.
+*/ -}}
+{{- $p := . -}}
+{{- with $p.Params.pdf -}}
+{{- if $p.Params.clase -}}
+  <div class="descargas">
+    {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.act_descarga")) }}
+    {{- with $p.Params.soluciones }}
+    {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.act_soluciones") "estilo" "secundario") }}
+    {{- end }}
+  </div>
+  {{- with partial "fractalis/pagina-del-tema.html" $p }}
+  <p><em>{{ i18n "fractalis.act_repasa" (dict "Url" .RelPermalink "Tema" $p.Params.tema) | safeHTML }}</em></p>
+  {{- end }}
+  <p class="licencia">{{ i18n "fractalis.licencia_material" | safeHTML }}</p>
+{{- else if $p.Params.tema -}}
+  {{ partial "fractalis/actividades-tema.html" $p }}
+  <hr>
+  {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.tema_descarga")) }}
+  <p class="licencia">{{ i18n "fractalis.licencia_apuntes" | safeHTML }}</p>
+{{- end -}}
+{{- end -}}
+{{- with $p.Params.imagen_autor -}}
+  {{- $autor := . }}{{ with $p.Params.imagen_autor_url }}{{ $autor = printf "<a href=\"%s\">%s</a>" . $autor }}{{ end -}}
+  {{- $fuente := $p.Params.imagen_fuente }}{{ with $p.Params.imagen_url }}{{ $fuente = printf "<a href=\"%s\">%s</a>" . $fuente }}{{ end }}
+  <p class="licencia">{{ i18n "fractalis.imagen_credito" (dict "Autor" $autor "Fuente" $fuente) | safeHTML }}</p>
+{{- end -}}

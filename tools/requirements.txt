@@ -1,0 +1,4 @@
+Pillow>=10.1
+numpy
+matplotlib   # solo para el icono de Mandelbrot
+PyYAML       # revisar_front_matter.py

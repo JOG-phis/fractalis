@@ -5,3 +5,5 @@ heroStyle: "background"
 cardView: false
 showCards: false
 ---
+
+{{< curso-vacio >}}

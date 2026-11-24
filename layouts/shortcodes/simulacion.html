@@ -1,0 +1,12 @@
+{{- /*
+  Enlace a una simulación, app o web externa (como \cajaqr y \appfractalis; en la web, el QR se sustituye por un botón).
+  Uso:  {{< simulacion titulo="Simulación PhET: ..." url="https://..." >}} descripción {{< /simulacion >}}
+  boton: texto del botón (por defecto «Abrir la simulación»).
+*/ -}}
+<div class="caja caja-simulacion">
+  <div class="caja-cuerpo">
+    <p class="caja-titulo">{{ .Get "titulo" }}</p>
+    {{ trim .Inner "\n\r " | .Page.RenderString }}
+    <p><a class="simulacion-boton" href="{{ .Get "url" }}" target="_blank" rel="noopener">{{ .Get "boton" | default (i18n "fractalis.simulacion_abrir") }} ↗</a></p>
+  </div>
+</div>

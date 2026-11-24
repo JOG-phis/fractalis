@@ -1,0 +1,37 @@
+{{- /*
+  Caja de apuntes (equivale a las tcolorbox de los apuntes en LaTeX).
+  Uso:  {{< caja idea "Teoría cinético-molecular (TCM):" >}} texto en Markdown {{< /caja >}}
+  Tipos (cada uno tiene un único significado, igual que en LaTeX):
+    idea     -> ideabox    Definición / Idea clave        (azul)
+    nota     -> notabox    Recuerda / Importante          (dorado)
+    cuidado  -> cuidadobox ¡Cuidado!                      (rojo)
+    tcm      -> tcmbox     Explicación con la TCM         (verde)
+    ejemplo  -> ejemplobox Ejemplo resuelto               (marco azul, título en cabecera)
+    marco    -> marcobox   Recuadro informativo con título (marco gris, título en cabecera)
+  En idea/nota/cuidado/tcm el título va en negrita al inicio del texto, como en el PDF.
+*/ -}}
+{{- $tipo := .Get 0 | default "idea" -}}
+{{- $titulo := .Get 1 -}}
+{{- $porDefecto := dict "idea" (i18n "fractalis.caja_idea") "nota" (i18n "fractalis.caja_nota") "cuidado" (i18n "fractalis.caja_cuidado") "tcm" (i18n "fractalis.caja_tcm") "ejemplo" (i18n "fractalis.caja_ejemplo") "marco" "" -}}
+{{- if eq $tipo "ejemplo" -}}
+  {{- $titulo = cond (ne $titulo "") (printf "%s: %s" (i18n "fractalis.caja_ejemplo") $titulo) (i18n "fractalis.caja_ejemplo") -}}
+{{- else if not $titulo -}}
+  {{- $titulo = index $porDefecto $tipo -}}
+{{- end -}}
+{{- /* "3. Título" no debe convertirse en una lista numerada */ -}}
+{{- $titulo = replaceRE `^(\d+)\. ` "$1\\. " $titulo -}}
+{{- $cuerpo := trim .Inner "\n\r " -}}
+{{- $cabecera := in (slice "ejemplo" "marco") $tipo -}}
+<div class="caja caja-{{ $tipo }}">
+{{- if $cabecera }}
+  {{- with $titulo }}<div class="caja-cabecera">{{ . | $.Page.RenderString (dict "display" "inline") }}</div>{{ end }}
+  <div class="caja-cuerpo">{{ $cuerpo | $.Page.RenderString }}</div>
+{{- else }}
+  {{- /* Título en línea si el texto empieza por un párrafo; si empieza por una lista, va encima */ -}}
+  {{- if findRE `^([-*+]|\d+\.)\s` $cuerpo }}
+  <div class="caja-cuerpo"><p class="caja-titulo">{{ $titulo | $.Page.RenderString (dict "display" "inline") }}</p>{{ $cuerpo | $.Page.RenderString }}</div>
+  {{- else }}
+  <div class="caja-cuerpo">{{ printf "<span class=\"caja-titulo\">%s</span> %s" ($titulo | $.Page.RenderString (dict "display" "inline")) $cuerpo | $.Page.RenderString }}</div>
+  {{- end }}
+{{- end }}
+</div>

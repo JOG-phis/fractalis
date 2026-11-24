@@ -1,0 +1,20 @@
+{{- /*
+  Cabecera automática según el front matter (la llama layouts/_default/single.html antes del contenido).
+  · Actividad (tiene  clase:  y  pdf:): ficha con el tema, el formato y las páginas.
+  · Tema de apuntes (tiene  pdf:  y  tema:, sin clase): entradilla y botón de descarga.
+  Los textos están en i18n/<idioma>.yaml (grupo fractalis).
+*/ -}}
+{{- $p := . -}}
+{{- with $p.Params.pdf -}}
+{{- if $p.Params.clase -}}
+  {{- $tema := partial "fractalis/pagina-del-tema.html" $p -}}
+  <div class="ficha-actividad">
+    {{- with $tema }}<span>{{ .Title }}</span>{{ end -}}
+    {{- with $p.Params.formato }}<span>{{ . }}</span>{{ end -}}
+    {{- with $p.Params.paginas }}<span>{{ i18n "fractalis.ficha_paginas" (int .) }}</span>{{ end -}}
+  </div>
+{{- else if $p.Params.tema -}}
+  <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">{{ i18n "fractalis.tema_entradilla" | markdownify }}</div>
+  {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.tema_descarga")) }}
+{{- end -}}
+{{- end -}}

@@ -1,0 +1,2 @@
+{{- /* Resultado destacado en línea (como \resultado). Uso: {{< resultado >}}\(V_2 = 2\ \text{L}\){{< /resultado >}} */ -}}
+<span class="resultado">{{ trim .Inner "\n\r " | .Page.RenderString (dict "display" "inline") }}</span>

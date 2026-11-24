@@ -6,3 +6,10 @@
   }
 </style>
 {{ end }}
+{{- /* Fractalis: química en KaTeX (\ce{...} y \pu{...}) con la extensión mhchem, en las páginas que cargan KaTeX.
+     Se carga justo después de KaTeX; assets/js/katex-render.js espera a que esté lista antes de dibujar las fórmulas. */ -}}
+{{ if .Page.HasShortcode "katex" }}
+  {{ with resources.Get "lib/katex/mhchem.min.js" | resources.Fingerprint (site.Params.fingerprintAlgorithm | default "sha512") }}
+  <script defer type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" id="katex-mhchem"></script>
+  {{ end }}
+{{ end }}

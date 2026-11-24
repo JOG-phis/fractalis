@@ -1,0 +1,5 @@
+{{- /*
+  Fórmula destacada y centrada (como \formula de LaTeX). El contenido es LaTeX matemático, sin delimitadores.
+  Uso:  {{< formula >}}P_1 \cdot V_1 = P_2 \cdot V_2{{< /formula >}}
+*/ -}}
+<div class="formula">\[ {{ trim .Inner "\n\r " }} \]</div>

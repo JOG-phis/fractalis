@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="79.832" height="51.486" viewBox="0 0 79.832 51.486">
+<defs>
+<clipPath id="clip-0">
+<path clip-rule="nonzero" d="M 0.3125 0 L 79.355469 0 L 79.355469 50.976562 L 0.3125 50.976562 Z M 0.3125 0 "/>
+</clipPath>
+</defs>
+<g clip-path="url(#clip-0)">
+<path fill="none" stroke-width="0.99628" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(72.332764%, 39.666748%, 1.998901%)" stroke-opacity="1" stroke-dasharray="2.98883 1.99255" stroke-miterlimit="10" d="M 2.834927 11.337324 L 73.703404 53.859199 " transform="matrix(0.990115, 0, 0, -0.990115, 1.943095, 57.764322)"/>
+</g>
+<path fill-rule="nonzero" fill="rgb(30.549622%, 66.233826%, 84.62677%)" fill-opacity="1" stroke-width="0.49814" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(5.880737%, 9.020996%, 16.471863%)" stroke-opacity="1" stroke-miterlimit="10" d="M 49.889891 36.851238 C 49.889891 39.35647 47.858089 41.388273 45.356802 41.388273 C 42.85157 41.388273 40.819768 39.35647 40.819768 36.851238 C 40.819768 34.346006 42.85157 32.314204 45.356802 32.314204 C 47.858089 32.314204 49.889891 34.346006 49.889891 36.851238 Z M 49.889891 36.851238 " transform="matrix(0.990115, 0, 0, -0.990115, 1.943095, 57.764322)"/>
+<path fill="none" stroke-width="0.79701" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(5.880737%, 9.020996%, 16.471863%)" stroke-opacity="1" stroke-miterlimit="10" d="M 51.026123 40.252041 L 59.7609 45.495275 " transform="matrix(0.990115, 0, 0, -0.990115, 1.943095, 57.764322)"/>
+<path fill-rule="nonzero" fill="rgb(5.880737%, 9.020996%, 16.471863%)" fill-opacity="1" stroke-width="0.79701" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(5.880737%, 9.020996%, 16.471863%)" stroke-opacity="1" stroke-miterlimit="10" d="M 3.84787 0.00125603 L 1.28757 0.971563 L 2.145504 0.0012823 L 1.284833 -0.973032 Z M 3.84787 0.00125603 " transform="matrix(0.848994, -0.509414, -0.509414, -0.848994, 59.460383, 13.711227)"/>
+</svg>

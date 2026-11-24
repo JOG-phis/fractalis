@@ -4,12 +4,7 @@ description: "Placeholder, contenido pendiente."
 summary: "Placeholder, contenido pendiente."
 date: 2026-07-30
 weight: 80
-tipo: ["apuntes"]
-tags: ["placeholder"]
-draft: false
+draft: true   # oculto hasta que tenga contenido
 ---
 
-{{< alert >}}
-🚧 **En construcción** 🚧  
-Este artículo es un borrador. Estoy terminando de escribir y pulir el contenido. ✏️
-{{< /alert >}}
+{{< hic-sunt-dracones >}}

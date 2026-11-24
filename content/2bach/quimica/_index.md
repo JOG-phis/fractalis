@@ -1,3 +1,5 @@
 ---
 title: "Química"
 ---
+
+{{< curso-vacio >}}

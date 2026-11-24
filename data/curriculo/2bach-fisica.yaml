@@ -1,0 +1,208 @@
+# Currículo oficial de Física (2º Bachillerato) en Andalucía.
+# Fuente: Orden de 30 de mayo de 2023 (Bachillerato, Andalucía), Anexo II. BOJA nº 104, de 2 de junio de 2023.
+# Texto extraído del BOJA; no editar salvo para corregir erratas de la extracción.
+materia: Física
+curso: "2º Bachillerato"
+norma:
+  nombre: Orden de 30 de mayo de 2023 (Bachillerato, Andalucía), Anexo II
+  boja: BOJA nº 104, de 2 de junio de 2023
+  url: "https://www.juntadeandalucia.es/eboja/2023/104/BOJA23-104-00281-9728-01_00284744.pdf"
+competencias:
+- n: 1
+  texto: Utilizar las teorías, principios y leyes que rigen los procesos físicos más importantes, considerando su base experimental y desarrollo matemático en la resolución de problemas, para reconocer la Física como una ciencia relevante implicada en el desarrollo de la tecnología, de la economía, de la sociedad y de la sostenibilidad ambiental.
+  descriptores:
+  - STEM1
+  - STEM2
+  - STEM3
+  - CD5
+  criterios:
+  - n: "1.1"
+    texto: Reconocer la relevancia de la Física en el desarrollo de la ciencia, la tecnología, la economía, la sociedad y la sostenibilidad ambiental, empleando adecuadamente los fundamentos científicos relativos a esos ámbitos.
+    saberes:
+    - FISI.2.A.5
+    - FISI.2.B.6
+    - FISI.2.D.2
+    - FISI.2.D.3
+    - FISI.2.D.4
+    - FISI.2.D.5
+  - n: "1.2"
+    texto: Resolver problemas de manera experimental y analítica, utilizando principios, leyes y teorías de la Física.
+    saberes:
+    - FISI.2.A.1
+    - FISI.2.A.2
+    - FISI.2.B.2
+- n: 2
+  texto: Adoptar los modelos, teorías y leyes aceptados por la Física como base de estudio de los sistemas naturales y predecir su evolución para inferir soluciones generales a los problemas cotidianos relacionados con las aplicaciones prácticas demandadas por la sociedad en el campo tecnológico, industrial y biosanitario.
+  descriptores:
+  - STEM2
+  - STEM5
+  - CPSAA2
+  - CC4
+  criterios:
+  - n: "2.1"
+    texto: Analizar y comprender la evolución de los sistemas naturales, utilizando modelos, leyes y teorías de la Física.
+    saberes:
+    - FISI.2.A.3
+    - FISI.2.B.3
+    - FISI.2.C.3
+  - n: "2.2"
+    texto: Inferir soluciones generales a problemas generales a partir del análisis de situaciones particulares y las variables de que dependen.
+    saberes:
+    - FISI.2.A.1
+    - FISI.2.A.4
+    - FISI.2.D.1
+  - n: "2.3"
+    texto: Conocer aplicaciones prácticas y productos útiles para la sociedad en el campo tecnológico, industrial y biosanitario, analizándolos de acuerdo con los modelos, las leyes y las teorías de la Física.
+    saberes:
+    - FISI.2.B.6
+    - FISI.2.C.5
+    - FISI.2.D.4
+- n: 3
+  texto: Utilizar el lenguaje de la Física con la formulación matemática de sus principios, magnitudes, unidades, ecuaciones, etc., para establecer una comunicación adecuada entre diferentes comunidades científicas y como una herramienta fundamental en la investigación.
+  descriptores:
+  - CCL1
+  - CCL5
+  - STEM1
+  - STEM4
+  - CD3
+  criterios:
+  - n: "3.1"
+    texto: Aplicar los principios, leyes y teorías científicas en el análisis crítico de procesos físicos del entorno, como los observados y los publicados en distintos medios de comunicación, analizando, comprendiendo y explicando las causas que los producen.
+    saberes:
+    - FISI.2.A.4
+    - FISI.2.A.5
+    - FISI.2.C.3
+  - n: "3.2"
+    texto: Utilizar de manera rigurosa las unidades de las variables físicas en diferentes sistemas de unidades, empleando correctamente su notación y sus equivalencias, así como la elaboración e interpretación adecuada de gráficas que relacionan variables físicas, posibilitando una comunicación efectiva con toda la comunidad científica.
+    saberes:
+    - FISI.2.A.3
+    - FISI.2.C.1
+    - FISI.2.C.2
+  - n: "3.3"
+    texto: Expresar de forma adecuada los resultados, argumentando las soluciones obtenidas, en la resolución de los ejercicios y problemas que se plantean, bien sea a través de situaciones reales o ideales.
+    saberes:
+    - FISI.2.A.1
+    - FISI.2.B.4
+    - FISI.2.B.5
+- n: 4
+  texto: Utilizar de forma autónoma, eficiente, crítica y responsable recursos en distintos formatos, plataformas digitales de información y de comunicación en el trabajo individual y colectivo para el fomento de la creatividad mediante la producción y el intercambio de materiales científicos y divulgativos que faciliten acercar la Física a la sociedad como un campo de conocimientos accesible.
+  descriptores:
+  - STEM3
+  - STEM5
+  - CD1
+  - CD3
+  - CPSAA4
+  criterios:
+  - n: "4.1"
+    texto: Consultar, elaborar e intercambiar materiales científicos y divulgativos en distintos formatos con otros miembros del entorno de aprendizaje, utilizando de forma autónoma y eficiente plataformas digitales.
+    saberes:
+    - FISI.2.D.1
+    - FISI.2.D.4
+    - FISI.2.D.5
+  - n: "4.2"
+    texto: Usar de forma crítica, ética y responsable medios de comunicación digitales y tradicionales como modo de enriquecer el aprendizaje y el trabajo individual y colectivo.
+    saberes:
+    - FISI.2.A.5
+    - FISI.2.C.3
+    - FISI.2.D.5
+- n: 5
+  texto: Aplicar técnicas de trabajo e indagación propias de la Física, así como la experimentación, el razonamiento lógico-matemático y la cooperación, en la resolución de problemas y la interpretación de situaciones relacionadas, para poner en valor el papel de la Física en una sociedad basada en valores éticos y sostenibles.
+  descriptores:
+  - STEM1
+  - CPSAA3.2
+  - CC4
+  - CE3
+  criterios:
+  - n: "5.1"
+    texto: Obtener relaciones entre variables físicas, midiendo y tratando los datos experimentales, determinando los errores y utilizando sistemas de representación gráfica.
+    saberes:
+    - FISI.2.B.4
+    - FISI.2.C.2
+    - FISI.2.C.3
+  - n: "5.2"
+    texto: Reproducir en laboratorios, sean reales o virtuales, determinados procesos físicos, modificando las variables que los condicionan, considerando los principios, leyes o teorías implicados, generando el correspondiente informe con formato adecuado e incluyendo argumentaciones, conclusiones, tablas de datos, gráficas y referencias bibliográficas.
+    saberes:
+    - FISI.2.B.5
+    - FISI.2.C.3
+    - FISI.2.C.5
+  - n: "5.3"
+    texto: Valorar la Física, debatiendo de forma fundamentada sobre sus avances y la implicación en la sociedad desde el punto de vista de la ética y de la sostenibilidad.
+    saberes:
+    - FISI.2.A.5
+    - FISI.2.C.4
+    - FISI.2.D.5
+- n: 6
+  texto: Reconocer y analizar el carácter multidisciplinar de la Física, considerando su relevante recorrido histórico y sus contribuciones al avance del conocimiento científico como un proceso en continua evolución e innovación, para establecer unas bases de conocimiento y relación con otras disciplinas científicas.
+  descriptores:
+  - STEM2
+  - STEM5
+  - CPSAA5
+  - CE1
+  criterios:
+  - n: "6.1"
+    texto: Identificar los principales avances científicos relacionados con la Física que han contribuido a la formulación de las leyes y teorías aceptadas actualmente en el conjunto de las disciplinas científicas, como las fases para el entendimiento de las metodologías de la ciencia, su evolución constante y su universalidad.
+    saberes:
+    - FISI.2.C.4
+    - FISI.2.D.1
+    - FISI.2.D.4
+  - n: "6.2"
+    texto: Reconocer el carácter multidisciplinar de la ciencia y las contribuciones de unas disciplinas en otras, estableciendo relaciones entre la Física y la Química, la Biología, la Geología o las Matemáticas.
+    saberes:
+    - FISI.2.B.1
+    - FISI.2.C.5
+    - FISI.2.D.5
+bloques:
+- id: A
+  titulo: Campo gravitatorio
+  saberes:
+  - codigo: FISI.2.A.1
+    texto: Ley de Gravitación Universal. Momento angular de un objeto en un campo gravitatorio. Fuerzas centrales. Determinación, a través del cálculo vectorial, del campo gravitatorio producido por un sistema de masas. Efectos sobre las variables cinemáticas y dinámicas de objetos inmersos en el campo.
+  - codigo: FISI.2.A.2
+    texto: "Momento angular de un objeto en un campo gravitatorio: cálculo, relación con las fuerzas centrales y aplicación de su conservación en el estudio de su movimiento gravitatorio. Movimiento orbital de satélites, planetas y galaxias."
+  - codigo: FISI.2.A.3
+    texto: "Energía mecánica de un objeto sometido a un campo gravitatorio: deducción del tipo de movimiento que posee, cálculo del trabajo o los balances energéticos existentes en desplazamientos entre distintas posiciones, velocidades y tipos de trayectorias. Carácter conservativo del campo gravitatorio. Trabajo en el campo gravitatorio. Velocidad de escape. Potencial gravitatorio creado por una o varias masas. Superficies equipotenciales."
+  - codigo: FISI.2.A.4
+    texto: Leyes que se verifican en el movimiento planetario y extrapolación al movimiento de satélites y cuerpos celestes. Leyes de Kepler.
+  - codigo: FISI.2.A.5
+    texto: "Introducción a la cosmología y la astrofísica como aplicación del campo gravitatorio: implicación de la Física en la evolución de objetos astronómicos, del conocimiento del universo y repercusión de la investigación en estos ámbitos en la industria, la tecnología, la economía y en la sociedad. Historia y composición del universo."
+- id: B
+  titulo: Campo electromagnético
+  saberes:
+  - codigo: FISI.2.B.1
+    texto: "Campos eléctrico y magnético: tratamiento vectorial, determinación de las variables cinemáticas y dinámicas de cargas eléctricas libres en presencia de estos campos. Movimientos de cargas en campos eléctricos y/o magnéticos uniformes. Fenómenos naturales y aplicaciones tecnológicas en los que se aprecian estos efectos."
+  - codigo: FISI.2.B.2
+    texto: "Intensidad del campo eléctrico en distribuciones de cargas discretas, y continuas: cálculo e interpretación del flujo de campo eléctrico. Ley de Coulomb. Teorema de Gauss. Aplicaciones a esfera y lámina cargadas. Jaula de Faraday."
+  - codigo: FISI.2.B.3
+    texto: "Energía de una distribución de cargas estáticas: magnitudes que se modifican y que permanecen constantes con el desplazamiento de cargas libres entre puntos de distinto potencial eléctrico. Carácter conservativo del campo eléctrico. Trabajo en el campo eléctrico. Potencial eléctrico creado por una o varias cargas. Diferencia de potencial y movimiento de cargas. Superficies equipotenciales."
+  - codigo: FISI.2.B.4
+    texto: "Campos magnéticos generados por hilos con corriente eléctrica en distintas configuraciones geométricas: rectilíneos, espiras, solenoides o toros. Intensidad del campo magnético. Fuerza de Lorentz. Fuerza magnética sobre una corriente rectilínea. Momento de fuerzas sobre una espira. Interacción con cargas eléctricas libres presentes en su entorno. Interacción entre conductores rectilíneos y paralelos. Ley de Ampère."
+  - codigo: FISI.2.B.5
+    texto: Líneas de campo eléctrico y magnético producido por distribuciones de carga sencillas, imanes e hilos con corriente eléctrica en distintas configuraciones geométricas.
+  - codigo: FISI.2.B.6
+    texto: "Ley de Faraday-Henry. Ley de Lenz. Generación de corriente alterna. Representación gráfica de la fuerza electromotriz en función del tiempo. Generación de la fuerza electromotriz: funcionamiento de motores, generadores y transformadores a partir de sistemas donde se produce una variación del flujo magnético."
+- id: C
+  titulo: Vibraciones y ondas
+  saberes:
+  - codigo: FISI.2.C.1
+    texto: "Movimiento oscilatorio: variables cinemáticas de un cuerpo oscilante y conservación de energía en estos sistemas. Representación gráfica en función del tiempo."
+  - codigo: FISI.2.C.2
+    texto: "Movimiento ondulatorio: gráficas de oscilación en función de la posición y del tiempo, ecuación de onda que lo describe y relación con el movimiento armónico simple. Velocidad de propagación y de vibración. Diferencia de fases. Distintos tipos de movimientos ondulatorios en la naturaleza."
+  - codigo: FISI.2.C.3
+    texto: "Fenómenos ondulatorios: situaciones y contextos naturales en los que se ponen de manifiesto distintos fenómenos ondulatorios y aplicaciones. Ondas sonoras y sus cualidades. Intensidad sonora. Escala decibélica. Cambios en las propiedades de las ondas en función del desplazamiento del emisor y receptor: el efecto Doppler. Aplicaciones tecnológicas del sonido."
+  - codigo: FISI.2.C.4
+    texto: "Naturaleza de la luz: controversias y debates históricos. La luz como onda electromagnética. Espectro electromagnético. Velocidad de propagación de la luz. Índice de refracción. Fenómenos luminosos: reflexión y refracción de la luz y sus leyes. Estudio cualitativo de la dispersión, interferencia, difracción y polarización."
+  - codigo: FISI.2.C.5
+    texto: "Formación de imágenes en medios y objetos con distinto índice de refracción. Sistemas ópticos: lentes delgadas, espejos planos y curvos y sus aplicaciones. El microscopio y el telescopio. Óptica de la visión. Defectos visuales."
+- id: D
+  titulo: Física relativista, cuántica, nuclear y de partículas
+  saberes:
+  - codigo: FISI.2.D.1
+    texto: "Sistemas de referencia inercial y no inercial. La Relatividad en la Mecánica Clásica. Limitaciones de la Física clásica. Experimento de Michelson-Morley. Principios fundamentales de la Relatividad especial y sus consecuencias: contracción de la longitud, dilatación del tiempo, energía y masa relativistas. Postulados de Einstein."
+  - codigo: FISI.2.D.2
+    texto: "Dualidad onda-corpúsculo y cuantización: hipótesis de De Broglie y efecto fotoeléctrico. Principio de incertidumbre formulado basándose en el tiempo y la energía."
+  - codigo: FISI.2.D.3
+    texto: "Modelo estándar en la Física de partículas. Clasificaciones de las partículas fundamentales. Las interacciones fundamentales como procesos de intercambio de partículas (bosones): gravitatoria, electromagnética, nuclear fuerte y nuclear débil. Aceleradores de partículas. Frontera y desafíos de la Física."
+  - codigo: FISI.2.D.4
+    texto: El efecto fotoeléctrico como sistema de transformación energética y de producción de diferencias de potencial eléctrico para su aplicación tecnológica.
+  - codigo: FISI.2.D.5
+    texto: Núcleos atómicos y estabilidad de isótopos. Tipos de radiaciones y desintegración radioactiva. Radiactividad natural y otros procesos nucleares. Leyes de Soddy y Fajans. Fuerzas nucleares y energía de enlace. Reacciones nucleares. Leyes de la desintegración radioactiva. Actividad en una muestra radiactiva. Aplicaciones en los campos de la ingeniería, la tecnología y la salud. Datación de fósiles y medicina nuclear.

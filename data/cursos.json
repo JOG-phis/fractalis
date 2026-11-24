@@ -1,0 +1,8 @@
+{
+  "2eso": {"id": "2eso", "orden": 1, "nombre": "2º ESO", "nombre_en": "2 ESO", "ruta": "/2eso", "carpeta": "content/2eso", "color": "#38bdf8", "fractal": "alfombra", "nombre_fractal": "Alfombra de Sierpinski"},
+  "3eso": {"id": "3eso", "orden": 2, "nombre": "3º ESO", "nombre_en": "3 ESO", "ruta": "/3eso", "carpeta": "content/3eso", "color": "#2dd4bf", "fractal": "koch", "nombre_fractal": "Copo de nieve de Koch"},
+  "4eso": {"id": "4eso", "orden": 3, "nombre": "4º ESO", "nombre_en": "4 ESO", "ruta": "/4eso", "carpeta": "content/4eso", "color": "#4ade80", "fractal": "arbol", "nombre_fractal": "Árbol fractal"},
+  "1bach": {"id": "1bach", "orden": 4, "nombre": "1º Bachillerato", "nombre_en": "1 Bachillerato", "ruta": "/1bach", "carpeta": "content/1bach", "color": "#a78bfa", "fractal": "mandelbrot", "nombre_fractal": "Conjunto de Mandelbrot"},
+  "2bach-quimica": {"id": "2bach-quimica", "orden": 5, "nombre": "Química", "nombre_en": "Chemistry", "ruta": "/2bach/quimica", "carpeta": "content/2bach/quimica", "color": "#fbbf24", "fractal": "dendrimero", "nombre_fractal": "Dendrímero", "lineas": ["2º Bachillerato", "Apuntes y actividades"]},
+  "2bach-fisica": {"id": "2bach-fisica", "orden": 6, "nombre": "Física", "nombre_en": "Physics", "ruta": "/2bach/fisica", "carpeta": "content/2bach/fisica", "color": "#f87171", "fractal": "dragon", "nombre_fractal": "Curva del dragón", "lineas": ["2º Bachillerato", "Apuntes y actividades"]}
+}
