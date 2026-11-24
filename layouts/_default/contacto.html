@@ -1,0 +1,142 @@
+{{- /*
+  Página de contacto (content/contacto/). Formulario propio que envía a Web3Forms
+  (clave en params.toml → [fractalis] contactoClave), que reenvía el mensaje al correo de Juan.
+  Se puede enlazar ya rellenado:  /contacto/?motivo=guia|errata|sugerencia|otro&recurso=<ruta de la página>
+  Sin clave configurada, el formulario no se muestra.
+*/ -}}
+{{ define "main" }}
+{{- $clave := site.Params.fractalis.contactoClave -}}
+<article class="max-w-prose mx-auto">
+  <header class="mt-5">
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  </header>
+  <section class="prose dark:prose-invert mt-4">{{ .Content }}</section>
+
+  {{- with $clave }}
+  <form id="form-contacto" class="form-contacto" action="https://api.web3forms.com/submit" method="POST" novalidate>
+    <input type="hidden" name="access_key" value="{{ . }}">
+    <input type="hidden" name="subject" value="[Fractalis] {{ i18n "fractalis.contacto_asunto" }}">
+    <input type="hidden" name="from_name" value="Fractalis">
+    <input type="hidden" name="idioma" value="{{ $.Lang }}">
+    {{- /* Trampa para bots: un humano no la ve ni la marca */}}
+    <input type="checkbox" name="botcheck" class="campo-trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="campo">
+      <label for="c-nombre">{{ i18n "fractalis.contacto_nombre" }}</label>
+      <input id="c-nombre" name="nombre" type="text" required autocomplete="name">
+      <p class="campo-error" hidden>{{ i18n "fractalis.contacto_obligatorio" }}</p>
+    </div>
+    <div class="campo">
+      <label for="c-correo">{{ i18n "fractalis.contacto_correo" }}</label>
+      <input id="c-correo" name="email" type="email" required autocomplete="email">
+      <p class="campo-error" hidden>{{ i18n "fractalis.contacto_correo_error" }}</p>
+    </div>
+    <div class="campos-fila">
+      <div class="campo">
+        <label for="c-perfil">{{ i18n "fractalis.contacto_perfil" }}</label>
+        <select id="c-perfil" name="perfil" required>
+          <option value="">—</option>
+          {{- range slice "docente" "estudiante" "familia" "otro" }}
+          <option value="{{ . }}">{{ i18n (printf "fractalis.contacto_perfil_%s" .) }}</option>
+          {{- end }}
+        </select>
+        <p class="campo-error" hidden>{{ i18n "fractalis.contacto_obligatorio" }}</p>
+      </div>
+      <div class="campo">
+        <label for="c-motivo">{{ i18n "fractalis.contacto_motivo" }}</label>
+        <select id="c-motivo" name="motivo" required>
+          <option value="">—</option>
+          {{- range slice "guia" "errata" "sugerencia" "otro" }}
+          <option value="{{ . }}">{{ i18n (printf "fractalis.contacto_motivo_%s" .) }}</option>
+          {{- end }}
+        </select>
+        <p class="campo-error" hidden>{{ i18n "fractalis.contacto_obligatorio" }}</p>
+      </div>
+    </div>
+    <p id="c-aviso-guia" class="contacto-aviso" hidden>{{ i18n "fractalis.contacto_aviso_guia" }}</p>
+    <div class="campo">
+      <label for="c-recurso">{{ i18n "fractalis.contacto_recurso" }} <span class="campo-opcional">({{ i18n "fractalis.contacto_opcional" }})</span></label>
+      <input id="c-recurso" name="recurso" type="text" placeholder="{{ i18n "fractalis.contacto_recurso_ejemplo" }}">
+    </div>
+    <div class="campo">
+      <label for="c-mensaje">{{ i18n "fractalis.contacto_mensaje" }}</label>
+      <textarea id="c-mensaje" name="mensaje" rows="6" required></textarea>
+      <p class="campo-nota">{{ i18n "fractalis.contacto_sin_datos" }}</p>
+      <p class="campo-error" hidden>{{ i18n "fractalis.contacto_obligatorio" }}</p>
+    </div>
+    <div class="campo campo-casilla">
+      <input id="c-privacidad" name="privacidad" type="checkbox" value="aceptada" required>
+      <label for="c-privacidad">{{ i18n "fractalis.contacto_privacidad" }}</label>
+      <p class="campo-error" hidden>{{ i18n "fractalis.contacto_privacidad_error" }}</p>
+    </div>
+    <p class="campo-nota">{{ i18n "fractalis.contacto_privacidad_info" }}</p>
+
+    <p class="descarga"><button type="submit" class="descarga-boton">{{ partial "icon.html" "envelope" }} <span>{{ i18n "fractalis.contacto_enviar" }}</span></button></p>
+    <p id="c-estado" class="contacto-estado" role="status" aria-live="polite"></p>
+  </form>
+
+  <script>
+  (function () {
+    const form = document.getElementById("form-contacto");
+    const textos = {
+      enviando: {{ i18n "fractalis.contacto_enviando" }},
+      ok: {{ i18n "fractalis.contacto_ok" }},
+      error: {{ i18n "fractalis.contacto_error" }},
+      enviar: {{ i18n "fractalis.contacto_enviar" }}
+    };
+    // Rellenar desde la URL: ?motivo=guia&recurso=/fractalis/3eso/...
+    const q = new URLSearchParams(location.search);
+    const motivo = form.motivo, perfil = form.perfil, aviso = document.getElementById("c-aviso-guia");
+    if (q.get("motivo") && [...motivo.options].some(o => o.value === q.get("motivo"))) motivo.value = q.get("motivo");
+    if (q.get("recurso")) form.recurso.value = location.origin + q.get("recurso");
+    const avisar = () => { aviso.hidden = !(motivo.value === "guia" && perfil.value === "estudiante"); };
+    motivo.addEventListener("change", avisar); perfil.addEventListener("change", avisar);
+
+    const campos = ["nombre", "email", "perfil", "motivo", "mensaje", "privacidad"];
+    const valido = (el) => el.type === "checkbox" ? el.checked : el.checkValidity() && el.value.trim() !== "";
+    const marcar = (el) => {
+      const ok = valido(el);
+      const err = el.closest(".campo").querySelector(".campo-error");
+      if (err) err.hidden = ok;
+      el.setAttribute("aria-invalid", ok ? "false" : "true");
+      return ok;
+    };
+    // Los errores solo se quitan mientras se escribe o se elige (nunca al salir del campo:
+    // si el aviso desapareciera en ese momento, todo se movería y el clic siguiente caería fuera).
+    campos.forEach(n => {
+      const el = form[n];
+      el.addEventListener(el.tagName === "SELECT" || el.type === "checkbox" ? "change" : "input", () => {
+        if (el.getAttribute("aria-invalid") === "true") marcar(el);
+      });
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const malos = campos.map(n => form[n]).filter(el => !marcar(el));
+      if (malos.length) { malos[0].focus(); return; }
+      const estado = document.getElementById("c-estado"), boton = form.querySelector("button[type=submit]");
+      const datos = Object.fromEntries(new FormData(form));
+      datos.subject = datos.subject + " · " + motivo.options[motivo.selectedIndex].text;
+      datos.motivo = motivo.options[motivo.selectedIndex].text;
+      datos.perfil = perfil.options[perfil.selectedIndex].text;
+      boton.disabled = true; boton.querySelector("span").textContent = textos.enviando;
+      estado.className = "contacto-estado"; estado.textContent = "";
+      try {
+        const r = await fetch(form.action, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(datos) });
+        const j = await r.json();
+        if (!r.ok || !j.success) throw new Error(j.message || r.status);
+        form.querySelectorAll(".campo, .campos-fila, .campo-nota, #c-aviso-guia, .descarga").forEach(el => el.hidden = true);
+        estado.className = "contacto-estado ok"; estado.textContent = textos.ok;
+        estado.setAttribute("tabindex", "-1"); estado.focus();
+      } catch (err) {
+        estado.className = "contacto-estado error"; estado.textContent = textos.error;
+        boton.disabled = false; boton.querySelector("span").textContent = textos.enviar;
+      }
+    });
+  })();
+  </script>
+  {{- else }}
+  {{- warnf "[Fractalis] contacto: falta [fractalis] contactoClave en params.toml" }}
+  {{- end }}
+</article>
+{{ end }}

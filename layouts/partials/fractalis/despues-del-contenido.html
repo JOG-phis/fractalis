@@ -1,28 +1,49 @@
 {{- /*
   Pie automático según el front matter (la llama layouts/_default/single.html después del contenido).
-  · Actividad: botones de descarga (pdf y, si hay, soluciones), enlace a los apuntes del tema y licencia.
+  · Actividad o proyecto: botones de descarga (pdf y, si hay, soluciones), botón «Abrir» si hay  enlace:
+    (texto propio con  boton:), aviso de la guía del profesor si  guia_profesor: bajo-peticion,
+    enlace a los apuntes del tema, licencia y «¿Has visto una errata?» (al formulario de contacto).
   · Tema de apuntes: «Actividades de este tema», botón de descarga repetido y licencia.
   · Si la página lleva imagen_autor (y opcionalmente imagen_autor_url, imagen_fuente, imagen_url), el crédito de la foto de cabecera.
 */ -}}
 {{- $p := . -}}
-{{- with $p.Params.pdf -}}
-{{- if $p.Params.clase -}}
+{{- $proyecto := eq $p.Params.clase "proyectos" -}}
+{{- if or (and $p.Params.pdf $p.Params.clase) $proyecto -}}
+  {{- if or $p.Params.pdf $p.Params.enlace }}
   <div class="descargas">
+    {{- with $p.Params.pdf }}
     {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.act_descarga")) }}
+    {{- end }}
     {{- with $p.Params.soluciones }}
     {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.act_soluciones") "estilo" "secundario") }}
     {{- end }}
+    {{- with $p.Params.enlace }}
+    <p class="descarga"><a class="descarga-boton{{ if $p.Params.pdf }} secundario{{ end }}" href="{{ . }}" target="_blank" rel="noopener">{{ partial "fractalis/icono.html" "abrir" }} {{ $p.Params.boton | default (i18n "fractalis.proy_abrir") }}</a></p>
+    {{- end }}
   </div>
+  {{- end }}
+  {{- /* La guía del profesor (breakouts) no se publica: se pide por el formulario de contacto. Sale solo cuando exista la página /contacto/. */ -}}
+  {{- if eq $p.Params.guia_profesor "bajo-peticion" }}{{ with $p.Site.GetPage "/contacto" }}
+  <div class="guia-peticion">
+    <p>{{ i18n "fractalis.act_guia_peticion" }}</p>
+    <p class="descarga"><a class="descarga-boton secundario" href="{{ .RelPermalink }}?motivo=guia&amp;recurso={{ $p.RelPermalink | urlquery }}">{{ partial "icon.html" "envelope" }} {{ i18n "fractalis.act_guia_boton" }}</a></p>
+  </div>
+  {{- end }}{{ end }}
   {{- with partial "fractalis/pagina-del-tema.html" $p }}
   <p><em>{{ i18n "fractalis.act_repasa" (dict "Url" .RelPermalink "Tema" $p.Params.tema) | safeHTML }}</em></p>
   {{- end }}
   <p class="licencia">{{ i18n "fractalis.licencia_material" | safeHTML }}</p>
-{{- else if $p.Params.tema -}}
+  {{- with $p.Site.GetPage "/contacto" }}
+  <p class="errata"><a href="{{ .RelPermalink }}?motivo=errata&amp;recurso={{ $p.RelPermalink | urlquery }}">{{ i18n "fractalis.errata_enlace" }}</a></p>
+  {{- end }}
+{{- else if and $p.Params.pdf $p.Params.tema -}}
   {{ partial "fractalis/actividades-tema.html" $p }}
   <hr>
-  {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.tema_descarga")) }}
+  {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" $p.Params.pdf "texto" (i18n "fractalis.tema_descarga")) }}
   <p class="licencia">{{ i18n "fractalis.licencia_apuntes" | safeHTML }}</p>
-{{- end -}}
+  {{- with $p.Site.GetPage "/contacto" }}
+  <p class="errata"><a href="{{ .RelPermalink }}?motivo=errata&amp;recurso={{ $p.RelPermalink | urlquery }}">{{ i18n "fractalis.errata_enlace" }}</a></p>
+  {{- end }}
 {{- end -}}
 {{- with $p.Params.imagen_autor -}}
   {{- $autor := . }}{{ with $p.Params.imagen_autor_url }}{{ $autor = printf "<a href=\"%s\">%s</a>" . $autor }}{{ end -}}

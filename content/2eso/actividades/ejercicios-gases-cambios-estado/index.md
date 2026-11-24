@@ -7,6 +7,8 @@ weight: 210
 clase: "ejercicios"
 tema: 2
 materia: ["quimica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["leyes de los gases"]
 formato: "Hoja de ejercicios"
 paginas: 4

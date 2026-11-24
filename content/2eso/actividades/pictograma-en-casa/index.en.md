@@ -7,6 +7,8 @@ weight: 160
 clase: "tareas"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["pictograms"]
 formato: "Homework"
 paginas: 1

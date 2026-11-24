@@ -7,6 +7,8 @@ weight: 140
 clase: "tareas"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 3
+agrupamiento: "parejas"
 tags: ["factores de conversión", "trabajo en equipo"]
 formato: "Actividad"
 paginas: 7

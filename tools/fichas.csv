@@ -1,0 +1,31 @@
+﻿curso;carpeta;titulo;tipo;tema;paginas;sesiones;agrupamiento;materiales;materiales_en;herramienta;metodologia;guia_profesor
+2eso;breakout-base-luna;Breakout: Misión Base Luna;breakouts;6;48;2;equipos;El kit impreso y recortado, en sobres para cada equipo | Candados o una caja con candado;The printed and cut-out kit, in envelopes for each team | Padlocks or a box with a padlock;;gamificacion;bajo-peticion
+2eso;breakout-caja-elementos;Breakout: La caja de los elementos;breakouts;4;48;2;equipos;El kit impreso y recortado, en sobres para cada equipo | Candados o una caja con candado;The printed and cut-out kit, in envelopes for each team | Padlocks or a box with a padlock;;gamificacion;bajo-peticion
+2eso;breakout-operacion-dron;Breakout: Operación Dron;breakouts;5;48;2;equipos;El kit impreso y recortado, en sobres para cada equipo | Candados o una caja con candado;The printed and cut-out kit, in envelopes for each team | Padlocks or a box with a padlock;;gamificacion;bajo-peticion
+2eso;breakout-sabotaje-laboratorio;Breakout: Sabotaje en el laboratorio;breakouts;3;48;2;equipos;El kit impreso y recortado, en sobres para cada equipo | Candados o una caja con candado;The printed and cut-out kit, in envelopes for each team | Padlocks or a box with a padlock;;gamificacion;bajo-peticion
+2eso;cambio-unidades-escalera;Cambiamos unidades con la escalera;ejercicios;1;2;1;parejas;;;;;
+2eso;ejercicios-cambios-quimicos;Ejercicios: los cambios químicos;ejercicios;4;4;2;parejas;;;;;
+2eso;ejercicios-disoluciones;Ejercicios: disoluciones y concentración;ejercicios;3;2;1;parejas;;;;;
+2eso;ejercicios-fuerzas;Ejercicios: las fuerzas;ejercicios;6;4;2;parejas;;;;;
+2eso;ejercicios-gases-cambios-estado;Ejercicios: leyes de los gases y cambios de estado;ejercicios;2;4;2;parejas;;;;;
+2eso;ejercicios-movimiento;Ejercicios: el movimiento;ejercicios;5;3;2;parejas;;;;;
+2eso;ejercicios-separacion-mezclas;Ejercicios: las mezclas y su separación;ejercicios;3;4;2;parejas;;;;;
+2eso;laboratorio-densidades;Laboratorio virtual de densidades;simulaciones;1;5;2;parejas;Ordenadores o tablets con conexión a internet;Computers or tablets with internet access;;;
+2eso;lectura-agua-anomala;Lectura: el comportamiento anómalo del agua;lecturas;1;2;1;individual;;;;;
+2eso;lectura-eureka;Lectura: ¡Eureka! La corona del rey;lecturas;1;2;1;individual;;;;;
+2eso;notacion-cientifica;Notación científica;ejercicios;1;1;1;parejas;;;;;
+2eso;notacion-cientifica-basica;Notación científica: contamos ceros;ejercicios;1;2;1;parejas;;;;;
+2eso;phet-gases;Simulación PhET: las leyes de los gases;simulaciones;2;4;2;parejas;Ordenadores o tablets con conexión a internet;Computers or tablets with internet access;phet;;
+2eso;pictograma-en-casa;Tarea para casa: un pictograma de peligro en casa;tareas;1;1;1;individual;;;;;
+2eso;pictogramas-peligro;Pictogramas de peligro;tareas;1;1;1;individual;;;;;
+2eso;radar-tramo;El radar de tramo;tareas;5;4;1;individual;;;;;
+2eso;tension-superficial;Práctica de laboratorio: la tensión superficial del agua;practicas;1;;1;parejas;Monedas (al menos dos distintas y dos iguales) | Agua y cuentagotas | Papel de cocina | Jabón (mejor lavavajillas);Coins (at least two different ones and two identical ones) | Water and a dropper | Kitchen paper | Soap (dish soap works best);;;
+2eso;viajamos-nueva-york;¿Viajamos a Nueva York?;tareas;1;7;3;parejas;;;;;
+3eso;breakout-enigma-mendeleiev;Breakout: El enigma de Mendeléiev;breakouts;3;30;2;equipos;El kit impreso y recortado, en sobres para cada equipo | Candados o una caja con candado;The printed and cut-out kit, in envelopes for each team | Padlocks or a box with a padlock;;gamificacion;bajo-peticion
+3eso;ejercicios-atomo;Ejercicios: el átomo, isótopos e iones;ejercicios;1;2;1;parejas;;;;;
+3eso;ejercicios-elementos-compuestos;Ejercicios: elementos y compuestos;ejercicios;2;4;2;parejas;;;;;
+3eso;ejercicios-fuerzas;Ejercicios: las fuerzas;ejercicios;6;4;2;parejas;;;;;
+3eso;ejercicios-movimiento;Ejercicios: el movimiento;ejercicios;5;4;2;parejas;;;;;
+3eso;ejercicios-reacciones;Ejercicios: las reacciones químicas;ejercicios;4;8;4;parejas;;;;;
+3eso;lectura-millikan;Lectura: Millikan y la carga del electrón;lecturas;1;2;1;individual;;;;;
+3eso;phet-isotopos;Simulación PhET: isótopos y masa atómica;simulaciones;1;3;2;parejas;Ordenadores o tablets con conexión a internet;Computers or tablets with internet access;phet;;

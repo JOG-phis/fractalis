@@ -7,6 +7,8 @@ weight: 110
 clase: "ejercicios"
 tema: 1
 materia: ["quimica"]
+sesiones: 1
+agrupamiento: "parejas"
 tags: ["isótopos", "masa atómica", "iones"]
 formato: "Hoja de ejercicios"
 paginas: 2

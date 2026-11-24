@@ -48,3 +48,10 @@
   name = "About me"
   pageRef = "/sobre-mi"
   weight = 90
+
+# -- Footer Menu --
+
+[[footer]]
+  name = "Contact"
+  pageRef = "/contacto"
+  weight = 10

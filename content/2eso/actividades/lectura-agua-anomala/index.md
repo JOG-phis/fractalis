@@ -7,6 +7,8 @@ weight: 180
 clase: "lecturas"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["densidad", "agua"]
 formato: "Lectura"
 paginas: 2

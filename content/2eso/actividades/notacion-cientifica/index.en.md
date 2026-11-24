@@ -7,6 +7,8 @@ weight: 130
 clase: "ejercicios"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "parejas"
 tags: ["scientific notation"]
 formato: "Worksheet"
 paginas: 1

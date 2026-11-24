@@ -8,6 +8,10 @@ clase: "simulaciones"
 tema: 1
 materia: ["quimica"]
 herramienta: ["phet"]
+sesiones: 2
+agrupamiento: "parejas"
+materiales:
+  - "Ordenadores o tablets con conexión a internet"
 tags: ["isótopos", "masa atómica"]
 formato: "Laboratorio virtual"
 paginas: 3

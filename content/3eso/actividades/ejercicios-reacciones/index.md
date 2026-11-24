@@ -7,6 +7,8 @@ weight: 410
 clase: "ejercicios"
 tema: 4
 materia: ["quimica"]
+sesiones: 4
+agrupamiento: "parejas"
 tags: ["ajuste de ecuaciones", "el mol", "estequiometría"]
 formato: "Hoja de ejercicios"
 paginas: 8

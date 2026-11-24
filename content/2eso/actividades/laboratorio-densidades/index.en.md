@@ -7,6 +7,10 @@ weight: 190
 clase: "simulaciones"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 2
+agrupamiento: "parejas"
+materiales:
+  - "Computers or tablets with internet access"
 tags: ["density"]
 formato: "Virtual lab"
 paginas: 5

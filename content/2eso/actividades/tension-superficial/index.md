@@ -8,7 +8,15 @@ showHero: true
 heroStyle: "background"
 clase: "practicas"
 tema: 1
+formato: "Práctica de laboratorio"
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "parejas"
+materiales:
+  - "Monedas (al menos dos distintas y dos iguales)"
+  - "Agua y cuentagotas"
+  - "Papel de cocina"
+  - "Jabón (mejor lavavajillas)"
 tags: ["tensión superficial", "método científico", "cohesión molecular", "experimento casero"]
 draft: false
 showTableOfContents: true

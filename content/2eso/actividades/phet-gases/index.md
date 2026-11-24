@@ -8,6 +8,10 @@ clase: "simulaciones"
 tema: 2
 materia: ["quimica"]
 herramienta: ["phet"]
+sesiones: 2
+agrupamiento: "parejas"
+materiales:
+  - "Ordenadores o tablets con conexión a internet"
 tags: ["leyes de los gases"]
 formato: "Laboratorio virtual"
 paginas: 4

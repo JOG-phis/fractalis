@@ -198,3 +198,10 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [advertisement]
   # adsense = ""
+
+# -- Fractalis --
+[fractalis]
+  # Clave de Web3Forms para el formulario de contacto (layouts/_default/contacto.html).
+  # Es pública por diseño (va en el HTML): solo permite enviar mensajes al correo de Juan.
+  # Se gestiona en web3forms.com (formulario «Contacto Fractalis»).
+  contactoClave = "8f208e89-7db1-42f4-a29e-9daacea0d6f9"

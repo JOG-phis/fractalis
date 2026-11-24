@@ -1,20 +1,38 @@
 {{- /*
   Cabecera automática según el front matter (la llama layouts/_default/single.html antes del contenido).
-  · Actividad (tiene  clase:  y  pdf:): ficha con el tema, el formato y las páginas.
+  · Actividad o proyecto (tiene  clase:, con o sin pdf): la ficha. El pie automático (despues-del-contenido) solo sale si hay pdf o es un proyecto.
+      Fila 1: tema (o niveles, en los proyectos), formato y páginas.
+      Fila 2: sesiones, agrupamiento y, si la página tiene el bloque {{< en-el-aula >}}, un enlace a él.
+      Debajo: materiales.
+    Materia, herramienta y metodología no se repiten aquí: salen como etiquetas de Blowfish (showTaxonomies).
   · Tema de apuntes (tiene  pdf:  y  tema:, sin clase): entradilla y botón de descarga.
-  Los textos están en i18n/<idioma>.yaml (grupo fractalis).
+  Los textos están en i18n/<idioma>.yaml (grupo fractalis). Cada fila o dato solo sale si está en el front matter.
 */ -}}
 {{- $p := . -}}
-{{- with $p.Params.pdf -}}
+{{- $proyecto := eq $p.Params.clase "proyectos" -}}
 {{- if $p.Params.clase -}}
   {{- $tema := partial "fractalis/pagina-del-tema.html" $p -}}
   <div class="ficha-actividad">
     {{- with $tema }}<span>{{ .Title }}</span>{{ end -}}
+    {{- if $proyecto }}{{ range $p.Params.cursos }}{{ with index hugo.Data.cursos . }}<span>{{ cond (eq $p.Lang "en") .nombre_en .nombre }}</span>{{ end }}{{ end }}{{ end -}}
     {{- with $p.Params.formato }}<span>{{ . }}</span>{{ end -}}
-    {{- with $p.Params.paginas }}<span>{{ i18n "fractalis.ficha_paginas" (int .) }}</span>{{ end -}}
+    {{- if $p.Params.pdf }}{{ with $p.Params.paginas }}<span>{{ i18n "fractalis.ficha_paginas" (int .) }}</span>{{ end }}{{ end -}}
   </div>
-{{- else if $p.Params.tema -}}
+  {{- $aula := findRE `\{\{[<%]\s*en-el-aula` $p.RawContent 1 -}}
+  {{- if or $p.Params.sesiones $p.Params.agrupamiento $aula }}
+  <div class="ficha-detalle">
+    {{- with $p.Params.sesiones }}<span>{{ partial "fractalis/icono.html" "reloj" }}{{ i18n "fractalis.ficha_sesiones" (int .) }}</span>{{ end -}}
+    {{- with $p.Params.agrupamiento }}<span>{{ partial "fractalis/icono.html" "grupo" }}{{ i18n (printf "fractalis.agrup_%s" .) | default . }}</span>{{ end -}}
+    {{- if $aula }}<a href="#en-el-aula">{{ partial "fractalis/icono.html" "aula" }}{{ i18n "fractalis.aula_enlace" }}</a>{{ end -}}
+  </div>
+  {{- end }}
+  {{- with $p.Params.materiales }}
+  <div class="ficha-materiales">
+    <span class="ficha-materiales-titulo">{{ partial "fractalis/icono.html" "materiales" }}{{ i18n "fractalis.ficha_materiales" }}</span>
+    <ul>{{ range . }}<li>{{ . | $p.RenderString (dict "display" "inline") }}</li>{{ end }}</ul>
+  </div>
+  {{- end }}
+{{- else if and $p.Params.pdf $p.Params.tema -}}
   <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">{{ i18n "fractalis.tema_entradilla" | markdownify }}</div>
-  {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" . "texto" (i18n "fractalis.tema_descarga")) }}
-{{- end -}}
+  {{ partial "fractalis/boton-descarga.html" (dict "pagina" $p "src" $p.Params.pdf "texto" (i18n "fractalis.tema_descarga")) }}
 {{- end -}}

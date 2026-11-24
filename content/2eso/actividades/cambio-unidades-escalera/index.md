@@ -7,6 +7,8 @@ weight: 110
 clase: "ejercicios"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "parejas"
 tags: ["unidades"]
 formato: "Ficha de actividades"
 paginas: 2

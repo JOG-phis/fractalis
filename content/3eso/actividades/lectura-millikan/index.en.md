@@ -7,6 +7,8 @@ weight: 120
 clase: "lecturas"
 tema: 1
 materia: ["quimica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["electron", "history of science", "scientific ethics"]
 formato: "Reading"
 paginas: 2

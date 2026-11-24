@@ -8,6 +8,10 @@ clase: "simulaciones"
 tema: 2
 materia: ["quimica"]
 herramienta: ["phet"]
+sesiones: 2
+agrupamiento: "parejas"
+materiales:
+  - "Computers or tablets with internet access"
 tags: ["gas laws"]
 formato: "Virtual lab"
 paginas: 4

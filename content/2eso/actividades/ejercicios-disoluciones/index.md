@@ -7,6 +7,8 @@ weight: 310
 clase: "ejercicios"
 tema: 3
 materia: ["quimica"]
+sesiones: 1
+agrupamiento: "parejas"
 tags: ["disoluciones"]
 formato: "Hoja de ejercicios"
 paginas: 2

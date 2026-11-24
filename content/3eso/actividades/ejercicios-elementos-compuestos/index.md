@@ -7,6 +7,8 @@ weight: 210
 clase: "ejercicios"
 tema: 2
 materia: ["quimica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["tabla periódica", "regla del octeto", "enlace químico", "masa molecular"]
 formato: "Hoja de ejercicios"
 paginas: 4

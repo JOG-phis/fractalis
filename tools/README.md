@@ -19,6 +19,7 @@ Scripts para preparar el contenido de la web. No forman parte de la web (Hugo ig
 | `imagen_seccion.py` | Imágenes de las tarjetas «Apuntes» y «Actividades» de un curso: un abanico con contenido real sobre el fractal del curso. | `content/<curso>/apuntes/feature.png` y `.../actividades/feature.png` |
 | `vista_previa.py` | Imagen que sale al compartir el enlace de un curso (WhatsApp, Classroom…). | `content/<curso>/feature.png` |
 | `revisar_front_matter.py` | Revisa el front matter de apuntes, actividades y proyectos: que lleven `materia`, `tema` y `clase`, que usen solo términos de `data/vocabulario.yaml` y que la versión inglesa coincida con la española. Con `--paginas` crea las páginas de las taxonomías que falten. | `content/materia/`, `content/herramienta/`, `content/metodologia/` (solo con `--paginas`) |
+| `fichas.py` | Rellena sesiones, agrupamiento, materiales, herramienta, metodología y guía del profesor de todas las actividades desde una tabla (`tools/fichas.csv`, se abre en Excel). `generar` crea la tabla; `aplicar` la escribe en `index.md` e `index.en.md`. | front matter de las actividades |
 | `data/vocabulario.yaml` | Términos permitidos en `materia`, `herramienta`, `metodologia`, `clase` y `agrupamiento`, con su nombre en español e inglés. | — |
 | `data/cursos.json` | Datos de cada curso: nombre, carpeta, color, fractal. Lo usan los tres scripts anteriores. | — |
 | `fractales.py`, `comun.py` | Código compartido: geometría de los fractales y utilidades. | — |
@@ -107,3 +108,11 @@ Las imágenes actuales de 2º ESO se hicieron a mano con versiones previas de es
    ```
    Si un término se usa por primera vez, crea su página (con el nombre bonito, p. ej. «Computación y Robótica»). Si sale «Todo en orden», listo.
 3. Para un término nuevo, añádelo antes a `data/vocabulario.yaml`.
+
+### Rellenar las fichas de muchas actividades a la vez
+
+1. `python tools/fichas.py generar` crea `tools/fichas.csv` (si ya existe, no la pisa).
+2. Ábrela con Excel, rellena `sesiones`, `agrupamiento` y `materiales` (separados por `|`) y guarda.
+3. `python tools/fichas.py aplicar` y después `python tools/revisar_front_matter.py`.
+
+Una celda vacía no cambia nada; un guion (`-`) borra ese campo. `materiales_en` es la traducción inglesa (la hace Claude si se lo pides).

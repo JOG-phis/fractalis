@@ -7,6 +7,8 @@ weight: 520
 clase: "tareas"
 tema: 5
 materia: ["fisica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["speed", "graphs"]
 formato: "Activity"
 paginas: 4

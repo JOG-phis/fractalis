@@ -1,0 +1,19 @@
+{{- /*
+  Bloque «En el aula»: cómo se usó el recurso en clase. Va al final del contenido de una actividad o proyecto.
+  Uso:
+    {{< en-el-aula grupo="3º ESO" curso="2025-26" >}}
+    **Cómo lo planteé:** ...
+
+    **Qué funcionó:** ...
+
+    **Qué cambiaría:** ...
+    {{< /en-el-aula >}}
+  grupo y curso son opcionales. Nunca nombres de alumnos ni fotos con caras.
+  La ficha de arriba enlaza a este bloque sola («Cómo funcionó en clase»).
+*/ -}}
+<section class="en-el-aula" id="en-el-aula" aria-labelledby="en-el-aula-titulo">
+  <h2 id="en-el-aula-titulo">{{ i18n "fractalis.aula_titulo" }}</h2>
+  {{- $ctx := slice }}{{ with .Get "grupo" }}{{ $ctx = $ctx | append . }}{{ end }}{{ with .Get "curso" }}{{ $ctx = $ctx | append (i18n "fractalis.aula_curso" (dict "Curso" .)) }}{{ end }}
+  {{- with $ctx }}<p class="aula-contexto">{{ delimit . " · " }}</p>{{ end }}
+  {{ trim .Inner "\n\r " | .Page.RenderString }}
+</section>

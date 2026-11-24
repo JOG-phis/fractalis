@@ -8,7 +8,15 @@ showHero: true
 heroStyle: "background"
 clase: "practicas"
 tema: 1
+formato: "Lab practical"
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "parejas"
+materiales:
+  - "Coins (at least two different ones and two identical ones)"
+  - "Water and a dropper"
+  - "Kitchen paper"
+  - "Soap (dish soap works best)"
 tags: ["surface tension", "scientific method", "molecular cohesion", "homemade experiment"]
 draft: false
 showTableOfContents: true

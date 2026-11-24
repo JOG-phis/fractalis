@@ -7,6 +7,8 @@ weight: 170
 clase: "lecturas"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["densidad", "historia de la ciencia"]
 formato: "Lectura"
 paginas: 2

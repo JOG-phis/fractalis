@@ -7,6 +7,8 @@ weight: 410
 clase: "ejercicios"
 tema: 4
 materia: ["quimica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["chemical reactions"]
 formato: "Exercise sheet"
 paginas: 4

@@ -7,6 +7,8 @@ weight: 410
 clase: "ejercicios"
 tema: 4
 materia: ["quimica"]
+sesiones: 4
+agrupamiento: "parejas"
 tags: ["balancing equations", "the mole", "stoichiometry"]
 formato: "Exercise sheet"
 paginas: 8

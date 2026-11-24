@@ -7,6 +7,8 @@ weight: 150
 clase: "tareas"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["pictograms", "laboratory"]
 formato: "Worksheet"
 paginas: 1

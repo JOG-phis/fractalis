@@ -7,6 +7,8 @@ weight: 320
 clase: "ejercicios"
 tema: 3
 materia: ["quimica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["separación de mezclas"]
 formato: "Hoja de ejercicios"
 paginas: 4

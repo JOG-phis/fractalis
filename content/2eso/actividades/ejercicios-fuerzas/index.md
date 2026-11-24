@@ -7,6 +7,8 @@ weight: 610
 clase: "ejercicios"
 tema: 6
 materia: ["fisica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["ley de Hooke"]
 formato: "Hoja de ejercicios"
 paginas: 4

@@ -8,6 +8,12 @@ clase: "breakouts"
 tema: 3
 materia: ["quimica"]
 metodologia: ["gamificacion"]
+sesiones: 2
+agrupamiento: "equipos"
+guia_profesor: "bajo-peticion"
+materiales:
+  - "The printed and cut-out kit, in envelopes for each team"
+  - "Padlocks or a box with a padlock"
 tags: ["mixtures"]
 formato: "Breakout"
 paginas: 48

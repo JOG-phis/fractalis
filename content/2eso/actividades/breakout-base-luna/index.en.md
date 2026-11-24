@@ -8,6 +8,12 @@ clase: "breakouts"
 tema: 6
 materia: ["fisica"]
 metodologia: ["gamificacion"]
+sesiones: 2
+agrupamiento: "equipos"
+guia_profesor: "bajo-peticion"
+materiales:
+  - "The printed and cut-out kit, in envelopes for each team"
+  - "Padlocks or a box with a padlock"
 tags: ["forces"]
 formato: "Breakout"
 paginas: 48

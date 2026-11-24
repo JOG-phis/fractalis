@@ -7,6 +7,8 @@ weight: 510
 clase: "ejercicios"
 tema: 5
 materia: ["fisica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["velocidad"]
 formato: "Hoja de ejercicios"
 paginas: 3

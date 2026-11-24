@@ -7,6 +7,8 @@ weight: 510
 clase: "ejercicios"
 tema: 5
 materia: ["fisica"]
+sesiones: 2
+agrupamiento: "parejas"
 tags: ["URM", "UARM", "free fall", "graphs"]
 formato: "Exercise sheet"
 paginas: 4

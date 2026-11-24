@@ -7,6 +7,8 @@ weight: 120
 clase: "lecturas"
 tema: 1
 materia: ["quimica"]
+sesiones: 1
+agrupamiento: "individual"
 tags: ["electrón", "historia de la ciencia", "ética científica"]
 formato: "Lectura"
 paginas: 2

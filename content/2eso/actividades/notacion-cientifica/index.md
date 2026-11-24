@@ -7,6 +7,8 @@ weight: 130
 clase: "ejercicios"
 tema: 1
 materia: ["fisica", "quimica"]
+sesiones: 1
+agrupamiento: "parejas"
 tags: ["notación científica"]
 formato: "Ficha de actividades"
 paginas: 1
