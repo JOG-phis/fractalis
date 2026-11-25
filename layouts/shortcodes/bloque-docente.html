@@ -1,0 +1,48 @@
+{{- /*
+  Portada: «¿Eres docente?» (diseño C). A la izquierda, título, el texto que se escriba dentro y el botón «Escríbeme»;
+  a la derecha, una lista de accesos con una línea de descripción: Proyectos (con su fractal), currículo,
+  guías de los breakouts (al formulario de contacto) y páginas amigas. Cada acceso solo sale si su página existe.
+  Uso: {{< bloque-docente >}}Texto en Markdown{{< /bloque-docente >}}
+*/ -}}
+{{- $p := .Page -}}
+{{- $contacto := site.GetPage "/contacto" -}}
+<section class="portada-bloque portada-docente">
+  <div class="docente-izq">
+    <h2>{{ i18n "fractalis.docente_titulo" }}</h2>
+    <div class="docente-texto">{{ trim .Inner "\n\r " | $p.RenderString }}</div>
+    {{- with $contacto }}
+    <p class="descarga"><a class="descarga-boton secundario" href="{{ .RelPermalink }}">{{ partial "icon.html" "envelope" }} {{ i18n "fractalis.docente_contacto" }}</a></p>
+    {{- end }}
+  </div>
+  <ul class="docente-lista">
+    {{- with hugo.Data.cursos.proyectos }}{{ with site.GetPage .ruta }}
+    {{- $vacio := not .RegularPagesRecursive }}
+    <li><a href="{{ .RelPermalink }}">
+      <span class="docente-icono docente-icono-fractal">{{ with $p.Resources.Get "course-proyectos.svg" }}<img class="nozoom" src="{{ .RelPermalink }}" alt="" width="34" height="34">{{ end }}</span>
+      <span class="docente-fila-texto"><span class="docente-fila-titulo">{{ .Title }}{{ if $vacio }} <span class="docente-pronto">{{ i18n "fractalis.proximamente" }}</span>{{ end }}</span>
+      <span class="docente-fila-desc">{{ i18n "fractalis.docente_proyectos_desc" }}</span></span>
+      <span class="docente-flecha" aria-hidden="true">›</span></a></li>
+    {{- end }}{{ end }}
+    {{- with site.GetPage "/curriculo" }}
+    <li><a href="{{ .RelPermalink }}">
+      <span class="docente-icono">{{ partial "icon.html" "list-check" }}</span>
+      <span class="docente-fila-texto"><span class="docente-fila-titulo">{{ i18n "fractalis.docente_curriculo" }}</span>
+      <span class="docente-fila-desc">{{ i18n "fractalis.docente_curriculo_desc" }}</span></span>
+      <span class="docente-flecha" aria-hidden="true">›</span></a></li>
+    {{- end }}
+    {{- with $contacto }}
+    <li><a href="{{ .RelPermalink }}?motivo=guia">
+      <span class="docente-icono">{{ partial "icon.html" "lock" }}</span>
+      <span class="docente-fila-texto"><span class="docente-fila-titulo">{{ i18n "fractalis.docente_guias" }}</span>
+      <span class="docente-fila-desc">{{ i18n "fractalis.docente_guias_desc" }}</span></span>
+      <span class="docente-flecha" aria-hidden="true">›</span></a></li>
+    {{- end }}
+    {{- with site.GetPage "/paginas-amigas" }}
+    <li><a href="{{ .RelPermalink }}">
+      <span class="docente-icono">{{ partial "icon.html" "link" }}</span>
+      <span class="docente-fila-texto"><span class="docente-fila-titulo">{{ i18n "fractalis.docente_amigas" }}</span>
+      <span class="docente-fila-desc">{{ i18n "fractalis.docente_amigas_desc" }}</span></span>
+      <span class="docente-flecha" aria-hidden="true">›</span></a></li>
+    {{- end }}
+  </ul>
+</section>

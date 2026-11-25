@@ -1,0 +1,59 @@
+# Textos de la tabla periódica interactiva (layouts/shortcodes/tabla-periodica.html + assets/js/tabla-periodica.js)
+es:
+  buscar: "Busca por nombre, símbolo o número"
+  modo: "Colorear por"
+  imprimir: "Imprimir (A4)"
+  ver_oxidacion: "Estados de oxidación"
+  titulo_impresion_ox: "Tabla periódica con los estados de oxidación"
+  instruccion: "Pulsa un elemento para ver su ficha."
+  modos: {familia: "Familias", bloque: "Bloques s, p, d, f", estado: "Estado a 25 °C", tipo: "Metales y no metales", en_pauling: "Electronegatividad", radio: "Radio atómico", ei1: "Energía de ionización", densidad: "Densidad", fusion: "Punto de fusión"}
+  familias: {alcalinos: "Metales alcalinos", alcalinoterreos: "Metales alcalinotérreos", transicion: "Metales de transición", lantanidos: "Lantánidos", actinidos: "Actínidos", otros-metales: "Otros metales", semimetales: "Semimetales", no-metales: "No metales", halogenos: "Halógenos", gases-nobles: "Gases nobles"}
+  estados: {solido: "Sólido", liquido: "Líquido", gas: "Gas"}
+  tipos: {metal: "Metal", semimetal: "Semimetal", no-metal: "No metal"}
+  bloques: {s: "Bloque s", p: "Bloque p", d: "Bloque d", f: "Bloque f"}
+  campos: {numero: "Número atómico", masa: "Masa atómica", config: "Configuración electrónica", capas: "Electrones por capa", oxidacion: "Estados de oxidación habituales", familia: "Familia", posicion: "Posición", estado: "Estado a 25 °C", tipo: "Tipo", en_pauling: "Electronegatividad (Pauling)", radio: "Radio atómico", ei1: "1.ª energía de ionización", afinidad: "Afinidad electrónica", densidad: "Densidad", fusion: "Punto de fusión", ebullicion: "Punto de ebullición"}
+  grupo: "Grupo"
+  periodo: "Periodo"
+  bloque: "bloque"
+  mas_datos: "Más datos (Bachillerato)"
+  en_fractalis: "En Fractalis"
+  sin_datos: "Sin datos"
+  ninguno: "ninguno conocido"
+  masa_isotopo: "isótopo más estable"
+  predicho: "Elemento sintético: algunas propiedades son predicciones."
+  lantanidos: "Lantánidos"
+  actinidos: "Actínidos"
+  escala_log: "escala logarítmica"
+  cerrar: "Cerrar ficha"
+  titulo_impresion: "Tabla periódica de los elementos"
+  pie_impresion: "Fractalis — Física y Química en cada escala · CC BY-NC-SA 4.0"
+  tipos_pagina: {apuntes: "Apuntes", actividad: "Actividad"}
+en:
+  buscar: "Search by name, symbol or number"
+  modo: "Colour by"
+  imprimir: "Print (A4)"
+  ver_oxidacion: "Oxidation states"
+  titulo_impresion_ox: "Periodic table with oxidation states"
+  instruccion: "Click an element to see its card."
+  modos: {familia: "Families", bloque: "s, p, d, f blocks", estado: "State at 25 °C", tipo: "Metals and non-metals", en_pauling: "Electronegativity", radio: "Atomic radius", ei1: "Ionisation energy", densidad: "Density", fusion: "Melting point"}
+  familias: {alcalinos: "Alkali metals", alcalinoterreos: "Alkaline earth metals", transicion: "Transition metals", lantanidos: "Lanthanides", actinidos: "Actinides", otros-metales: "Other metals", semimetales: "Metalloids", no-metales: "Non-metals", halogenos: "Halogens", gases-nobles: "Noble gases"}
+  estados: {solido: "Solid", liquido: "Liquid", gas: "Gas"}
+  tipos: {metal: "Metal", semimetal: "Metalloid", no-metal: "Non-metal"}
+  bloques: {s: "s block", p: "p block", d: "d block", f: "f block"}
+  campos: {numero: "Atomic number", masa: "Atomic mass", config: "Electron configuration", capas: "Electrons per shell", oxidacion: "Common oxidation states", familia: "Family", posicion: "Position", estado: "State at 25 °C", tipo: "Type", en_pauling: "Electronegativity (Pauling)", radio: "Atomic radius", ei1: "1st ionisation energy", afinidad: "Electron affinity", densidad: "Density", fusion: "Melting point", ebullicion: "Boiling point"}
+  grupo: "Group"
+  periodo: "Period"
+  bloque: "block"
+  mas_datos: "More data (A level)"
+  en_fractalis: "On Fractalis"
+  sin_datos: "No data"
+  ninguno: "none known"
+  masa_isotopo: "most stable isotope"
+  predicho: "Synthetic element: some properties are predictions."
+  lantanidos: "Lanthanides"
+  actinidos: "Actinides"
+  escala_log: "logarithmic scale"
+  cerrar: "Close card"
+  titulo_impresion: "Periodic table of the elements"
+  pie_impresion: "Fractalis — Physics and Chemistry at every scale · CC BY-NC-SA 4.0"
+  tipos_pagina: {apuntes: "Notes", actividad: "Activity"}

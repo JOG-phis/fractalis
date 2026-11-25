@@ -1,0 +1,11 @@
+{{- /*
+  Imagen flotando a la derecha del texto, con pie (en móvil va centrada encima). Busca la imagen en la carpeta de la página
+  (sirve igual para index.md e index.en.md). Uso:
+    {{< imagen-lateral src="aun-aprendo.jpg" alt="Descripción" >}}Pie de la imagen en Markdown{{< /imagen-lateral >}}
+*/ -}}
+{{- $img := .Page.Resources.Get (.Get "src") -}}
+{{- if not $img }}{{ warnf "[Fractalis] imagen-lateral: no encuentro %s en %s" (.Get "src") .Page.File.Path }}{{ end -}}
+<figure class="goya">
+  {{- with $img }}<img src="{{ .RelPermalink }}" alt="{{ $.Get "alt" }}" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
+  {{- with trim .Inner "\n\r " }}<figcaption>{{ . | $.Page.RenderString (dict "display" "inline") }}</figcaption>{{ end }}
+</figure>

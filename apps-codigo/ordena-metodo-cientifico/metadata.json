@@ -1,0 +1,6 @@
+{
+  "name": "Ordena el Método Científico",
+  "description": "Una aplicación interactiva para ordenar las 5 etapas del método científico a través de 9 descubrimientos científicos históricos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

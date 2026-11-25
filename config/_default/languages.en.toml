@@ -15,5 +15,5 @@ title = "Fractalis"
 
   [params.author]
     name = "Fractalis"
-    email = "jogprofciencias@gmail.com"
+    # email: sin correo público (salía en los feeds RSS); el contacto va por el formulario /contacto/
     bio = "A chaotic object in which the same structure, fragmented or seemingly irregular, repeats identically at different scales."

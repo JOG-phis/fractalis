@@ -1,0 +1,26 @@
+{{- /*
+  Portada: «Novedades». Las últimas actividades, proyectos o temas publicados (por fecha), en tarjetas compactas.
+  Uso: {{< novedades >}}  o  {{< novedades 6 >}}  (cuántas; por defecto 4)
+*/ -}}
+{{- $cuantas := int (.Get 0 | default 4) -}}
+{{- $lista := slice -}}
+{{- range site.RegularPages.ByDate.Reverse }}
+  {{- if or .Params.clase (and .Params.tema .Params.pdf) }}{{ $lista = $lista | append . }}{{ end -}}
+{{- end -}}
+{{- with first $cuantas $lista }}
+<section class="portada-bloque portada-novedades">
+  <h2>{{ i18n "fractalis.novedades_titulo" }}</h2>
+  <div class="novedades-rejilla">
+  {{- range . }}
+    {{- $donde := "" }}{{ with .Parent }}{{ with .Parent }}{{ $donde = .Title }}{{ end }}{{ end }}
+    {{- if eq .Params.clase "proyectos" }}{{ $donde = "" }}{{ end }}
+    {{- $tipo := cond (isset .Params "clase") (i18n (printf "fractalis.clase_%s" .Params.clase)) (i18n "fractalis.novedades_apuntes") }}
+    <a class="novedad" href="{{ .RelPermalink }}">
+      {{- with .Resources.GetMatch "feature*" }}{{ with .Fill "480x270 Top webp" }}<img class="nozoom" src="{{ .RelPermalink }}" alt="" width="480" height="270" loading="lazy">{{ end }}{{ end }}
+      <span class="novedad-meta">{{ with $donde }}{{ . }} · {{ end }}{{ $tipo }}</span>
+      <span class="novedad-titulo">{{ .Title }}</span>
+    </a>
+  {{- end }}
+  </div>
+</section>
+{{- end }}

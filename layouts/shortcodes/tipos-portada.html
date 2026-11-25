@@ -1,0 +1,28 @@
+{{- /*
+  Portada: «Explora por tipo de actividad». Una línea con las cifras (temas, actividades, cursos) y una tarjeta por tipo
+  (clase) con su número, enlazada a /clase/<tipo>/. Todo se cuenta solo al compilar, en el idioma de la página.
+  Los tipos y su orden salen de data/vocabulario.yaml (clase.terminos); sus nombres, de i18n (fractalis.filtro_<tipo>).
+  Uso: {{< tipos-portada >}}
+*/ -}}
+{{- $paginas := site.RegularPages -}}
+{{- $actividades := slice }}{{ $temas := 0 -}}
+{{- range $paginas }}
+  {{- if and .Params.clase (ne .Params.clase "proyectos") }}{{ $actividades = $actividades | append . }}
+  {{- else if and .Params.tema .Params.pdf (not .Params.clase) }}{{ $temas = add $temas 1 }}{{ end -}}
+{{- end -}}
+{{- $cursos := 0 }}{{ range hugo.Data.cursos }}{{ if ne .portada false }}{{ with site.GetPage .ruta }}{{ if .RegularPagesRecursive }}{{ $cursos = add $cursos 1 }}{{ end }}{{ end }}{{ end }}{{ end -}}
+<section class="portada-bloque portada-tipos">
+  <h2>{{ i18n "fractalis.portada_tipos_titulo" }}</h2>
+  <p class="portada-cifras">{{ i18n "fractalis.portada_cifras" (dict "Temas" $temas "Actividades" (len $actividades) "Cursos" $cursos) }}</p>
+  <div class="tipos-rejilla">
+  {{- range hugo.Data.vocabulario.clase.terminos }}{{ if ne . "proyectos" }}
+    {{- $id := . }}{{ $n := len (where $actividades "Params.clase" $id) }}
+    {{- if $n }}{{ with site.GetPage (printf "/clase/%s" $id) }}
+    <a class="tipo-tarjeta tipo-{{ $id }}" href="{{ .RelPermalink }}">
+      <span class="tipo-num">{{ $n }}</span>
+      <span class="tipo-nombre">{{ i18n (printf "fractalis.filtro_%s" $id) }}</span>
+    </a>
+    {{- end }}{{ end }}
+  {{- end }}{{ end }}
+  </div>
+</section>

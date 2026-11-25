@@ -1,0 +1,4 @@
+{{- /* Fila con los fractales de los cursos y de Proyectos. Lo usan los shortcodes fractales-fila y por-que-fractalis. */ -}}
+<div class="fractales-fila" aria-hidden="true">
+{{- range sort hugo.Data.cursos "orden" }}{{ with site.Home.Resources.Get (printf "course-%s.svg" .id) }}<img class="nozoom" src="{{ .RelPermalink }}" alt="" width="44" height="44" loading="lazy">{{ end }}{{ end }}
+</div>

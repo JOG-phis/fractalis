@@ -28,7 +28,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 CONTENT = RAIZ / "content"
 TAXONOMIAS = ["materia", "herramienta", "metodologia"]
 IGUALES_EN_LOS_DOS = ["tema", "clase", "weight", "draft", "sesiones", "agrupamiento",
-                      "guia_profesor", "cursos"] + TAXONOMIAS
+                      "guia_profesor"] + TAXONOMIAS   # «cursos» no: en los proyectos puede ser texto traducido («1º ESO» / «1 ESO»)
 
 
 def leer_front_matter(f: Path) -> dict:

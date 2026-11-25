@@ -1,0 +1,37 @@
+{{- /*
+  Incrusta una app web dentro de la página, con barra para pantalla completa y para abrirla en otra pestaña.
+  Uso:
+    {{< app src="apps/ordena-metodo-cientifico/" titulo="Ordena el método científico" >}}       (app alojada en la web: static/apps/…)
+    {{< app src="https://otra-app.netlify.app/" titulo="…" alto="800" >}}                          (app externa)
+  Si la app está en la propia web, la altura se ajusta sola a su contenido; si es externa, se usa «alto» (por defecto 820 px).
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $externa := hasPrefix $src "http" -}}
+{{- $url := cond $externa $src (relURL $src) -}}
+{{- $titulo := .Get "titulo" | default "App" -}}
+{{- $id := printf "app-%d" .Ordinal -}}
+<div class="app-marco not-prose" id="{{ $id }}">
+  <div class="app-barra">
+    <span class="app-titulo">{{ $titulo }}</span>
+    <button type="button" class="app-boton app-completa">{{ i18n "fractalis.app_completa" }}</button>
+    <a class="app-boton" href="{{ $url }}" target="_blank" rel="noopener">{{ i18n "fractalis.app_pestana" }} ↗</a>
+  </div>
+  <iframe src="{{ $url }}" title="{{ $titulo }}" loading="lazy" allow="fullscreen" style="height: {{ .Get "alto" | default "820" }}px"></iframe>
+</div>
+<script>
+(function () {
+  const marco = document.getElementById("{{ $id }}"), iframe = marco.querySelector("iframe");
+  marco.querySelector(".app-completa").addEventListener("click", () => (marco.requestFullscreen || marco.webkitRequestFullscreen || function () {}).call(marco));
+  {{- if not $externa }}
+  // App de la propia web: la altura sigue a la del contenido (sin barra de desplazamiento interna)
+  iframe.addEventListener("load", () => {
+    try {
+      const doc = iframe.contentDocument; if (!doc) return;
+      const contenido = () => doc.getElementById("root") || doc.body;
+      const ajustar = () => { if (!document.fullscreenElement) iframe.style.height = Math.max(400, Math.ceil(contenido().getBoundingClientRect().height)) + "px"; };
+      new ResizeObserver(ajustar).observe(contenido()); ajustar();
+    } catch (e) {}
+  });
+  {{- end }}
+})();
+</script>

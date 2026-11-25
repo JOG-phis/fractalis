@@ -14,7 +14,7 @@
   {{- $tema := partial "fractalis/pagina-del-tema.html" $p -}}
   <div class="ficha-actividad">
     {{- with $tema }}<span>{{ .Title }}</span>{{ end -}}
-    {{- if $proyecto }}{{ range $p.Params.cursos }}{{ with index hugo.Data.cursos . }}<span>{{ cond (eq $p.Lang "en") .nombre_en .nombre }}</span>{{ end }}{{ end }}{{ end -}}
+    {{- if $proyecto }}{{ range $p.Params.cursos }}{{ with index hugo.Data.cursos . }}<span>{{ cond (eq $p.Lang "en") .nombre_en .nombre }}</span>{{ else }}<span>{{ . }}</span>{{ end }}{{ end }}{{ end -}}
     {{- with $p.Params.formato }}<span>{{ . }}</span>{{ end -}}
     {{- if $p.Params.pdf }}{{ with $p.Params.paginas }}<span>{{ i18n "fractalis.ficha_paginas" (int .) }}</span>{{ end }}{{ end -}}
   </div>

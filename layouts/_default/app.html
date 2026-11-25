@@ -1,0 +1,19 @@
+{{- /*
+  Plantilla para apps a todo lo ancho (p. ej. la tabla periódica de Proyectos): título, migas de pan,
+  ficha automática (antes-del-contenido), el contenido a lo ancho y el pie automático (despues-del-contenido).
+  Se activa con  layout: "app"  en el front matter.
+*/ -}}
+{{ define "main" }}
+<article class="app-pagina">
+  <header id="single_header" class="mt-5">
+    {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}{{ partial "breadcrumbs.html" . }}{{ end }}
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
+    <div class="mt-1 mb-4 text-base text-neutral-500 dark:text-neutral-400 print:hidden">{{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}</div>
+  </header>
+  <section class="prose dark:prose-invert app-contenido mt-6">
+    {{ partial "fractalis/antes-del-contenido.html" . }}
+    {{ .Content }}
+    {{ partial "fractalis/despues-del-contenido.html" . }}
+  </section>
+</article>
+{{ end }}

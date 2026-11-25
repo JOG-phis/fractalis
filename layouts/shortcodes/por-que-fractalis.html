@@ -1,0 +1,10 @@
+{{- /*
+  Portada: «¿Por qué Fractalis?». Título, fila con los fractales de los cursos y el texto que se escriba dentro.
+  Uso: {{< por-que-fractalis >}}Texto en Markdown{{< /por-que-fractalis >}}
+*/ -}}
+{{- $p := .Page -}}
+<section class="portada-bloque portada-porque">
+  <h2>{{ i18n "fractalis.portada_porque_titulo" }}</h2>
+  {{ partial "fractalis/fractales-fila.html" . }}
+  <div class="portada-texto">{{ trim .Inner "\n\r " | $p.RenderString }}</div>
+</section>

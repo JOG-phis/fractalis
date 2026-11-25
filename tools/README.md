@@ -20,6 +20,7 @@ Scripts para preparar el contenido de la web. No forman parte de la web (Hugo ig
 | `vista_previa.py` | Imagen que sale al compartir el enlace de un curso (WhatsApp, Classroom…). | `content/<curso>/feature.png` |
 | `revisar_front_matter.py` | Revisa el front matter de apuntes, actividades y proyectos: que lleven `materia`, `tema` y `clase`, que usen solo términos de `data/vocabulario.yaml` y que la versión inglesa coincida con la española. Con `--paginas` crea las páginas de las taxonomías que falten. | `content/materia/`, `content/herramienta/`, `content/metodologia/` (solo con `--paginas`) |
 | `fichas.py` | Rellena sesiones, agrupamiento, materiales, herramienta, metodología y guía del profesor de todas las actividades desde una tabla (`tools/fichas.csv`, se abre en Excel). `generar` crea la tabla; `aplicar` la escribe en `index.md` e `index.en.md`. | front matter de las actividades |
+| `tabla_periodica.py` | Genera `data/elementos.json` (datos de la tabla periódica interactiva) a partir de `tools/datos/PeriodicTableJSON.json`, añadiendo los nombres en español, los estados de oxidación habituales y las familias. | `data/elementos.json` |
 | `data/vocabulario.yaml` | Términos permitidos en `materia`, `herramienta`, `metodologia`, `clase` y `agrupamiento`, con su nombre en español e inglés. | — |
 | `data/cursos.json` | Datos de cada curso: nombre, carpeta, color, fractal. Lo usan los tres scripts anteriores. | — |
 | `fractales.py`, `comun.py` | Código compartido: geometría de los fractales y utilidades. | — |
@@ -116,3 +117,35 @@ Las imágenes actuales de 2º ESO se hicieron a mano con versiones previas de es
 3. `python tools/fichas.py aplicar` y después `python tools/revisar_front_matter.py`.
 
 Una celda vacía no cambia nada; un guion (`-`) borra ese campo. `materiales_en` es la traducción inglesa (la hace Claude si se lo pides).
+
+### Publicar un proyecto (sección Proyectos)
+
+Para lo que no es de un curso de FyQ: Computación y Robótica, programación, IA, impresión 3D, guías para docentes...
+
+1. Crea la página (español e inglés, como borrador):
+   ```
+   hugo new content --kind proyecto proyectos/semaforo-arduino
+   ```
+2. Rellena el front matter. `cursos:` admite ids de `data/cursos.json` (`2eso`, `3eso`…) o texto (`"1º ESO"`, `"Docentes"`; en la versión inglesa, `"1 ESO"`, `"Teachers"`). Si hay PDF, cópialo a la carpeta y pon `pdf:` y `paginas:`; si hay app o simulador, `enlace:` (y `boton:` para el texto del botón).
+3. `python tools/revisar_front_matter.py --paginas` crea las páginas de las herramientas o metodologías nuevas (Arduino, ABP…).
+4. Al publicar el primero, el aviso del dragón y el «Próximamente» de la portada desaparecen solos. Si quieres la imagen para compartir el enlace de la sección: `python tools/vista_previa.py proyectos`.
+
+El icono de la tarjeta (conjunto de Julia, el «conejo de Douady») se genera con `python tools/iconos_portada.py proyectos`.
+
+### Tabla periódica interactiva (Proyectos)
+
+- Página: `content/proyectos/tabla-periodica/` (`layout: "app"`, con el shortcode `{{< tabla-periodica >}}`).
+- Datos: `data/elementos.json`, generado con `python tools/tabla_periodica.py`. Para corregir un nombre o un estado de oxidación, cámbialo en el script (listas `NOMBRES_ES` y `OXIDACION`) y vuelve a ejecutarlo.
+- Textos de la interfaz, en los dos idiomas: `data/tabla_textos.yaml`. Código: `assets/js/tabla-periodica.js`. Estilos: `.tp-*` en `assets/css/custom.css`.
+- Los enlaces «En Fractalis» de cada elemento se calculan solos al compilar: apuntes y actividades que nombran el elemento al menos dos veces o lo llevan en las etiquetas.
+
+### Apps de Fractalis dentro de la web
+
+Las apps que funcionan solo en el navegador (sin Gemini ni servidor) se alojan en la propia web:
+
+- Código fuente: `apps-codigo/<app>/` (cada una con su `LEEME.md` para recompilarla).
+- Versión compilada: `static/apps/<app>/` (se sirve en `/apps/<app>/`).
+- Página en Proyectos con la app incrustada: `{{< app src="apps/<app>/" titulo="…" >}}` (altura automática, pantalla completa y «Abrir en una pestaña nueva»). Para una app externa (Netlify…), `src` con la URL completa y `alto="…"`.
+- Desde los apuntes, el botón de `{{< simulacion >}}` puede apuntar a la página: `url="/proyectos/<app>/"`.
+
+Al compilar con Vite: `--base=./` y nombres de archivo fijos (ver `vite.config.ts` de la app del método científico), para que al recompilar se sobrescriban los archivos y no se acumulen versiones viejas.

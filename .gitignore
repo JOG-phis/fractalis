@@ -6,3 +6,7 @@ _vendor/
 # Herramientas (tools/)
 __pycache__/
 _build/
+
+# Código de las apps (apps-codigo/): dependencias y compilaciones locales
+node_modules/
+apps-codigo/*/dist/

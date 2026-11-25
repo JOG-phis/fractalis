@@ -1,0 +1,39 @@
+{{- /*
+  Tabla periódica interactiva. Uso (en la página del proyecto): {{< tabla-periodica >}}
+  Datos: data/elementos.json (se genera con tools/tabla_periodica.py). Textos: data/tabla_textos.yaml.
+  Al compilar, para cada elemento se buscan los apuntes y actividades (en el idioma de la página) que lo
+  nombran al menos dos veces o lo llevan en las etiquetas; se enlazan los 4 que más lo nombran.
+  El dibujo y la interacción están en assets/js/tabla-periodica.js; los estilos, en assets/css/custom.css (.tp-*).
+*/ -}}
+{{- $lang := .Page.Lang -}}
+{{- $textos := index hugo.Data.tabla_textos $lang -}}
+{{- $ambiguos := dict "es" (slice "radio") "en" (slice "lead") -}}
+{{- $paginas := slice -}}
+{{- range site.RegularPages }}{{ if or (and .Params.clase (ne .Params.clase "proyectos")) (and .Params.tema .Params.pdf (not .Params.clase)) }}{{ $paginas = $paginas | append . }}{{ end }}{{ end -}}
+{{- $elementos := slice -}}
+{{- range hugo.Data.elementos }}
+  {{- $e := . -}}
+  {{- $nombre := index $e $lang -}}
+  {{- $enlaces := slice -}}
+  {{- if not (in (index $ambiguos $lang) (lower $nombre)) }}
+    {{- $patron := printf `(?i)\b%s\b` $nombre -}}
+    {{- range $paginas }}
+      {{- $veces := len (findRE $patron .Plain) -}}
+      {{- $etiqueta := in (apply (.Params.tags | default slice) "lower" ".") (lower $nombre) -}}
+      {{- if or (ge $veces 2) $etiqueta }}
+        {{- $tipo := cond (isset .Params "clase") "actividad" "apuntes" -}}
+        {{- $curso := "" }}{{ with .Parent }}{{ with .Parent }}{{ $curso = .Title }}{{ end }}{{ end -}}
+        {{- $enlaces = $enlaces | append (dict "t" .Title "u" .RelPermalink "k" (index $textos.tipos_pagina $tipo) "c" $curso "v" (add $veces (cond $etiqueta 5 0))) -}}
+      {{- end }}
+    {{- end }}
+  {{- end }}
+  {{- $enlaces = first 4 (sort $enlaces "v" "desc") -}}
+  {{- $elementos = $elementos | append (merge $e (dict "nombre" $nombre "enlaces" $enlaces)) -}}
+{{- end -}}
+<div class="tp-app not-prose" id="tabla-periodica">
+  <script type="application/json" class="tp-datos">{{ dict "elementos" $elementos "textos" $textos "lang" $lang | jsonify | safeJS }}</script>
+  <noscript><p>{{ cond (eq $lang "en") "This interactive periodic table needs JavaScript." "Esta tabla periódica interactiva necesita JavaScript." }}</p></noscript>
+</div>
+{{- with resources.Get "js/tabla-periodica.js" }}{{ with . | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}{{ end }}

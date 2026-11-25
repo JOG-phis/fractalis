@@ -1,0 +1,9 @@
+{{- /*
+  Cita destacada con autor y fuente. Uso:
+    {{< cita autor="Albert Einstein" fuente="Entrevista en la revista LIFE, 1955" >}}Lo importante es no dejar de hacerse preguntas.{{< /cita >}}
+  Con ancho="completo" ocupa toda la columna (en Sobre mí); dentro de {{< citas >}} se colocan en rejilla.
+*/ -}}
+<figure class="cita{{ with .Get "ancho" }} cita-{{ . }}{{ end }}">
+  <blockquote>{{ trim .Inner "\n\r " | .Page.RenderString }}</blockquote>
+  <figcaption><span class="cita-autor">{{ .Get "autor" }}</span>{{ with .Get "fuente" }}<span class="cita-fuente">{{ . | $.Page.RenderString (dict "display" "inline") }}</span>{{ end }}</figcaption>
+</figure>

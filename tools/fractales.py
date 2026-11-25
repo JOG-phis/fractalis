@@ -161,8 +161,62 @@ def dragon(iteraciones=8, giro=135):
     return [('trazo', [M.tolist()], k * 0.52)]
 
 
+def julia(c=-0.123 + 0.745j, resolucion=1000, iteraciones=200):
+    """Contorno del conjunto de Julia relleno del «conejo de Douady», c = -0,123 + 0,745i (Proyectos).
+    Necesita matplotlib. Tiene simetría central; se deja en diagonal, que es como mejor llena el cuadrado."""
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    L = 1.45
+    xs = np.linspace(-L, L, resolucion); ys = np.linspace(-L, L, resolucion)
+    z = xs[None, :] + 1j * ys[:, None]
+    dentro = np.ones(z.shape, bool)
+    for _ in range(iteraciones):
+        z[dentro] = z[dentro] ** 2 + c
+        dentro &= np.abs(z) <= 2
+    cs = plt.contour(xs, ys, dentro.astype(float), levels=[0.5])
+    polis = []
+    for p in cs.get_paths():
+        for poly in p.to_polygons():
+            if len(poly) < 8:
+                continue
+            pts = np.c_[poly[:, 0], -poly[:, 1]]          # eje y hacia abajo, como en SVG
+            quedan = [pts[0]]
+            for q in pts[1:]:
+                if np.hypot(*(q - quedan[-1])) > 0.009:
+                    quedan.append(q)
+            if len(quedan) >= 4:
+                polis.append(quedan)
+    plt.close('all')
+    todos = np.vstack([np.array(q) for q in polis])
+    _, k = _encajar(todos, 12)
+    mn = todos.min(0); ext = todos.max(0) - mn
+    desplaz = (LADO - ext * k) / 2
+    return [('relleno', [[tuple((np.array(q) - mn) * k + desplaz) for q in poli] for poli in polis], True)]
+
+
+def hilbert(orden=4, grosor=0.42):
+    """Curva de Hilbert (Proyectos: recuerda a un circuito). grosor: fracción del paso de la rejilla."""
+    N = 2 ** orden
+    def punto(d):
+        x = y = 0; s = 1; t = d
+        while s < N:
+            rx = 1 & (t // 2); ry = 1 & (t ^ rx)
+            if ry == 0:
+                if rx == 1:
+                    x, y = s - 1 - x, s - 1 - y
+                x, y = y, x
+            x += s * rx; y += s * ry; t //= 4; s *= 2
+        return x, y
+    P = np.array([punto(d) for d in range(N * N)], float)
+    P[:, 1] = (N - 1) - P[:, 1]                     # la «boca» de la curva hacia abajo
+    P, k = _encajar(P, 24)
+    return [('trazo', [P.tolist()], k * grosor)]
+
+
 FRACTALES = {'alfombra': alfombra, 'koch': koch, 'sierpinski': sierpinski, 'arbol': arbol,
-             'mandelbrot': mandelbrot, 'dendrimero': dendrimero, 'dragon': dragon}
+             'mandelbrot': mandelbrot, 'dendrimero': dendrimero, 'dragon': dragon,
+             'julia': julia, 'hilbert': hilbert}
 
 # ---------------------------------------------------------------- salida
 
