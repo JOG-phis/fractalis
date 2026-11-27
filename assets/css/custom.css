@@ -534,7 +534,7 @@ section.prose.max-w-4xl { max-width: 56rem; }
 .tp-nom { font-size: 0.55rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tp-masa { font-size: 0.55rem; opacity: 0.8; }
 .tp-hueco { display: flex; align-items: center; justify-content: center; font-size: 0.7rem; opacity: 0.7; border: 1px dashed var(--fq-borde); border-radius: 0.35rem; }
-.tp-resumen { grid-column: 3 / 13; grid-row: 1 / 4; display: flex; align-items: center; gap: 1rem; padding: 0.5rem 1.25rem; }
+.tp-resumen { grid-column: 3 / 11; grid-row: 1 / 4; display: flex; align-items: center; gap: 1rem; padding: 0.5rem 1.25rem; }
 .tp-instruccion { margin: 0; opacity: 0.7; font-size: 1rem; }
 .tp-res-sim {
   flex: none; display: flex; align-items: center; justify-content: center; width: 5.5rem; height: 5.5rem; border-radius: 0.6rem;
@@ -551,6 +551,20 @@ section.prose.max-w-4xl { max-width: 56rem; }
 .tp-ley-titulo { font-weight: 700; margin-right: 0.25rem; }
 .tp-degradado { display: inline-block; width: 12rem; height: 0.8rem; border-radius: 0.4rem; }
 .tp-ley-num { font-variant-numeric: tabular-nums; opacity: 0.85; }
+/* Clave (a la izquierda del boro: grupos 11-12, periodos 2-3) */
+.tp-clave { grid-column: 11 / 13; grid-row: 2 / 4; position: relative; display: flex; border: 1.5px dashed #94a3b8; border-radius: 0.5rem; background: color-mix(in srgb, #94a3b8 8%, transparent); font-size: 0.7rem; line-height: 1.2; }
+.tp-clave-normal, .tp-clave-ox { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.2rem; padding: 0.4rem; text-align: center; }
+.tp-clave-ox { display: none; justify-content: flex-start; padding-top: 0.5rem; }
+.tp-ver-ox .tp-clave-normal { display: none; } .tp-ver-ox .tp-clave-ox { display: flex; }
+.tp-clave-z { position: absolute; top: 0.3rem; left: 0.4rem; font-size: 0.65rem; opacity: 0.85; }
+.tp-clave-sim { font-size: 1.05rem; font-weight: 800; margin-top: 0.4rem; }
+.tp-clave-ox .tp-clave-sim { margin-top: 0; }
+.tp-clave-nom, .tp-clave-masa { opacity: 0.85; }
+.tp-clave-cols { display: flex; justify-content: space-between; gap: 0.3rem; width: 100%; padding: 0 0.15rem; }
+.tp-clave-neg, .tp-clave-pos { display: flex; flex-direction: column; font-size: 0.62rem; }
+.tp-clave-neg { align-items: flex-start; font-style: italic; } .tp-clave-pos { align-items: flex-end; }
+.tp-clave-neg b, .tp-clave-pos b { font-size: 0.95rem; font-style: normal; }
+.tp-clave-pie { margin-top: auto; font-size: 0.6rem; opacity: 0.75; }
 /* Interruptor «Estados de oxidación» y casillas con los estados en lugar del nombre */
 .tp-interruptor { display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 600; font-size: 0.95rem; cursor: pointer; user-select: none; }
 .tp-interruptor input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -611,6 +625,7 @@ section.prose.max-w-4xl { max-width: 56rem; }
   .tp-sim { font-size: 12pt; } .tp-nom, .tp-masa { font-size: 5pt; } .tp-num { font-size: 5pt; }
   .tp-ver-ox .tp-oxs { font-size: 6pt; } .tp-ver-ox .tp-oxs-lados { font-size: 5.5pt; } .tp-ver-ox .tp-sim { font-size: 11pt; margin-bottom: 1mm; } .tp-ver-ox .tp-celda { padding-top: 1mm; }
   .tp-resumen { visibility: hidden !important; }
+  .tp-clave { border-color: #64748b; background: #f8fafc !important; color: #0f172a; font-size: 6.5pt; } .tp-clave-sim { font-size: 9pt; } .tp-clave-z { font-size: 6pt; } .tp-clave-neg, .tp-clave-pos { font-size: 5pt; } .tp-clave-cols { gap: 1.5mm; } .tp-clave-pie { font-size: 5.5pt; }
   .tp-resumen * { visibility: hidden !important; }
   .tp-leyenda { margin-top: 2mm; font-size: 7pt; color: #0f172a; }
   .tp-muestra { background: color-mix(in srgb, var(--c) 30%, white) !important; border-color: #475569; }
@@ -621,12 +636,14 @@ section.prose.app-contenido { max-width: none; }
 .app-contenido > p, .app-contenido > h2, .app-contenido > h3, .app-contenido > ul, .app-contenido > ol, .app-contenido > .ficha-actividad, .app-contenido > .ficha-detalle, .app-contenido > .ficha-materiales { max-width: 48rem; }
 
 /* Apps incrustadas ({{< app >}}) */
-.app-marco { margin: 1.5rem 0 2rem; border: 1px solid var(--fq-borde); border-radius: 0.9rem; overflow: hidden; background: #fafafa; }
+.app-marco { margin: 1.5rem 0 2rem; border: 1px solid var(--fq-borde); border-radius: 0.9rem; overflow: hidden; background: transparent; }
 .app-barra { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; padding: 0.55rem 0.9rem; background: color-mix(in srgb, var(--fq-azul) 8%, transparent); border-bottom: 1px solid var(--fq-borde); }
 .dark .app-barra { background: #1e293b; color: #e2e8f0; }
 .app-titulo { font-weight: 700; margin-right: auto; }
 .app-boton { padding: 0.3rem 0.75rem; border-radius: 0.4rem; font: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none !important; color: var(--fq-azul); border: 1.5px solid var(--fq-azul); background: transparent; }
 .app-boton:hover { background: color-mix(in srgb, var(--fq-azul) 12%, transparent); }
-.app-marco iframe { display: block; width: 100%; border: 0; background: #fafafa; }
-.app-marco:fullscreen { border-radius: 0; display: flex; flex-direction: column; }
+/* Las apps de Fractalis tienen el fondo transparente cuando están incrustadas: se ve el de la web, en claro y en oscuro */
+.app-marco iframe { display: block; width: 100%; border: 0; background: transparent; }
+.app-marco:fullscreen { border-radius: 0; display: flex; flex-direction: column; background: #fafafa; }
+.dark .app-marco:fullscreen { background: #27272a; }
 .app-marco:fullscreen iframe { flex: 1; height: auto !important; }

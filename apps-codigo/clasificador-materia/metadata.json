@@ -1,0 +1,6 @@
+{
+  "name": "Clasificador de Materia",
+  "description": "Aplicación educativa interactiva para aprender y clasificar la materia y sus diferentes estados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

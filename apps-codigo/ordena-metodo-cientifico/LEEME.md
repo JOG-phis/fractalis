@@ -17,3 +17,7 @@ npx vite build --base=./ --outDir ../../static/apps/ordena-metodo-cientifico --e
 
 `--base=./` es importante: hace que la app funcione dentro de la web (en `/fractalis/apps/…` o en el dominio propio).
 Después, `hugo server` para comprobarla y commit como siempre.
+
+## Kit común
+
+La cabecera y el pie son los comunes de las apps de Fractalis (`apps-codigo/_comun/`, ver su LEEME.md). Para recompilar, esa carpeta tiene que estar al lado de esta.

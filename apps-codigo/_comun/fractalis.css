@@ -1,0 +1,77 @@
+/* Kit de identidad de las apps de Fractalis: cabecera y pie comunes (estilo A: barra azul marino con el color del curso).
+   CSS normal (no depende de Tailwind): sirve para cualquier app. Se importa desde Fractalis.tsx. */
+.fx-cabecera, .fx-pie {
+  --fx-marino: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--fx-marino); color: #fff;
+}
+.fx-cabecera { position: sticky; top: 0; z-index: 60; border-bottom: 3px solid var(--fx-acento, #38bdf8); }
+.fx-cab-int, .fx-pie-int { max-width: 72rem; margin: 0 auto; display: flex; align-items: center; flex-wrap: wrap; }
+.fx-cab-int { gap: 0.5rem 0.8rem; padding: 0.6rem 1rem; }
+.fx-marca { display: inline-flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; }
+.fx-logo { width: 1.7rem; height: 1.7rem; flex: none; }
+.fx-nombre-web { font-size: 0.8rem; letter-spacing: 0.06em; opacity: 0.85; }
+.fx-sep { width: 1px; height: 1.6rem; background: rgba(255, 255, 255, 0.3); }
+.fx-titulos { display: flex; flex-direction: column; min-width: 0; }
+.fx-titulo { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.2; color: #fff; }
+.fx-subtitulo { font-size: 0.75rem; opacity: 0.75; line-height: 1.3; }
+.fx-chip { padding: 0.15rem 0.6rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; white-space: nowrap; background: var(--fx-acento, #38bdf8); color: var(--fx-marino); }
+.fx-acciones { margin-left: auto; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.fx-boton {
+  display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.7rem; border-radius: 0.5rem; cursor: pointer;
+  font: inherit; font-size: 0.8rem; font-weight: 600; color: #fff; text-decoration: none;
+  background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); transition: background 0.15s ease;
+}
+.fx-boton:hover { background: rgba(255, 255, 255, 0.2); }
+.fx-boton:focus-visible { outline: 2px solid var(--fx-acento, #38bdf8); outline-offset: 2px; }
+.fx-boton[aria-pressed="false"] { opacity: 0.6; }
+.fx-boton svg { width: 1rem; height: 1rem; }
+.fx-dato {
+  padding: 0.3rem 0.65rem; border-radius: 0.5rem; font-size: 0.78rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  background: color-mix(in srgb, var(--fx-acento, #38bdf8) 22%, transparent); border: 1px solid color-mix(in srgb, var(--fx-acento, #38bdf8) 55%, transparent);
+}
+/* Dentro de la página de Fractalis (incrustada): solo una barra fina con el subtítulo y los controles; sin pie */
+.fx-incrustada .fx-cab-int { padding: 0.4rem 0.9rem; }
+.fx-incrustada .fx-marca, .fx-incrustada .fx-sep, .fx-incrustada .fx-chip, .fx-incrustada .fx-titulo { display: none; }
+.fx-incrustada .fx-subtitulo { font-size: 0.8rem; opacity: 0.85; }
+/* Pie */
+.fx-pie { border-top: 3px solid var(--fx-acento, #38bdf8); color: #cbd5e1; font-size: 0.78rem; }
+.fx-pie-int { gap: 0.4rem 1.1rem; padding: 0.8rem 1rem; }
+.fx-pie b { color: #fff; }
+.fx-pie a { color: var(--fx-acento, #38bdf8); text-decoration: none; font-weight: 600; }
+.fx-pie a:hover { text-decoration: underline; }
+.fx-pie-der { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; }
+@media (max-width: 640px) {
+  .fx-nombre-web, .fx-sep, .fx-subtitulo { display: none; }
+  .fx-incrustada .fx-subtitulo { display: inline; }
+  .fx-pie-der { margin-left: 0; }
+}
+
+/* Presentación de la pantalla de inicio (IntroFractalis): tarjeta sobria con el fractal del curso de fondo */
+.fx-intro {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: 1.6rem 1.75rem; border-radius: 0.75rem;
+  background: #fff; color: #0f172a; border: 1px solid #e2e8f0; border-left: 4px solid var(--fx-acento, #38bdf8);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.dark .fx-intro { background: #0f172a; color: #f1f5f9; border-color: #1e293b; border-left-color: var(--fx-acento, #38bdf8); }
+.fx-intro-fractal {
+  position: absolute; z-index: -1; right: -3rem; top: 50%; width: 17rem; height: 17rem; transform: translateY(-50%) rotate(-8deg);
+  color: var(--fx-acento, #38bdf8); opacity: 0.22; pointer-events: none;
+  /* se difumina hacia el texto, como una marca de agua */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 70%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 70%);
+}
+.dark .fx-intro-fractal { opacity: 0.28; }
+.fx-intro-fractal svg { width: 100%; height: 100%; display: block; }
+.fx-intro-texto { max-width: 46rem; }
+.fx-intro-ante { margin: 0 0 0.35rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #475569; }
+.dark .fx-intro-ante { color: #94a3b8; }
+.fx-intro-titulo { margin: 0 0 0.6rem; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 1.9rem); font-weight: 800; line-height: 1.2; letter-spacing: -0.01em; }
+.fx-intro-cuerpo { font-size: 1rem; line-height: 1.6; color: #475569; }
+.dark .fx-intro-cuerpo { color: #cbd5e1; }
+.fx-intro-cuerpo > * + * { margin-top: 1rem; }
+@media (max-width: 640px) {
+  .fx-intro { padding: 1.2rem 1.1rem; }
+  .fx-intro-fractal { width: 10rem; height: 10rem; right: -2.5rem; top: -1rem; transform: rotate(-8deg); }
+}

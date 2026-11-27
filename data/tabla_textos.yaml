@@ -28,6 +28,7 @@ es:
   titulo_impresion: "Tabla periódica de los elementos"
   pie_impresion: "Fractalis — Física y Química en cada escala · CC BY-NC-SA 4.0"
   tipos_pagina: {apuntes: "Apuntes", actividad: "Actividad"}
+  clave: {titulo: "Clave", z: "Z (número atómico)", simbolo: "Símbolo", nombre: "Nombre", masa: "Masa atómica", neg: "negativos", pos: "positivos", ox: "Estados de oxidación"}
 en:
   buscar: "Search by name, symbol or number"
   modo: "Colour by"
@@ -57,3 +58,4 @@ en:
   titulo_impresion: "Periodic table of the elements"
   pie_impresion: "Fractalis — Physics and Chemistry at every scale · CC BY-NC-SA 4.0"
   tipos_pagina: {apuntes: "Notes", actividad: "Activity"}
+  clave: {titulo: "Key", z: "Z (atomic number)", simbolo: "Symbol", nombre: "Name", masa: "Atomic mass", neg: "negative", pos: "positive", ox: "Oxidation states"}

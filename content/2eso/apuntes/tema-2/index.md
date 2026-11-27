@@ -97,4 +97,13 @@ Observa cómo se mueven las partículas en cada estado y qué ocurre al calentar
 {{< simulacion titulo="PhET: Propiedades de los gases" url="https://phet.colorado.edu/es/simulations/gas-properties" >}}
 Cambia la presión, el volumen y la temperatura y comprueba las leyes de los gases.
 {{< /simulacion >}}
+{{< simulacion titulo="Clasificador de la materia" url="/proyectos/clasificador-materia/" boton="Abrir la app" >}}
+En el nivel 2, clasifica cosas cotidianas en sólidos, líquidos y gases, con algún caso con trampa como la arena o la plastilina.
+{{< /simulacion >}}
+{{< simulacion titulo="Curva de calentamiento" url="/proyectos/curva-calentamiento/" boton="Abrir la app" >}}
+Calienta hielo hasta convertirlo en vapor y observa a la vez las partículas y la gráfica: ¿por qué no sube la temperatura en las mesetas?
+{{< /simulacion >}}
+{{< simulacion titulo="Leyes de los gases" url="/proyectos/leyes-gases/" boton="Abrir la app" >}}
+Comprime el gas, caliéntalo, anota medidas y descubre las leyes de Boyle-Mariotte, Charles y Gay-Lussac.
+{{< /simulacion >}}
 {{< /columnas >}}

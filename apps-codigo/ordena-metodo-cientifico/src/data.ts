@@ -347,9 +347,9 @@ export const EXERCISES: Exercise[] = [
 
 // Helper to define the steps metadata in detail
 export const STEP_METADATA = {
-  1: { name: "Observación", color: "from-blue-500 to-indigo-500", bg: "bg-blue-50/50 dark:bg-blue-950/20", border: "border-blue-200 dark:border-blue-900", icon: "👁️" },
-  2: { name: "Hipótesis", color: "from-purple-500 to-pink-500", bg: "bg-purple-50/50 dark:bg-purple-950/20", border: "border-purple-200 dark:border-purple-900", icon: "💡" },
-  3: { name: "Experimentación", color: "from-amber-500 to-orange-500", bg: "bg-amber-50/50 dark:bg-amber-950/20", border: "border-amber-200 dark:border-amber-900", icon: "⚗️" },
-  4: { name: "Análisis de resultados", color: "from-teal-500 to-emerald-500", bg: "bg-teal-50/50 dark:bg-teal-950/20", border: "border-teal-200 dark:border-teal-900", icon: "📊" },
-  5: { name: "Comunicación", color: "from-rose-500 to-red-500", bg: "bg-rose-50/50 dark:bg-rose-950/20", border: "border-rose-200 dark:border-rose-900", icon: "📢" },
+  1: { name: "Observación", color: "from-acento-500 to-acento-700", bg: "bg-acento-50 dark:bg-acento-950/30", border: "border-acento-200 dark:border-acento-900", icon: "👁️" },
+  2: { name: "Hipótesis", color: "from-acento-500 to-acento-700", bg: "bg-acento-50 dark:bg-acento-950/30", border: "border-acento-200 dark:border-acento-900", icon: "💡" },
+  3: { name: "Experimentación", color: "from-acento-500 to-acento-700", bg: "bg-acento-50 dark:bg-acento-950/30", border: "border-acento-200 dark:border-acento-900", icon: "⚗️" },
+  4: { name: "Análisis de resultados", color: "from-acento-500 to-acento-700", bg: "bg-acento-50 dark:bg-acento-950/30", border: "border-acento-200 dark:border-acento-900", icon: "📊" },
+  5: { name: "Comunicación", color: "from-acento-500 to-acento-700", bg: "bg-acento-50 dark:bg-acento-950/30", border: "border-acento-200 dark:border-acento-900", icon: "📢" },
 } as const;

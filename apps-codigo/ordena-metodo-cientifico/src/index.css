@@ -1,38 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
+/* Tema común de las apps de Fractalis: color del curso (acento-*), modo oscuro, formas, fuente y fondo */
+@import "../../_comun/tema.css";
 
-@theme {
-  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-}
-
-/* Base style overrides to ensure highly elegant appearance */
-body {
-  font-family: var(--font-sans);
-  background-color: #fafafa;
-  color: #171717;
-}
-
-/* Simple keyframe fade for subtle motion intro */
+/* Entrada suave de los bloques */
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+.animate-slide-up { animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-.animate-slide-up {
-  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Custom styles for glowing border elements */
-.glow-success {
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
-}
-
-/* Fondo de la página también en modo oscuro (la app ya no ocupa toda la altura de la pantalla, para poder incrustarla en Fractalis) */
-@media (prefers-color-scheme: dark) { body { background-color: #020617; } }
+/* Brillo suave en los aciertos (verde de Fractalis) */
+.glow-success { box-shadow: 0 0 20px rgb(34 197 94 / 0.15); }

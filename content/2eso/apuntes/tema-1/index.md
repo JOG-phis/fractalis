@@ -149,7 +149,7 @@ Los productos químicos peligrosos llevan en su etiqueta unos rombos rojos con u
 {{< simulacion titulo="Ordena el método científico" url="/proyectos/ordena-metodo-cientifico/" boton="Abrir la app" >}}
 Ordena las cinco etapas del método científico en descubrimientos científicos famosos.
 {{< /simulacion >}}
-{{< simulacion titulo="MateriaKids, clasificador de la materia" url="https://clasmat-fractalis.netlify.app/" boton="Abrir la app" >}}
+{{< simulacion titulo="Clasificador de la materia" url="/proyectos/clasificador-materia/" boton="Abrir la app" >}}
 Clasifica la materia de forma interactiva.
 {{< /simulacion >}}
 {{< simulacion titulo="Factores de conversión" url="https://factores-fractalis.netlify.app/" boton="Abrir la app" >}}

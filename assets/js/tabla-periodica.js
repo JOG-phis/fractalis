@@ -86,7 +86,15 @@
   imprimible.append(tituloImpresion);
   const tabla = el("div", { class: "tp-tabla", role: "group", "aria-label": T.titulo_impresion });
   const resumen = el("div", { class: "tp-resumen", "aria-live": "polite" });
-  tabla.append(resumen);
+  // Clave (a la izquierda del boro): explica qué es cada cosa en las casillas, en los dos modos del interruptor
+  const C = T.clave;
+  const clave = el("div", { class: "tp-clave", "aria-label": C.titulo },
+    `<div class="tp-clave-normal"><span class="tp-clave-z">${esc(C.z)}</span><span class="tp-clave-sim">${esc(C.simbolo)}</span>` +
+    `<span class="tp-clave-nom">${esc(C.nombre)}</span><span class="tp-clave-masa">${esc(C.masa)}</span></div>` +
+    `<div class="tp-clave-ox"><span class="tp-clave-sim">${esc(C.simbolo)}</span><span class="tp-clave-cols">` +
+    `<span class="tp-clave-neg"><b>−</b>${esc(C.neg)}</span><span class="tp-clave-pos"><b>+</b>${esc(C.pos)}</span></span>` +
+    `<span class="tp-clave-pie">${esc(C.ox)}</span></div>`);
+  tabla.append(resumen, clave);
   const celdas = new Map();
   for (const e of E) {
     const b = el("button", { type: "button", class: "tp-celda", "data-n": e.n, "aria-label": `${e.nombre}, ${e.s}, ${e.n}` },

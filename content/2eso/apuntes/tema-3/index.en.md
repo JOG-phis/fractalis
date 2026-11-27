@@ -83,3 +83,9 @@ Each technique makes use of a different property of the components.
 **Homogeneous mixtures**
 
 {{< figura src="sep-cristalizacion.svg|sep-destilacion.svg|sep-cromatografia-en.svg" alt="Evaporation and crystallisation by heating an evaporating dish|Distillation with a flask and condenser|Paper chromatography" ancho="120|125|95" rotulos="**Evaporation and crystallisation**<br>dissolved solid|**Distillation**<br>boiling point|**Chromatography**<br>how fast each substance is carried" >}}
+
+## Practice
+
+{{< simulacion titulo="Matter sorter" url="/proyectos/clasificador-materia/" boton="Open the app (in Spanish)" >}}
+In level 3, sort substances into elements, compounds, homogeneous mixtures and heterogeneous mixtures.
+{{< /simulacion >}}

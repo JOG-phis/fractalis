@@ -149,7 +149,7 @@ Hazardous chemicals carry red diamonds with a black symbol on their label, warni
 {{< simulacion titulo="Put the scientific method in order" url="/proyectos/ordena-metodo-cientifico/" boton="Open the app (in Spanish)" >}}
 Put the five stages of the scientific method in order in famous scientific discoveries.
 {{< /simulacion >}}
-{{< simulacion titulo="MateriaKids, the matter sorter" url="https://clasmat-fractalis.netlify.app/" boton="Open the app (in Spanish)" >}}
+{{< simulacion titulo="Matter sorter" url="/proyectos/clasificador-materia/" boton="Open the app (in Spanish)" >}}
 Classify matter interactively.
 {{< /simulacion >}}
 {{< simulacion titulo="Conversion factors" url="https://factores-fractalis.netlify.app/" boton="Open the app (in Spanish)" >}}

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+/* Tema común de las apps de Fractalis: color del curso (acento-*), modo oscuro, formas, fuente y fondo */
+@import "../../_comun/tema.css";
+
+/* Llama del mechero */
+@keyframes llama { 0%, 100% { scale: 1 1; } 50% { scale: 0.92 1.08; } }
+.fx-llama { animation: llama 0.35s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .fx-llama { animation: none; } }

@@ -83,3 +83,9 @@ Cada técnica aprovecha una propiedad diferente de los componentes.
 **Mezclas homogéneas**
 
 {{< figura src="sep-cristalizacion.svg|sep-destilacion.svg|sep-cromatografia.svg" alt="Evaporación y cristalización calentando una cápsula|Destilación con matraz y refrigerante|Cromatografía en papel" ancho="120|125|95" rotulos="**Evaporación y cristalización**<br>sólido disuelto|**Destilación**<br>temperatura de ebullición|**Cromatografía**<br>velocidad de arrastre" >}}
+
+## Para practicar
+
+{{< simulacion titulo="Clasificador de la materia" url="/proyectos/clasificador-materia/" boton="Abrir la app" >}}
+En el nivel 3, clasifica sustancias en elementos, compuestos, mezclas homogéneas y mezclas heterogéneas.
+{{< /simulacion >}}

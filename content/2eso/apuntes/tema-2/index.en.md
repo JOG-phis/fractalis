@@ -97,4 +97,13 @@ Watch how the particles move in each state and what happens when you heat or coo
 {{< simulacion titulo="PhET: Gas Properties" url="https://phet.colorado.edu/en/simulations/gas-properties" >}}
 Change the pressure, volume and temperature of a gas and check the gas laws.
 {{< /simulacion >}}
+{{< simulacion titulo="Matter sorter" url="/proyectos/clasificador-materia/" boton="Open the app (in Spanish)" >}}
+In level 2, sort everyday things into solids, liquids and gases, including some tricky cases such as sand or modelling clay.
+{{< /simulacion >}}
+{{< simulacion titulo="Heating curve" url="/proyectos/curva-calentamiento/" boton="Open the app (in Spanish)" >}}
+Heat ice until it turns into steam and watch the particles and the graph at the same time: why does the temperature stay the same on the plateaus?
+{{< /simulacion >}}
+{{< simulacion titulo="Gas laws" url="/proyectos/leyes-gases/" boton="Open the app (in Spanish)" >}}
+Compress the gas, heat it, record measurements and discover Boyle's, Charles's and Gay-Lussac's laws.
+{{< /simulacion >}}
 {{< /columnas >}}
